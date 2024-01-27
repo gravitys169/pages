@@ -1,7 +1,7 @@
 Hello 
 [test](./test)
-[operator algorithm](./operator algorithm.md)
+[operator algorithm](./operator_algorithm.md)
 dd
 speak
-[[operator algorithm]]
+[[operator_algorithm]]
 
