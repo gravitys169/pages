@@ -4,4 +4,3 @@ Hello
 dd
 speak
 [[operator_algorithm]]
-
