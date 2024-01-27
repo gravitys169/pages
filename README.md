@@ -1,3 +1,3 @@
 Hello 
-[test](/test)
+[test](/test.md)
 dd
