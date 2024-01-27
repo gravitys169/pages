@@ -1,5 +1,3 @@
 Hello 
-
-[hello test](test.md)
-
+[test](./test)
 dd
