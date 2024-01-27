@@ -4,3 +4,4 @@
 [test](test/test.md)
 [new](new.md)
 
+## obsidian+git插件+github+github pages实现文章共享
