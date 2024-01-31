@@ -8,18 +8,16 @@
 1. 知识的来源与质量参差不齐，囫囵吞枣的吸纳并不利于知识的提纯与消化
 2. 知识的数量与种类浩如烟海，究其一生也无法吸纳知识世间知识之万一
 3. 个人的记忆力有限，随着时间推移，许多有益的记忆逐渐模糊，珍贵的知识需要重温
+
 故而通过pages这个平台，记录自己的知识经验，一方面在撰写的过程中提炼总结，另一方面也为了方便自己温故知新。
 
 # 目录
 ## 计算机技术
-[hdfs](hdfs.md)
-[operator_algorithm](operator_algorithm.md)
-
-[new](new.md)
-
-[laptop](./laptop.md)
-
+- [hdfs](./计算机技术/hdfs.md)
+- [operator_algorithm](operator_algorithm.md)
+- [new](new.md)
+- [laptop](./laptop.md)
 ## 职场人生
-[向优秀学习](向优秀学习.md)
+[向优秀学习](./职场人生/向优秀学习.md)
 
 ## obsidian+git插件+github+github pages实现文章共享
