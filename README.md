@@ -1,7 +1,7 @@
 # 目录
 [hdfs](hdfs.md)
 [operator_algorithm](operator_algorithm.md)
-[test](test/test.md)
+[向优秀学习](向优秀学习.md)
 [new](new.md)
 
 [laptop](./laptop.md)
