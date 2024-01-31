@@ -1,11 +1,9 @@
 # 目录
 [hdfs](hdfs.md)
 [operator_algorithm](operator_algorithm.md)
-
+[向优秀学习](向优秀学习.md)
 [new](new.md)
 
-## career talk
-[向优秀学习](career_talk/向优秀学习.md)
 [laptop](./laptop.md)
 
 
