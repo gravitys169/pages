@@ -11,15 +11,15 @@
 故而通过pages这个平台，记录自己的知识经验，一方面在撰写的过程中提炼总结，另一方面也为了方便自己温故知新。
 
 # 目录
-## 技术领域
-[hdfs](./计算机/hdfs.md)
+## 计算机技术
+[hdfs](hdfs.md)
 [operator_algorithm](operator_algorithm.md)
 
 [new](new.md)
 
 [laptop](./laptop.md)
 
-## Career
-[向优秀学习](career_talk/向优秀学习.md)
+## 职场人生
+[向优秀学习](向优秀学习.md)
 
 ## obsidian+git插件+github+github pages实现文章共享
