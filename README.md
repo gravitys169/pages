@@ -18,8 +18,9 @@
 **Below are key points when writing pages：**
 1. 宁缺毋滥，dont write pages only for just write
 2. 提纲挈领，勿长篇累牍的记录，复杂事项应提供以一概之的一句话总结
-3. 所有内容应为原创，better to draw the pictures by myself
-4. 凡能查询到的已有知识，仅提供
+3. 注重原创，better to draw the pictures by myself
+4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
+5. English first, try to use  English to write the article
 
 # 目录
 ## 计算机技术
@@ -29,5 +30,5 @@
 - [laptop](./laptop.md)
 ## 职场人生
 [向优秀学习](./职场人生/向优秀学习.md)
-
-## obsidian+git插件+github+github pages实现文章共享
+## 读书笔记
+### obsidian+git插件+github+github pages实现文章共享
