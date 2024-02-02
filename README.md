@@ -24,13 +24,12 @@
 
 # 目录
 ## 计算机技术
-- [hdfs](./计算机技术/hdfs.md)
-- [operator_algorithm](operator_algorithm.md)
-- [new](new.md)
-- [laptop](./laptop.md)
+### 系统架构
+- [CPU](计算机技术/系统架构/CPU.md)
 ### 大数据
 - [大数据技术概览](计算机技术/大数据/大数据技术概览.md)
 - [Native_Engine](计算机技术/大数据/Native_Engine.md)
+- [hdfs](计算机技术/大数据/hdfs.md)
 ## 职场人生
 [向优秀学习](./职场人生/向优秀学习.md)
 ## 读书笔记
