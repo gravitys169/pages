@@ -97,6 +97,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 12d401376e1e0b86ed2a98b77185be95a309d658: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720172033_511.png]]
 4f9553304cce93389e2065b89f5963a9296ecaac: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720195852_455.png]]
 45645fedb59c90cd58a4b5e1a5ec32ce17cc6336: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20231106201456_908.png]]
+748dbc03407c93be6466bdf211b21aee5e8ea9c2: [[attachments/20240206163724.jpg]]
 
 %%
 # Drawing
@@ -3053,33 +3054,31 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 			]
 		},
 		{
+			"id": "i5kBrlwS",
 			"type": "image",
-			"version": 383,
-			"versionNonce": 1806448881,
-			"isDeleted": true,
-			"id": "lYSBIjGjyS7MGP7cXtLcw",
+			"x": -909.0481814010071,
+			"y": -889.5895763417458,
+			"width": 500,
+			"height": 275.40983606557376,
+			"angle": 0,
+			"strokeColor": "transparent",
+			"backgroundColor": "transparent",
 			"fillStyle": "hachure",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
-			"angle": 0,
-			"x": -991.5314649410996,
-			"y": -1007.9423742943741,
-			"strokeColor": "transparent",
-			"backgroundColor": "transparent",
-			"width": 791.0518870857657,
-			"height": 431.62871729426155,
-			"seed": 1114616458,
-			"groupIds": [],
-			"frameId": null,
 			"roundness": null,
+			"seed": 3528,
+			"version": 9,
+			"versionNonce": 152845823,
+			"updated": 1707221953218,
+			"isDeleted": false,
+			"groupIds": [],
 			"boundElements": [],
-			"updated": 1707221940026,
 			"link": null,
 			"locked": false,
-			"status": "pending",
-			"fileId": "69f6f24a0fa0c19dbe15ad7772ce084bf2cf4962",
+			"fileId": "748dbc03407c93be6466bdf211b21aee5e8ea9c2",
 			"scale": [
 				1,
 				1
