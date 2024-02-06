@@ -37,7 +37,7 @@ Spark Stage内的执行模式
 ![](attachments/20240206163417.jpg)
 
 ## Shuffle  
-![[Shuffle]]
+![[绘图/Shuffle]]
 
 Shuffle是指对数据进行重组，使其按照某种规则（基于hash或者range）重新分布的一种方式。
 
