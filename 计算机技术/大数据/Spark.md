@@ -34,7 +34,7 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 Presto Stage内的执行模式
 ![](attachments/20240206162639.jpg)
 Spark Stage内的执行模式
-![[Pasted image 20230731200658.png]]  
+![](attachments/20240206163417.jpg)
 
 ## Shuffle  
 ![[Shuffle]]
