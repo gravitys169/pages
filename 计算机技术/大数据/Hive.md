@@ -10,7 +10,7 @@
 - Hive执行引擎：Hive可以通过不同的执行引擎来执行查询和任务。最常用的执行引擎是MapReduce和Tez。MapReduce引擎将查询转换为一系列的Map和Reduce任务，而Tez引擎使用更高效的图计算模型来执行查询。
 ### Hive Metastore与HDFS的逻辑联系
 从用户查询的表，到实际读取的文件块，中间经历了两次映射:
-
+![](attachments/20240206120118.jpg)
 - 从表映射到文件路径，这个映射关系保存在Hive的后端存储引擎mysql中
 ![](attachments/20240206120257.jpg)
 - 从文件路径映射到多个文件块，这个映射关系保存在HDFS的NameNode中
