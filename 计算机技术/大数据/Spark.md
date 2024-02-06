@@ -31,10 +31,14 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 2. HashbuilderOp发生spill时，采用异步spill机制，持有一个spill状态的future
 3. TableScanOp依赖pagesource的输入，持有一个pagesource是否block的future
 4. ExchangeOp依赖exchangeClient是否block，比如PageBuffer满了，将block住
+
 **而Spark不存在上述的block机制，其通过Iterator模式从子Operator拉取结果，在hasNext方法中，如果子Operator需要长期处理大量数据，那么会同步等待，直到子Operator完成。当hashNext返回false时，表示子算子的数据已经处理完毕。**
+
 - Presto Stage内的执行模式
+
 ![](attachments/20240206162639.jpg)
 - Spark Stage内的执行模式
+
 ![](attachments/20240206163417.jpg)
 
 ## Shuffle  
