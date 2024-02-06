@@ -80,12 +80,14 @@ executor*Reducer个文件 ^MprMud7S
 
 
 # Embedded files
-61e3b5d1dcab773f8a06e7c3f274197bd9781a06: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171926_435.png]]
 748dbc03407c93be6466bdf211b21aee5e8ea9c2: [[attachments/20240206163724.jpg]]
 d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 0313131d6cd2c2dc8a5531d91a01f23b4ff58dc1: [[attachments/20240206202543.jpg]]
 940597a0f51e21c8b50d341a23fadec021bb5c56: [[attachments/Pasted Image 20240206202757_074.jpg]]
 e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202923_955.jpg]]
+820d7ae40979e9f69acd01696ec673fb2140bfe5: [[attachments/20240206202955.jpg]]
+f313fcbc5bb1e1e18418d78a7b859ee89a64ac2f: [[attachments/Pasted Image 20240206203007_413.png]]
+61e3b5d1dcab773f8a06e7c3f274197bd9781a06: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171926_435.png]]
 
 %%
 # Drawing
@@ -356,8 +358,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "embeddable",
-			"version": 97,
-			"versionNonce": 46283743,
+			"version": 99,
+			"versionNonce": 1371141745,
 			"isDeleted": false,
 			"id": "VB2HOsuD_WHVo9SrjfaEa",
 			"fillStyle": "hachure",
@@ -379,7 +381,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1707222576028,
+			"updated": 1707222719646,
 			"link": "https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0",
 			"locked": false,
 			"validated": true,
@@ -469,8 +471,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 1276,
-			"versionNonce": 1906427217,
+			"version": 1284,
+			"versionNonce": 1863869169,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -492,7 +494,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576087,
+			"updated": 1707222801665,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -521,8 +523,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 1366,
-			"versionNonce": 1539007761,
+			"version": 1374,
+			"versionNonce": 2099190449,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -544,7 +546,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576087,
+			"updated": 1707222801666,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -897,8 +899,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 456,
-			"versionNonce": 675288273,
+			"version": 464,
+			"versionNonce": 1999299185,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -920,7 +922,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576090,
+			"updated": 1707222801669,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1057,8 +1059,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 395,
-			"versionNonce": 729457745,
+			"version": 403,
+			"versionNonce": 406954481,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1080,7 +1082,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576093,
+			"updated": 1707222801672,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1299,8 +1301,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 646,
-			"versionNonce": 724661201,
+			"version": 662,
+			"versionNonce": 238854513,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1322,7 +1324,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576098,
+			"updated": 1707222801675,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1351,8 +1353,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 566,
-			"versionNonce": 856781713,
+			"version": 582,
+			"versionNonce": 707115313,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1374,7 +1376,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576099,
+			"updated": 1707222801676,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1482,8 +1484,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 813,
-			"versionNonce": 1732543313,
+			"version": 821,
+			"versionNonce": 620486897,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1505,7 +1507,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576102,
+			"updated": 1707222801679,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1688,8 +1690,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 539,
-			"versionNonce": 2051449617,
+			"version": 547,
+			"versionNonce": 1387993265,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1711,7 +1713,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576103,
+			"updated": 1707222801680,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1740,8 +1742,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 743,
-			"versionNonce": 798216913,
+			"version": 751,
+			"versionNonce": 945774705,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1763,7 +1765,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222576105,
+			"updated": 1707222801685,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2348,8 +2350,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "embeddable",
-			"version": 294,
-			"versionNonce": 779564433,
+			"version": 296,
+			"versionNonce": 937141535,
 			"isDeleted": false,
 			"id": "V_k65EI6JDJ0dU-0s3kNF",
 			"fillStyle": "solid",
@@ -2376,7 +2378,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 					"type": "arrow"
 				}
 			],
-			"updated": 1707222576028,
+			"updated": 1707222719646,
 			"link": "https://blog.csdn.net/lidongmeng0213/article/details/109409210",
 			"locked": false,
 			"validated": true,
@@ -2843,12 +2845,76 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 			]
 		},
 		{
-			"id": "vHSezlvtD2HmRk_OMRjaQ",
 			"type": "image",
+			"version": 56,
+			"versionNonce": 340573503,
+			"isDeleted": false,
+			"id": "vHSezlvtD2HmRk_OMRjaQ",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
 			"x": -930.9788779245362,
 			"y": -119.19262410681844,
+			"strokeColor": "transparent",
+			"backgroundColor": "transparent",
 			"width": 758.4293578315331,
 			"height": 419.60440803105536,
+			"seed": 867140497,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1707222560948,
+			"link": null,
+			"locked": false,
+			"status": "pending",
+			"fileId": "e4eb39e08814d5189208887ec133cbc78383c8cf",
+			"scale": [
+				1,
+				1
+			]
+		},
+		{
+			"id": "xk1ElFM6",
+			"type": "image",
+			"x": -890.1962426301762,
+			"y": -464.0597076616658,
+			"width": 598.5158175377261,
+			"height": 322.4147707569299,
+			"angle": 0,
+			"strokeColor": "transparent",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"roundness": null,
+			"seed": 52199,
+			"version": 37,
+			"versionNonce": 296363423,
+			"updated": 1707222741634,
+			"isDeleted": false,
+			"groupIds": [],
+			"boundElements": [],
+			"link": null,
+			"locked": false,
+			"fileId": "820d7ae40979e9f69acd01696ec673fb2140bfe5",
+			"scale": [
+				1,
+				1
+			]
+		},
+		{
+			"id": "5XluGeOWyvyQRyrERAm-Q",
+			"type": "image",
+			"x": -920.1246947464788,
+			"y": -535.8780449515707,
+			"width": 729.8879078347547,
+			"height": 393.18366463717445,
 			"angle": 0,
 			"strokeColor": "transparent",
 			"backgroundColor": "transparent",
@@ -2860,16 +2926,16 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
-			"seed": 867140497,
-			"version": 56,
-			"versionNonce": 340573503,
+			"seed": 1712093311,
+			"version": 50,
+			"versionNonce": 733572895,
 			"isDeleted": false,
 			"boundElements": null,
-			"updated": 1707222560948,
+			"updated": 1707222605636,
 			"link": null,
 			"locked": false,
 			"status": "pending",
-			"fileId": "e4eb39e08814d5189208887ec133cbc78383c8cf",
+			"fileId": "f313fcbc5bb1e1e18418d78a7b859ee89a64ac2f",
 			"scale": [
 				1,
 				1
@@ -2892,7 +2958,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
 		"scrollX": 1341.8477875377582,
-		"scrollY": 468.09140892590165,
+		"scrollY": 759.9901275562011,
 		"zoom": {
 			"value": 1.3703383210346154
 		},
