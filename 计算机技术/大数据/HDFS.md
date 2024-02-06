@@ -1,7 +1,6 @@
 ## 概括
 
 **一句话：用一个NameNode节点记录一个文件打散到不同DataNode节点的文件块，由依托本地文件系统的DataNode提供文件读取服务**
-[HDFS_arch](绘图/HDFS_arch.md)
 Hadoop分布式文件系统（Hadoop Distributed File System），由1个NameNode与N个DataNode组成。
 
 ![5f7580af4f749a861c39dd54adcf5f7d_800x437.png@900-0-90-f.png](https://s2.loli.net/2024/02/04/sEMHFrmkYWA27gp.png)

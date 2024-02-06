@@ -91,12 +91,12 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 
 
 # Embedded files
-69f6f24a0fa0c19dbe15ad7772ce084bf2cf4962: [[attachments/Pasted Image 20230720171854_105.png]]
-61e3b5d1dcab773f8a06e7c3f274197bd9781a06: [[attachments/Pasted Image 20230720171926_435.png]]
-2294e30e28dbf90805d6bf631887d157930f87b8: [[attachments/Pasted Image 20230720171956_461.png]]
-12d401376e1e0b86ed2a98b77185be95a309d658: [[attachments/Pasted Image 20230720172033_511.png]]
-4f9553304cce93389e2065b89f5963a9296ecaac: [[attachments/Pasted Image 20230720195852_455.png]]
-45645fedb59c90cd58a4b5e1a5ec32ce17cc6336: [[attachments/Pasted Image 20231106201456_908.png]]
+69f6f24a0fa0c19dbe15ad7772ce084bf2cf4962: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171854_105.png]]
+61e3b5d1dcab773f8a06e7c3f274197bd9781a06: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171926_435.png]]
+2294e30e28dbf90805d6bf631887d157930f87b8: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171956_461.png]]
+12d401376e1e0b86ed2a98b77185be95a309d658: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720172033_511.png]]
+4f9553304cce93389e2065b89f5963a9296ecaac: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720195852_455.png]]
+45645fedb59c90cd58a4b5e1a5ec32ce17cc6336: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20231106201456_908.png]]
 
 %%
 # Drawing
@@ -349,8 +349,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "embeddable",
-			"version": 88,
-			"versionNonce": 1258271615,
+			"version": 90,
+			"versionNonce": 1142597745,
 			"isDeleted": false,
 			"id": "VB2HOsuD_WHVo9SrjfaEa",
 			"fillStyle": "hachure",
@@ -372,7 +372,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1707208495177,
+			"updated": 1707208852366,
 			"link": "https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0",
 			"locked": false,
 			"validated": true,
@@ -462,8 +462,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 897,
-			"versionNonce": 791150513,
+			"version": 903,
+			"versionNonce": 1876255729,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -473,11 +473,11 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 			"opacity": 100,
 			"angle": 0,
 			"x": -916.5583496384436,
-			"y": 565.9403815449526,
+			"y": 565.9403815342955,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 166.8041091212947,
-			"height": 53.88084228058767,
+			"height": 53.88084228704747,
 			"seed": 1118011990,
 			"groupIds": [],
 			"frameId": null,
@@ -485,7 +485,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495305,
+			"updated": 1707208864544,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -508,14 +508,14 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				],
 				[
 					-166.8041091212947,
-					53.88084228058767
+					53.88084228704747
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 1268,
-			"versionNonce": 1308526449,
+			"version": 1274,
+			"versionNonce": 558881713,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -525,11 +525,11 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 			"opacity": 100,
 			"angle": 0,
 			"x": -854.9667662420766,
-			"y": 1040.6032301008036,
+			"y": 1040.603230100803,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 230.5056749397679,
-			"height": 327.8562815728253,
+			"height": 327.8562815728251,
 			"seed": 25950422,
 			"groupIds": [],
 			"frameId": null,
@@ -537,7 +537,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495306,
+			"updated": 1707208864544,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -560,7 +560,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				],
 				[
 					-230.5056749397679,
-					-327.8562815728253
+					-327.8562815728251
 				]
 			]
 		},
@@ -890,8 +890,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 423,
-			"versionNonce": 589700913,
+			"version": 429,
+			"versionNonce": 1155490673,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -913,7 +913,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495309,
+			"updated": 1707208864547,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1050,8 +1050,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 362,
-			"versionNonce": 223903409,
+			"version": 368,
+			"versionNonce": 992846577,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1073,7 +1073,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495311,
+			"updated": 1707208864550,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1292,8 +1292,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 581,
-			"versionNonce": 295640625,
+			"version": 593,
+			"versionNonce": 1855988337,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1315,7 +1315,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495314,
+			"updated": 1707208864552,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1344,8 +1344,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 501,
-			"versionNonce": 1864369649,
+			"version": 513,
+			"versionNonce": 1448933937,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1367,7 +1367,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495314,
+			"updated": 1707208864553,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1475,8 +1475,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 780,
-			"versionNonce": 1675230641,
+			"version": 786,
+			"versionNonce": 186049009,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1498,7 +1498,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495316,
+			"updated": 1707208864555,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1681,8 +1681,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 506,
-			"versionNonce": 550045041,
+			"version": 512,
+			"versionNonce": 482990513,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1704,7 +1704,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495316,
+			"updated": 1707208864555,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1733,8 +1733,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "arrow",
-			"version": 710,
-			"versionNonce": 1206459697,
+			"version": 716,
+			"versionNonce": 1282531697,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1756,7 +1756,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707208495319,
+			"updated": 1707208864558,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2580,8 +2580,8 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		},
 		{
 			"type": "embeddable",
-			"version": 183,
-			"versionNonce": 749111281,
+			"version": 185,
+			"versionNonce": 513217311,
 			"isDeleted": false,
 			"id": "V_k65EI6JDJ0dU-0s3kNF",
 			"fillStyle": "solid",
@@ -2608,7 +2608,7 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 					"type": "arrow"
 				}
 			],
-			"updated": 1707208495177,
+			"updated": 1707208852366,
 			"link": "https://blog.csdn.net/lidongmeng0213/article/details/109409210",
 			"locked": false,
 			"validated": true,
@@ -2994,6 +2994,39 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 			"originalText": "1630 没有12大盘场景；\n7270 920b 64核\n",
 			"lineHeight": 1.2,
 			"baseline": 71
+		},
+		{
+			"type": "image",
+			"version": 20,
+			"versionNonce": 545517137,
+			"isDeleted": true,
+			"id": "N7RnEGKYtElvVEzF4R-05",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"angle": 0,
+			"x": -1880.0460345803328,
+			"y": 243.2256390340678,
+			"strokeColor": "transparent",
+			"backgroundColor": "transparent",
+			"width": 610,
+			"height": 336,
+			"seed": 246584209,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"boundElements": [],
+			"updated": 1707208856285,
+			"link": null,
+			"locked": false,
+			"status": "pending",
+			"fileId": "c9d699f73d1c8731a63377907b1ec319f0ac5915",
+			"scale": [
+				1,
+				1
+			]
 		}
 	],
 	"appState": {
@@ -3011,10 +3044,10 @@ spark.shuffle.file.buffer=32k ^vU3AdB1g
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1917.046034580333,
-		"scrollY": 120.92019429926562,
+		"scrollX": 1435.8793679136666,
+		"scrollY": 696.5504026325993,
 		"zoom": {
-			"value": 0.7499999999999998
+			"value": 1
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
