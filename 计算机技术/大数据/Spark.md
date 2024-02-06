@@ -4,19 +4,12 @@ Spark生态中包含了Spark Core、Spark SQL、Spark Streaming、Spark ML与Pys
 ## RDD
 
 Spark RDD（Resilient Distributed Dataset）是Apache Spark中的核心抽象概念之一。它是一种分布式的、可容错的数据集合，用于在Spark中进行并行计算。
-
 以下是关于Spark RDD的一些重要特点和用法：  
-
 - 分布式数据集：RDD是由数据元素组成的分布式集合，可以分布在Spark集群的多个节点上进行并行处理。每个节点上的RDD可以被划分为`多个分区`，每个分区可以在不同的节点上进行计算。  
-
 - 可容错性：RDD具有容错性，这意味着在节点故障时可以自动恢复。通过记录RDD的转换操作历史，Spark可以重新计算丢失的分区，从而保证计算的正确性和可靠性。  
-
 - 不可变性：RDD是不可变的，一旦创建就不能被修改。这意味着RDD的数据和转换操作是确定性的，可以被多个并行任务共享和重用。  
-
 - 转换和动作操作：Spark提供了一系列的转换操作（Transformation）和动作操作（Action），用于对RDD进行操作和处理。转换操作会生成新的RDD，而动作操作会触发计算并返回结果或将数据存储到外部系统。
-
 - 惰性计算：Spark采用惰性计算的策略，即RDD上的转换操作并不会立即执行，而是在遇到动作操作时才触发计算。这种延迟计算的机制可以优化计算过程，避免不必要的中间结果生成。
-
 - 数据持久化：Spark支持将RDD的数据持久化到内存或磁盘中，以便在后续计算中重用。这可以提高计算性能，避免重复计算和数据传输。
 
 总结而言，RDD是对不同节点上正在按分区被处理的数据的一种横向抽象。
@@ -24,34 +17,22 @@ Spark RDD（Resilient Distributed Dataset）是Apache Spark中的核心抽象概
 ## 工作流程
 
 Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、Optimizer、Planner、Scheduler与Executor等角色。
-![[SQL process procedure]]
+> [SQL process procedure](SQL%20process%20procedure.md)
 1. 将用户提交的SQL经过解析成AST树，进而形成一个DAG图。
-
 2. 使用RBO和CBO优化DAG，并拆分为不同的stage，每个stage内部由并行的任务处理不同的数据
-
 3. Driver通过App Master向Yarn的Resource Manager申请资源，Node Manager负责分配对应的executor资源。Driver将拥有所有executor的视图
-
 4. Driver监控executor的执行，如果任务失败将重新发送任务。前一个Stage任务完成后，才会调度下一个stage的任务
-
-##### 与Presto的工作流程的差异
-
-Presto与Spark的整体流程是类似，其中coordinator对应Spark的Driver，worker对应executor
-
-其中presto是stage内包含多个pipeline，每个pipeline包含一系列的Operator，每个pipeline由一个driver驱动，driver引入了一个block机制，但某些算子依赖的其他内容没有完成时，且其状态会block时，上游不会再提供输入。
-
-其算子的block可以分为以下几种：
-
-- LookupJoinOp依赖的build侧还未完成状态，持有lookupSourceProviderFuture
-
-- HashbuilderOp发生spill时，采用异步spill机制，持有一个spill状态的future
-
-- TableScanOp依赖pagesource的输入，持有一个pagesource是否block的future
-
-- ExchangeOp依赖exchangeClient是否block，比如PageBuffer满了，将block住
-
-而Spark不存在上述的block机制，其通过Iterator模式从子Operator拉取结果，在hasNext方法中，如果子Operator需要长期处理大量数据，那么会同步等待，直到子Operator完成。当hashNext返回false时，表示子算子的数据已经处理完毕。
+### 与Presto的工作流程的差异
+- Presto与Spark的整体流程是类似，其中coordinator对应Spark的Driver，worker对应executor
+- 其中presto是stage内包含多个pipeline，每个pipeline包含一系列的Operator，每个pipeline由一个driver驱动，driver引入了一个block机制，当某些算子依赖的其他内容没有完成时，且其状态会block时，上游不会再提供输入。
+#### Presto算子Block原因：
+1. LookupJoinOp依赖的build侧还未完成状态，持有lookupSourceProviderFuture
+2. HashbuilderOp发生spill时，采用异步spill机制，持有一个spill状态的future
+3. TableScanOp依赖pagesource的输入，持有一个pagesource是否block的future
+4. ExchangeOp依赖exchangeClient是否block，比如PageBuffer满了，将block住
+**而Spark不存在上述的block机制，其通过Iterator模式从子Operator拉取结果，在hasNext方法中，如果子Operator需要长期处理大量数据，那么会同步等待，直到子Operator完成。当hashNext返回false时，表示子算子的数据已经处理完毕。**
 Presto Stage内的执行模式
-![[Pasted image 20230731200648.png]]
+![](attachments/20240206162639.jpg)
 Spark Stage内的执行模式
 ![[Pasted image 20230731200658.png]]  
 
