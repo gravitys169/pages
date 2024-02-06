@@ -18,6 +18,7 @@ Spark RDD（Resilient Distributed Dataset）是Apache Spark中的核心抽象概
 
 Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、Optimizer、Planner、Scheduler与Executor等角色。
 > [SQL process procedure](绘图/SQL%20process%20procedure.md)
+
 1. 将用户提交的SQL经过解析成AST树，进而形成一个DAG图。
 2. 使用RBO和CBO优化DAG，并拆分为不同的stage，每个stage内部由并行的任务处理不同的数据
 3. Driver通过App Master向Yarn的Resource Manager申请资源，Node Manager负责分配对应的executor资源。Driver将拥有所有executor的视图
@@ -99,6 +100,6 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 
 ![image.png](http://image.huawei.com/tiny-lts/v1/images/7b5e316435ab328a7dd084301aa0c6aa_720x280.png@900-0-90-f.png)
 
-  ## 参考文献
+## 参考文献
 1. [Running Spark Jobs on YARN](https://medium.com/@goyalsaurabh66/running-spark-jobs-on-yarn-809163fc57e2)
 2. [Spark Shuffle原理详解](https://developer.aliyun.com/article/927120)
