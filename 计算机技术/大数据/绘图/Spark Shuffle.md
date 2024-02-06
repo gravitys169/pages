@@ -81,11 +81,11 @@ executor*Reducer个文件 ^MprMud7S
 
 # Embedded files
 61e3b5d1dcab773f8a06e7c3f274197bd9781a06: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171926_435.png]]
-2294e30e28dbf90805d6bf631887d157930f87b8: [[../../../../Excalidraw/bigdata/attachments/Pasted Image 20230720171956_461.png]]
 748dbc03407c93be6466bdf211b21aee5e8ea9c2: [[attachments/20240206163724.jpg]]
 d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 0313131d6cd2c2dc8a5531d91a01f23b4ff58dc1: [[attachments/20240206202543.jpg]]
 940597a0f51e21c8b50d341a23fadec021bb5c56: [[attachments/Pasted Image 20240206202757_074.jpg]]
+e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202923_955.jpg]]
 
 %%
 # Drawing
@@ -272,39 +272,6 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 			]
 		},
 		{
-			"type": "image",
-			"version": 328,
-			"versionNonce": 1127489279,
-			"isDeleted": false,
-			"id": "LrN_ZPgrHrixwvcgaxoCo",
-			"fillStyle": "hachure",
-			"strokeWidth": 1,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": -941.8027099863318,
-			"y": -119.83358931618133,
-			"strokeColor": "transparent",
-			"backgroundColor": "transparent",
-			"width": 769.4251047419446,
-			"height": 431.62871729426155,
-			"seed": 1862997130,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1707222241846,
-			"link": null,
-			"locked": false,
-			"status": "pending",
-			"fileId": "2294e30e28dbf90805d6bf631887d157930f87b8",
-			"scale": [
-				1,
-				1
-			]
-		},
-		{
 			"type": "text",
 			"version": 859,
 			"versionNonce": 1356895345,
@@ -389,8 +356,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "embeddable",
-			"version": 95,
-			"versionNonce": 1191792433,
+			"version": 97,
+			"versionNonce": 46283743,
 			"isDeleted": false,
 			"id": "VB2HOsuD_WHVo9SrjfaEa",
 			"fillStyle": "hachure",
@@ -412,7 +379,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1707222507046,
+			"updated": 1707222576028,
 			"link": "https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0",
 			"locked": false,
 			"validated": true,
@@ -502,8 +469,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 1266,
-			"versionNonce": 251784351,
+			"version": 1276,
+			"versionNonce": 1906427217,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -525,7 +492,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507111,
+			"updated": 1707222576087,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -554,8 +521,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 1356,
-			"versionNonce": 1513656543,
+			"version": 1366,
+			"versionNonce": 1539007761,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -577,7 +544,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507112,
+			"updated": 1707222576087,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -930,8 +897,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 446,
-			"versionNonce": 381887775,
+			"version": 456,
+			"versionNonce": 675288273,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -953,7 +920,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507115,
+			"updated": 1707222576090,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1090,8 +1057,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 385,
-			"versionNonce": 31727007,
+			"version": 395,
+			"versionNonce": 729457745,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1113,7 +1080,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507118,
+			"updated": 1707222576093,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1332,8 +1299,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 626,
-			"versionNonce": 1116001823,
+			"version": 646,
+			"versionNonce": 724661201,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1355,7 +1322,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507122,
+			"updated": 1707222576098,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1384,8 +1351,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 546,
-			"versionNonce": 237967967,
+			"version": 566,
+			"versionNonce": 856781713,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1407,7 +1374,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507122,
+			"updated": 1707222576099,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1515,8 +1482,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 803,
-			"versionNonce": 986009247,
+			"version": 813,
+			"versionNonce": 1732543313,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1538,7 +1505,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507124,
+			"updated": 1707222576102,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1721,8 +1688,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 529,
-			"versionNonce": 302740191,
+			"version": 539,
+			"versionNonce": 2051449617,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1744,7 +1711,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507125,
+			"updated": 1707222576103,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1773,8 +1740,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "arrow",
-			"version": 733,
-			"versionNonce": 1019578143,
+			"version": 743,
+			"versionNonce": 798216913,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1796,7 +1763,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707222507127,
+			"updated": 1707222576105,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2381,8 +2348,8 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		},
 		{
 			"type": "embeddable",
-			"version": 292,
-			"versionNonce": 73087071,
+			"version": 294,
+			"versionNonce": 779564433,
 			"isDeleted": false,
 			"id": "V_k65EI6JDJ0dU-0s3kNF",
 			"fillStyle": "solid",
@@ -2409,7 +2376,7 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 					"type": "arrow"
 				}
 			],
-			"updated": 1707222507046,
+			"updated": 1707222576028,
 			"link": "https://blog.csdn.net/lidongmeng0213/article/details/109409210",
 			"locked": false,
 			"validated": true,
@@ -2874,6 +2841,39 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 				1,
 				1
 			]
+		},
+		{
+			"id": "vHSezlvtD2HmRk_OMRjaQ",
+			"type": "image",
+			"x": -930.9788779245362,
+			"y": -119.19262410681844,
+			"width": 758.4293578315331,
+			"height": 419.60440803105536,
+			"angle": 0,
+			"strokeColor": "transparent",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 867140497,
+			"version": 56,
+			"versionNonce": 340573503,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1707222560948,
+			"link": null,
+			"locked": false,
+			"status": "pending",
+			"fileId": "e4eb39e08814d5189208887ec133cbc78383c8cf",
+			"scale": [
+				1,
+				1
+			]
 		}
 	],
 	"appState": {
@@ -2891,10 +2891,10 @@ d1640c5484326b1f7bcff95a385b7bfafb03550b: [[attachments/20240206195032.jpg]]
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1726.9959892355425,
-		"scrollY": -1167.2383996379629,
+		"scrollX": 1341.8477875377582,
+		"scrollY": 468.09140892590165,
 		"zoom": {
-			"value": 1.0548268293037564
+			"value": 1.3703383210346154
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
