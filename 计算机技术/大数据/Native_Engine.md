@@ -9,4 +9,3 @@
 - Databricks Photon
 - Apache Arrow Datafusion 
 - Apache Velox
--
