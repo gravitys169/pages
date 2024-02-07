@@ -65,7 +65,7 @@ map*reduce*executor个小文件 ^3dskBaTI
 
 reducer*executor个文件 ^ZGSHiltx
 
-executor*Reducer个文件 ^MprMud7S
+executor*mapper个文件 ^MprMud7S
 
 [[Spark Native列式Shuffle.pptx]] ^de9w8rht
 
@@ -435,8 +435,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 1290,
-			"versionNonce": 766783474,
+			"version": 1292,
+			"versionNonce": 117940786,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -458,7 +458,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993626,
+			"updated": 1707288729885,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -487,8 +487,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 1380,
-			"versionNonce": 307911538,
+			"version": 1382,
+			"versionNonce": 447102386,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -510,7 +510,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993626,
+			"updated": 1707288729885,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -863,8 +863,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 470,
-			"versionNonce": 1426826994,
+			"version": 472,
+			"versionNonce": 485751090,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -886,7 +886,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993629,
+			"updated": 1707288729890,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1023,8 +1023,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 409,
-			"versionNonce": 628071922,
+			"version": 411,
+			"versionNonce": 2055000114,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1046,7 +1046,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993631,
+			"updated": 1707288729893,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1265,8 +1265,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 674,
-			"versionNonce": 1956648178,
+			"version": 678,
+			"versionNonce": 761407282,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1288,7 +1288,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993634,
+			"updated": 1707288729896,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1317,8 +1317,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 594,
-			"versionNonce": 1632698482,
+			"version": 598,
+			"versionNonce": 1977844402,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1340,7 +1340,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993635,
+			"updated": 1707288729897,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1448,8 +1448,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 827,
-			"versionNonce": 945622002,
+			"version": 829,
+			"versionNonce": 1667497522,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1471,7 +1471,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993638,
+			"updated": 1707288729900,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1654,8 +1654,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 553,
-			"versionNonce": 897333106,
+			"version": 555,
+			"versionNonce": 1486592434,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1677,7 +1677,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993639,
+			"updated": 1707288729900,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1706,8 +1706,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "arrow",
-			"version": 757,
-			"versionNonce": 107381490,
+			"version": 759,
+			"versionNonce": 1782732082,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1729,7 +1729,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707277993641,
+			"updated": 1707288729902,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2131,8 +2131,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		},
 		{
 			"type": "text",
-			"version": 254,
-			"versionNonce": 1632817521,
+			"version": 260,
+			"versionNonce": 244881198,
 			"isDeleted": false,
 			"id": "MprMud7S",
 			"fillStyle": "solid",
@@ -2141,28 +2141,28 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -936.8038773027976,
+			"x": -932.0577835527976,
 			"y": 1374.521782158714,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 211.8359375,
+			"width": 202.34375,
 			"height": 24,
 			"seed": 639395716,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707222241847,
+			"updated": 1707289350119,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 4,
-			"text": "executor*Reducer个文件",
-			"rawText": "executor*Reducer个文件",
+			"text": "executor*mapper个文件",
+			"rawText": "executor*mapper个文件",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "executor*Reducer个文件",
+			"originalText": "executor*mapper个文件",
 			"lineHeight": 1.2,
 			"baseline": 19
 		},
@@ -2872,42 +2872,6 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 				1,
 				1
 			]
-		},
-		{
-			"text": "📍[[SQL process procedure]]",
-			"fontSize": 20,
-			"fontFamily": 4,
-			"textAlign": "center",
-			"verticalAlign": "top",
-			"baseline": 19,
-			"id": "lZEgcg2B",
-			"type": "text",
-			"x": -1202.1012759935024,
-			"y": -549.0134872899343,
-			"width": 247.36328125,
-			"height": 24,
-			"angle": 0,
-			"strokeColor": "#e03131",
-			"backgroundColor": "transparent",
-			"fillStyle": "hachure",
-			"strokeWidth": 1,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"roundness": null,
-			"seed": 6817,
-			"version": 18,
-			"versionNonce": 2046466542,
-			"updated": 1707278013019,
-			"isDeleted": true,
-			"groupIds": [],
-			"boundElements": [],
-			"link": "[[SQL process procedure]]",
-			"locked": false,
-			"containerId": null,
-			"originalText": "📍[[SQL process procedure]]",
-			"rawText": "[[SQL process procedure]]",
-			"lineHeight": 1.2
 		}
 	],
 	"appState": {
@@ -2925,10 +2889,10 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[attachments/Pasted Image 20240206202
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1341.8477875377582,
-		"scrollY": 905.9394868713507,
+		"scrollX": 1582.757523792728,
+		"scrollY": -452.54387767400283,
 		"zoom": {
-			"value": 1.3703383210346154
+			"value": 0.9848939081797637
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,

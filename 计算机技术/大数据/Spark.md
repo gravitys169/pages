@@ -51,7 +51,7 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 - 每一个上游ShufflleMapTask 根据下游 ReduceTask数量，产生对应多个的bucket内存，这个bucket存放的数据是经过Partition操作（默认是Hashpartition）之后找到对应的 bucket 然后放进去。
 - bucket内存大小默认是32k，最后将bucket缓存的数据溢写到磁盘，即为对应的block file。
 - 接下来Reduce Task底层通过 BlockManager 将数据拉取过来。拉取过来的数据会组成一个内部的 ShuffleRDD，优先放入内存，内存不够用则放入磁盘。
-- **缺点**：生成大量小文件，文件数量=maptask * executor * reducetask，当存在20个executor，每个executor运行200个map task与200个reduce task时，将产生20*200*200=800000个文件，则极大的增加的磁盘负担。
+- **缺点**：生成大量小文件，文件数量=maptask * executor * reducetask，当存在20个executor，每个executor运行200个map task与200个reduce task时，将产生20 * 200 * 200=800000个文件，则极大的增加的磁盘负担。
 #### 优化后的hash shuffle
 - 核心优化点：每个map task不再单独针对每个reduce 输出文件，而是让多个map task共享一个输出给reduce的文件，因为在一个executor进程内，因此可以共享同一个文件句柄。
 - 优化后的文件数=executor* reduce task，当存在20个executor，每个executor运行200个map task与200个reduce task时，产生文件数=20*200=4000个，虽然减少了不少，但是依然存在大量小文件。
@@ -67,41 +67,26 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 - 在溢写磁盘之前，会先根据key对内存数据结构中的数据进行排序，排序好的数据，会以每批次1万条数据的形式分批写入磁盘文件。
 - 然后通过一个类似于MergeSort的排序算法TimSort对AppendOnlyMap 集合底层的 Array 排序
 - 排序的逻辑是:**先按照PartitionId 排序, 后按照Key的HashCode 排序**
-
-  
-
-在task将所有数据写入内存数据结构的过程中，会发生多次磁盘溢写，会产生多个临时文件，最后会将之前所有的临时文件都进行合并，最后会合并成为一个大文件。  
-
-> 每个Map任务最后只会输出两个文件（一个数据文件，一个是索引文件记录每个分区的偏移量），中间过程采用归并排序,输出完成后，Reducer会根据索引文件得到属于自己的分区。
-> 上图中多个排序并列，可能存在误导，内存数据结构实例可以只有一个，因而可以节省内容
-
+- 在task将所有数据写入内存数据结构的过程中，会发生多次磁盘溢写，会产生多个临时文件，最后会将之前所有的临时文件都进行合并，最后会合并成为一个大文件。
+- 每个Map任务最后只会输出两个文件（一个数据文件，一个是索引文件记录每个分区的偏移量），中间过程采用归并排序,输出完成后，Reducer会根据索引文件得到属于自己的分区。
 #### BypassMergeSortShuffleWriter
 - 上游stage的task会为每个下游stage的task都创建一个临时磁盘文件，并将数据按key进行hash然后根据key的hash值，将key写入对应的磁盘文件之中。当然，写入磁盘文件时也是先写入内存缓冲，缓冲写满之后再溢写到磁盘文件的。最后，同样会将所有临时磁盘文件都合并成一个磁盘文件，并创建一个单独的索引文件。
-
->Bypass的模式和未优化的hashshuffle其实很类似，不同之处是合并了每个task的输出，并用一个索引文件记录了不同reduce task需要拉取的offset
->Bypass模式与优化的hashffle的区别是，bypass基于map task确定文件个数，而优化的hashshuffle基于reduce task确定文件个数
-
+- Bypass的模式和未优化的hashshuffle其实很类似，不同之处是合并了每个task的输出，并用一个索引文件记录了不同reduce task需要拉取的offset
+- Bypass模式与优化的hash shuffle的区别是，bypass基于map task确定文件个数，而优化的hashshuffle基于reduce task确定文件个数
 ## Spark on Yarn部署
 在Spark SQL中，`--deploy-mode`和`--master`是两个重要的启动参数，用于指定Spark应用程序的部署模式和集群管理器。
 1. `--deploy-mode`参数：该参数用于指定Spark应用程序的部署模式，即应用程序运行的方式。它可以设置为以下两个值：  
-   - `client`（默认值）：在客户端模式下，驱动程序进程运行在提交Spark应用程序的客户端机器上。这意味着驱动程序与客户端的会话是交互式的，并且客户端需要一直保持连接，直到应用程序运行完成。  
+   - `client`（默认值）：在客户端模式下，Driver进程运行在提交Spark应用程序的客户端机器上。这意味着Driver与客户端的会话是交互式的，并且客户端需要一直保持连接，直到应用程序运行完成。  
    ![image.png](http://image.huawei.com/tiny-lts/v1/images/5aece5fb0b7d653f45f5981e2d3258b7_720x415.png@900-0-90-f.png)
    - `cluster`：在集群模式下，Driver进程将由集群管理器（如YARN）分配到一个独立的容器中，并在集群中独立运行。这意味着客户端只需要提交应用程序，并不需要一直保持连接，应用程序将在集群上独立运行。
-
    ![image.png](http://image.huawei.com/tiny-lts/v1/images/77cf9f57a98b73da311e2d383769fe21_720x443.png@900-0-90-f.png)
 
 2. `--master`参数：该参数用于指定Spark应用程序的集群管理器。它决定了Spark应用程序在哪个集群上运行。常见的选项包括：  
-
    - `local`：在本地模式下运行，即在单机上运行Spark应用程序，不连接到任何集群管理器。  
-
    - `local[n]`：在本地模式下运行，使用n个线程。例如，`local[2]`表示在本地使用两个线程进行并行计算。
-
    - `yarn`：在YARN集群上运行，通过YARN进行资源管理和任务调度。
-
   - `spark://host:port`：连接到指定的Spark独立集群，其中`host:port`是Spark独立集群的地址和端口。
-
 部署差异汇总如下表：  
-
 ![image.png](http://image.huawei.com/tiny-lts/v1/images/7b5e316435ab328a7dd084301aa0c6aa_720x280.png@900-0-90-f.png)
 
 ## 参考文献
