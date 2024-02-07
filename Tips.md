@@ -2,3 +2,5 @@
 	- git push或上传图片大小（约100KB）有限制，使用jpg格式比png压缩率高2-3倍；
 	- git push触发的github登录，不再支持密码，仅支持口令
 - obsidian+git插件+github+github pages实现文章共享
+	- 建议通过excalidraw插件绘图，通过引用绘图文件的方式进行引用
+	- 
