@@ -14,4 +14,5 @@
 	- cache coherence
 - Memory semantics
 
-[Amaro 等 - 2023 - Logical Memory Pools Flexible and Local Disaggreg](../../../zotero/storage/E7ZSSPUJ/Amaro%20等%20-%202023%20-%20Logical%20Memory%20Pools%20Flexible%20and%20Local%20Disaggreg.pdf)
+## 参考文献
+[Nag - 2023 - CXL (Compute Express Link) Technology](../../../zotero/storage/ZG453YXQ/Nag%20-%202023%20-%20CXL%20(Compute%20Express%20Link)%20Technology.pdf)
