@@ -12,8 +12,6 @@
 故而通过pages这个平台，记录自己的知识经验，一方面在撰写的过程中提炼总结，另一方面也为了方便自己温故知新。
 
 吾生也有涯，所知所留概莫超过一本书的厚度，望本pages能成为吾生之精粹。
-
-
 ### How to write pages
 **Below are key points when writing pages：**
 1. 宁缺毋滥，dont write pages only for just write
@@ -21,7 +19,6 @@
 3. 注重原创，better to draw the pictures by myself
 4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
 5. English first, try to use  English to write the article
-
 # 目录
 ## 计算机技术
 ### 系统架构
@@ -34,7 +31,8 @@
 - [Spark](计算机技术/大数据/Spark.md)
 - [Native_Engine](计算机技术/大数据/Native_Engine.md)
 - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
-## 职场人生
-[向优秀学习](./职场人生/向优秀学习.md)
 ## 读书笔记
-[计算机组成与设计](读书笔记/书籍/计算机组成与设计.md)
+- [计算机组成与设计](读书笔记/书籍/计算机组成与设计.md)
+## 职场人生
+- [向优秀学习](./职场人生/向优秀学习.md)
+
