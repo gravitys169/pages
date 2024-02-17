@@ -18,6 +18,7 @@
 3. 注重原创，better to draw the pictures by myself
 4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
 5. English first, try to use  English to write the article
+
 # 目录
 ## 计算机技术
 #### 系统架构
