@@ -42,7 +42,7 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 ![](attachments/20240206163417.jpg)
 
 ## Shuffle  
-![[绘图/Spark Shuffle]]
+![[Spark Shuffle]]
 - Shuffle是指对数据进行重组，使其按照某种规则（基于hash或者range）重新分布的一种方式。
 - Spark与Presto的另外一大区别就在于Shuffle，Spark采用的stage by stage，每个stage结果落盘的方式来进行数据的Shuffle处理，而Presto采用的是内存中Shuffle的方式，通过在内存构建buffer来进行数据的交换。
 - Spark提供了shuffle manager接口，可用于定义自己的ESS或RSS
