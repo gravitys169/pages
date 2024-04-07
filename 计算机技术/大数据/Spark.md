@@ -73,6 +73,12 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 - 上游stage的task会为每个下游stage的task都创建一个临时磁盘文件，并将数据按key进行hash然后根据key的hash值，将key写入对应的磁盘文件之中。当然，写入磁盘文件时也是先写入内存缓冲，缓冲写满之后再溢写到磁盘文件的。最后，同样会将所有临时磁盘文件都合并成一个磁盘文件，并创建一个单独的索引文件。
 - Bypass的模式和未优化的hashshuffle其实很类似，不同之处是合并了每个task的输出，并用一个索引文件记录了不同reduce task需要拉取的offset
 - Bypass模式与优化的hash shuffle的区别是，bypass基于map task确定文件个数，而优化的hashshuffle基于reduce task确定文件个数
+### ESS与RSS
+[spark之ESS与RSS - 墨天轮](https://www.modb.pro/db/543682#:~:text=ESS%E4%B8%8ERSS-,spark%E4%B9%8BESS%E4%B8%8ERSS,-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%90%AF%E7%A4%BA)
+#### ESS
+在Spark中，Executor进程除了运行task，还要负责写shuffle 数据，以及给其他Executor提供shuffle数据。**当Executor进程任务过重，导致GC而不能为其他Executor提供shuffle数据时，会影响任务运行。同时，ESS的存在也使得，即使executor挂掉或者回收，都不影响其shuffle数据**，因此只有在ESS开启情况下才能开启动态调整executor数目。  
+  
+因此，spark提供了external shuffle service这个接口，常见的就是spark on yarn中的，YarnShuffleService。这样，在yarn的nodemanager中会常驻一个externalShuffleService服务进程来为所有的executor服务，默认为7337端口。
 ## Spark on Yarn部署
 在Spark SQL中，`--deploy-mode`和`--master`是两个重要的启动参数，用于指定Spark应用程序的部署模式和集群管理器。
 1. `--deploy-mode`参数：该参数用于指定Spark应用程序的部署模式，即应用程序运行的方式。它可以设置为以下两个值：  
