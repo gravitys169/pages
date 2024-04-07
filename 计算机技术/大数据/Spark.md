@@ -79,6 +79,12 @@ Spark 的Sql执行流程与其他引擎类似，可以分为Parser、Analyzer、
 在Spark中，Executor进程除了运行task，还要负责写shuffle 数据，以及给其他Executor提供shuffle数据。**当Executor进程任务过重，导致GC而不能为其他Executor提供shuffle数据时，会影响任务运行。同时，ESS的存在也使得，即使executor挂掉或者回收，都不影响其shuffle数据**，因此只有在ESS开启情况下才能开启动态调整executor数目。  
   
 因此，spark提供了external shuffle service这个接口，常见的就是spark on yarn中的，YarnShuffleService。这样，在yarn的nodemanager中会常驻一个externalShuffleService服务进程来为所有的executor服务，默认为7337端口。
+### RSS
+ESS：External Shuffle Service，ESS 原理是 Map 任务在计算节点本地将相同 Partition 数据合并到一起；
+
+RSS：Remote Shuffle Service，**RSS 原理是 Map 任务将相同 Partition 数据 Push 到远端的 RSS，RSS 将同一 Partition 的数据合并。**
+
+![](attachments/20240407145631.jpg)
 ## Spark on Yarn部署
 在Spark SQL中，`--deploy-mode`和`--master`是两个重要的启动参数，用于指定Spark应用程序的部署模式和集群管理器。
 1. `--deploy-mode`参数：该参数用于指定Spark应用程序的部署模式，即应用程序运行的方式。它可以设置为以下两个值：  
