@@ -79,6 +79,8 @@ executor*mapper个文件 ^MprMud7S
 当一个节点运行多个task时，可能存在大量未被统计的内存使用，
 如典配下：96核*2GB=192GB内存未被统计，导致杀进程 ^engw6p6o
 
+示意 ^PgImpot8
+
 
 # Embedded files
 748dbc03407c93be6466bdf211b21aee5e8ea9c2: [[绘图/attachments/20240206163724.jpg]]
@@ -241,8 +243,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 956,
-			"versionNonce": 1427910026,
+			"version": 966,
+			"versionNonce": 1754792266,
 			"isDeleted": false,
 			"id": "sbquvKrx",
 			"fillStyle": "hachure",
@@ -251,8 +253,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -1613.7170618937912,
-			"y": 1173.0363870601245,
+			"x": -1656.836312911549,
+			"y": 1167.0476021965474,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 772.3818359375,
@@ -262,7 +264,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260256303,
+			"updated": 1712473596733,
 			"link": null,
 			"locked": false,
 			"fontSize": 25.293877932962715,
@@ -436,8 +438,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1305,
-			"versionNonce": 1848152150,
+			"version": 1309,
+			"versionNonce": 2024982038,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -459,7 +461,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060236,
+			"updated": 1712473597790,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -488,8 +490,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1395,
-			"versionNonce": 7664342,
+			"version": 1399,
+			"versionNonce": 1857861782,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -511,7 +513,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060237,
+			"updated": 1712473597790,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -864,8 +866,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 485,
-			"versionNonce": 132822358,
+			"version": 489,
+			"versionNonce": 332139286,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -887,7 +889,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060239,
+			"updated": 1712473597793,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1024,8 +1026,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 424,
-			"versionNonce": 15882838,
+			"version": 428,
+			"versionNonce": 429576214,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1047,7 +1049,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060242,
+			"updated": 1712473597796,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1266,8 +1268,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 703,
-			"versionNonce": 1249869654,
+			"version": 711,
+			"versionNonce": 1130304790,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1289,7 +1291,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060245,
+			"updated": 1712473597799,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1318,8 +1320,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 623,
-			"versionNonce": 421274070,
+			"version": 631,
+			"versionNonce": 669075350,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1341,7 +1343,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060246,
+			"updated": 1712473597800,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1449,8 +1451,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 842,
-			"versionNonce": 902964310,
+			"version": 846,
+			"versionNonce": 710466070,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1472,7 +1474,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060248,
+			"updated": 1712473597802,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1655,8 +1657,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 568,
-			"versionNonce": 835290838,
+			"version": 572,
+			"versionNonce": 351128726,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1678,7 +1680,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060248,
+			"updated": 1712473597803,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1707,8 +1709,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 772,
-			"versionNonce": 1948928342,
+			"version": 776,
+			"versionNonce": 1204297494,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1730,7 +1732,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712022060251,
+			"updated": 1712473597805,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2353,8 +2355,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 395,
-			"versionNonce": 1469587210,
+			"version": 399,
+			"versionNonce": 331335626,
 			"isDeleted": false,
 			"id": "s8Ijd5vfARR8PHVta8CY5",
 			"fillStyle": "solid",
@@ -2375,8 +2377,13 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roundness": {
 				"type": 2
 			},
-			"boundElements": [],
-			"updated": 1709260190991,
+			"boundElements": [
+				{
+					"type": "text",
+					"id": "PgImpot8"
+				}
+			],
+			"updated": 1712473706398,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2402,6 +2409,43 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					90.0098173304757
 				]
 			]
+		},
+		{
+			"id": "PgImpot8",
+			"type": "text",
+			"x": -750.252671903623,
+			"y": 1511.8416069349882,
+			"width": 40,
+			"height": 24,
+			"angle": 0,
+			"strokeColor": "#e03131",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1970867414,
+			"version": 2,
+			"versionNonce": 1799321866,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1712473705580,
+			"link": null,
+			"locked": false,
+			"text": "示意",
+			"rawText": "示意",
+			"fontSize": 20,
+			"fontFamily": 4,
+			"textAlign": "center",
+			"verticalAlign": "middle",
+			"baseline": 19,
+			"containerId": "s8Ijd5vfARR8PHVta8CY5",
+			"originalText": "示意",
+			"lineHeight": 1.2
 		},
 		{
 			"type": "arrow",
@@ -2890,8 +2934,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1931.3889059326698,
-		"scrollY": -908.5512062309075,
+		"scrollX": 2127.821049458011,
+		"scrollY": -545.6308434981138,
 		"zoom": {
 			"value": 0.8348939081797636
 		},
