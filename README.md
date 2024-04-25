@@ -20,6 +20,9 @@
 5. English first, try to use  English to write the article
 
 # 目录
+## 灵感
+[技术灵感](技术灵感.md)
+[名言警句](名言警句.md)
 ## 计算机技术
 #### 系统架构
 - [CPU](计算机技术/系统架构/CPU.md)
