@@ -35,6 +35,7 @@
 - [Hive](计算机技术/大数据/Hive.md)
 - [Spark](计算机技术/大数据/Spark.md)
 	- [Spark Shuffle](计算机技术/大数据/Spark%20Shuffle.md)
+- [HBase](计算机技术/大数据/HBase.md)
 - [Native_Engine](计算机技术/大数据/Native_Engine.md)
 - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
 #### 硬件
