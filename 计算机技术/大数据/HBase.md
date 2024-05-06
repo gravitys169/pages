@@ -41,7 +41,7 @@ Hbase的主要应用场景如下：
 - Block Cache：Block cache是读缓存。Block cache将经常被读的数据存储在内存中来提高读取数据的效率。当Block cache的空间被占满后，其中被读取频率最低的数据将会被杀出。
 - MemStore：MemStore是写缓存。其中存储了从WAL中写入但尚未写入硬盘的数据。MemStore中的数据在写入硬盘之前会先进行排序操作。每一个region中的每一个column family对应一个MemStore。
 - Hfiles：Hfiles存在于硬盘上，根据排序号的键存储数据行。
-![[Pasted image 20230731194113.png]]
+![](attachments/20240506202105.jpg)
 ### META Table
 
 HBase中有一个特殊的起目录作用的表格，称为META table。META table中保存集群region的地址信息。ZooKeeper中会保存META table的位置,**注意而不是META TABLE**。
