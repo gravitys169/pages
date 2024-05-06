@@ -10,13 +10,11 @@ Hbase的主要应用场景如下：
 ![](attachments/20240506201829.jpg)
 
 ## HMaster
-
 - 调控Region server的工作
 	- 在集群启动的时候分配region，根据恢复服务或者负载均衡的需要重新分配region。
 	- 监控集群中的Region server的工作状态。（通过监听zookeeper对于ephemeral node状态的通知）。
 - 管理数据库
 	- 提供创建，删除或者更新表格的接口。
-   
  ![](attachments/20240506201934.jpg)  
 
 ## ZooKeeper
@@ -29,7 +27,7 @@ Hbase的主要应用场景如下：
 
 ![](attachments/20240506202006.jpg)
 ## Region Server
-- WAL：即Write Ahead Log。WAL是HDFS分布式文件系统中的一个文件，即HLog。WAL用来存储尚未写入永久性存储区中的新数据。WAL也用来在服务器发生故障时进行数据恢复。
+- WAL：即Write Ahead Log。**WAL是HDFS分布式文件系统中的一个文件，即HLog**。WAL用来存储尚未写入永久性存储区中的新数据。WAL也用来在服务器发生故障时进行数据恢复。
 - Block Cache：Block cache是读缓存。Block cache将经常被读的数据存储在内存中来提高读取数据的效率。当Block cache的空间被占满后，其中被读取频率最低的数据将会被杀出。
 - MemStore：MemStore是写缓存。其中存储了从WAL中写入但尚未写入硬盘的数据。MemStore中的数据在写入硬盘之前会先进行排序操作。每一个region中的每一个column family对应一个MemStore。
 - Hfiles：Hfiles存在于硬盘上，根据排序号的键存储数据行。
@@ -43,10 +41,10 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 - 键：region的起始键，region id。  
 - 值：Region server
 
-### 第一次数据读
+### 第一次数据读写
 当用户第一次从HBase中进行读或写操作时，执行以下步骤：
 1. 客户端从ZooKeeper中得到保存META table的Region server的信息。
-2. 客户端向该Region server查询负责管理自己想要访问的row key的所在的region的Region server的地址。客户端会缓存这一信息以及META table所在位置的信息。
+2. **客户端向该Region server查询负责管理自己想要访问的row key的所在的region的Region server的地址**。客户端会缓存这一信息以及META table所在位置的信息。
 3. 客户端与负责其row所在region的Region Server通信，实现对该行的读写操作。
 	在未来的读写操作中，客户端会根据缓存寻找相应的Region server地址。除非该Region server不再可达。这时客户端会重新访问META table并更新缓存。这一过程如下图所示：
 ![](attachments/20240506202131.jpg)
@@ -85,8 +83,7 @@ MemStore存在于内存中，其中存储的是按键排好序的待写入硬盘
 ### HFile
 
 HFile中包含了一个多层索引系统。这个多层索引是的HBase可以在不读取整个文件的情况下查找数据。这一多层索引类似于一个B+树。
-
-- 键值对根据键大小升序排列。
+- 键值对根据键大小升序排列。
 - 索引指向64KB大小的数据块。
 - 每一个数据块还有其相应的叶索引（leaf-index）。
 - 每一个数据块的最后一个键作为中间索引（intermediate index）。
