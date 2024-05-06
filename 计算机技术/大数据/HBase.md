@@ -2,15 +2,10 @@
 Hbase是一个分布式的NoSQL KV数据库，是开源社区基于谷歌BigTable的实现。
 
 Hbase的主要应用场景如下：
-
 - Hbase适合做海量数据（亿万条记录）的底层数据源，由于其LSM-Tree的数据结构，适合海量数据的快速写入
-
 - 需要存储历史记录场景，由于每行记录都有TimeStamp，因而便于查询用户的历史记录
-
 - 高并发的点查场景，HBase查询条件简单，只支持基于主键rowkey进行查询，即点查或小范围查询
-
 整体架构如下，由HMaster，HRegionServer，Zookeeper加上底层存储HDFS构成。
-
 `一句话概括：一种基于LSM-Tree的分布式KV存储系统，依托ZooKeeper的主从系统，支持高吞吐数据写入，适用于海量数据的点查或小范围查询场景`
 ![](attachments/20240506201829.jpg)
 
@@ -23,7 +18,6 @@ Hbase的主要应用场景如下：
     - 监控集群中的Region server的工作状态。（通过监听zookeeper对于ephemeral node状态的通知）。
 
 - 管理数据库
-
     - 提供创建，删除或者更新表格的接口。
  ![](attachments/20240506201934.jpg)  
 
