@@ -88,7 +88,9 @@ HFile中包含了一个多层索引系统。这个多层索引是的HBase可以�
 - 每一个数据块还有其相应的叶索引（leaf-index）。
 - 每一个数据块的最后一个键作为中间索引（intermediate index）。
 - 根索引（root index）指向中间索引。
+
 ![](attachments/20240506202501.jpg)
+
 ### Compaction
 
 由于Memstore多次flush形成多个HFile，大量的小文件不利于HDFS的性能，故需要Compaction操作。
@@ -115,21 +117,21 @@ Major compaction会将当前Region所服务的所有远程数据下载到本地R
 
 ## 使用注意事项
 
-#####  查询条件
+####  查询条件
 
 HBase查询条件简单，只支持基于主键rowkey索引，即只能通过rowkey进行查询，不能像其他数据库一样使用多条件复杂查询，不支持二级索引，因此选型前，需确认是否能满足业务需求。
 
-#####  rowkey设计要求较高
+####  rowkey设计要求较高
 
 HBase是Key/vale数据库，也只能通过key（即rowkey）来查询数据，rowkey的设计非常重要，一个优秀的rowkey设计，即可以满足查询业务需求，同时也能让数据均衡分布在集群中的节点上。提升读写性能。
 
 一般是将常用的谓词条件组合成rowkey，比如用户经常查询phone与age，则可以将phone与age组合成Key。
 
-#####  不太适合大范围key查询
+####  不太适合大范围key查询
 
 从HBase的存储原理可知，其根据rowkey字节范围进行分区分文件存储，大范围的数据查询会使查询落到多个不同的RegionServer上，所以大范围的rokey查询，查询效率会比较低下。
 
-##### Hbase部署相对复杂，运维成本高：
+#### Hbase部署相对复杂，运维成本高：
 
 部署Hbase集群之前，首先要部署Hadoop集群，这包括HDFS、Yarn、Mapredue等一系列组件，其次还要部署Zookeeper集群。
 
