@@ -12,7 +12,7 @@ Hbase的主要应用场景如下：
 整体架构如下，由HMaster，HRegionServer，Zookeeper加上底层存储HDFS构成。
 
 `一句话概括：一种基于LSM-Tree的分布式KV存储系统，依托ZooKeeper的主从系统，支持高吞吐数据写入，适用于海量数据的点查或小范围查询场景`
-![[Pasted image 20230731193908.png]]
+![](attachments/20240506201829.jpg)
 
 ## HMaster
 
