@@ -80,7 +80,7 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 
 3. 如果HBase从Block cache和MemStore中没有找到行所对应的cell所有的数据，系统会接着根据索引和 bloom filter（布隆过滤器） 从相应的HFile中读取目标行的cell的数据。
 	由于可能需要查找多个地方，因而存在一定的读放大
-![[Pasted image 20230731194348.png]]
+![](attachments/20240506202346.jpg)
 ### MemStore flush到磁盘
 
 MemStore存在于内存中，其中存储的是按键排好序的待写入硬盘的数据。数据也是按键排好序写入HFile中的。每一个Region中的每一个Column family对应一个MemStore文件。因此对数据的更新也是对应于每一个Column family。
