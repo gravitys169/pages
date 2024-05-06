@@ -101,7 +101,7 @@ HFile中包含了一个多层索引系统。这个多层索引是的HBase可以�
 - 每一个数据块还有其相应的叶索引（leaf-index）。
 - 每一个数据块的最后一个键作为中间索引（intermediate index）。
 - 根索引（root index）指向中间索引。
-![[Pasted image 20230731194653.png]]
+![](attachments/20240506202501.jpg)
 ### Compaction
 
 由于Memstore多次flush形成多个HFile，大量的小文件不利于HDFS的性能，故需要Compaction操作。
