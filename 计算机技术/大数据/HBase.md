@@ -25,7 +25,7 @@ Hbase的主要应用场景如下：
 - 管理数据库
 
     - 提供创建，删除或者更新表格的接口。
-   ![[Pasted image 20230731194019.png]]
+ ![](attachments/20240506201934.jpg)  
 
 ## ZooKeeper
 
@@ -34,8 +34,8 @@ Hbase的主要应用场景如下：
 - 使用一致性算法来保证服务器之间的同步。
 
 - 负责Master选举的工作。
-![[Pasted image 20230731194038.png]]
 
+![](attachments/20240506202006.jpg)
 ## Region Server
 - WAL：即Write Ahead Log。WAL是HDFS分布式文件系统中的一个文件，即HLog。WAL用来存储尚未写入永久性存储区中的新数据。WAL也用来在服务器发生故障时进行数据恢复。
 - Block Cache：Block cache是读缓存。Block cache将经常被读的数据存储在内存中来提高读取数据的效率。当Block cache的空间被占满后，其中被读取频率最低的数据将会被杀出。
