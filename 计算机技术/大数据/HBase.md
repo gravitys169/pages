@@ -19,6 +19,7 @@ Hbase的主要应用场景如下：
 
 - 管理数据库
     - 提供创建，删除或者更新表格的接口。
+   
  ![](attachments/20240506201934.jpg)  
 
 ## ZooKeeper
@@ -36,27 +37,23 @@ Hbase的主要应用场景如下：
 - MemStore：MemStore是写缓存。其中存储了从WAL中写入但尚未写入硬盘的数据。MemStore中的数据在写入硬盘之前会先进行排序操作。每一个region中的每一个column family对应一个MemStore。
 - Hfiles：Hfiles存在于硬盘上，根据排序号的键存储数据行。
 ![](attachments/20240506202105.jpg)
+
 ### META Table
 
 HBase中有一个特殊的起目录作用的表格，称为META table。META table中保存集群region的地址信息。ZooKeeper中会保存META table的位置,**注意而不是META TABLE**。
 
 META table中保存了HBase中所有region的信息，格式类似于B tree。其结构如下：  
-
 - 键：region的起始键，region id。  
-
 - 值：Region server
 
 ### 第一次数据读
-
 当用户第一次从HBase中进行读或写操作时，执行以下步骤：
-
 1. 客户端从ZooKeeper中得到保存META table的Region server的信息。
-
 2. 客户端向该Region server查询负责管理自己想要访问的row key的所在的region的Region server的地址。客户端会缓存这一信息以及META table所在位置的信息。
-
 3. 客户端与负责其row所在region的Region Server通信，实现对该行的读写操作。
 	在未来的读写操作中，客户端会根据缓存寻找相应的Region server地址。除非该Region server不再可达。这时客户端会重新访问META table并更新缓存。这一过程如下图所示：
 ![](attachments/20240506202131.jpg)
+
 ### 写操作
 
 当HBase的用户发出一个 PUT 请求时（也就是HBase的写请求），HBase进行处理的第一步是将数据写入HBase的write-ahead log（WAL）中。
@@ -66,6 +63,7 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 - 当server出现问题之后，WAL可以被用来恢复尚未写入HBase中的数据（因为WAL是保存在硬盘上的）。
 	当数据被成功写入WAL后，HBase将数据存入MemStore。这时HBase就会通知用户PUT操作已经成功了。
 ![](attachments/20240506202324.jpg)
+
 ### 读操作
 
 1. HBase会首先从Block cache（HBase的读缓存）中寻找所需的数据。
@@ -75,6 +73,7 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 3. 如果HBase从Block cache和MemStore中没有找到行所对应的cell所有的数据，系统会接着根据索引和 bloom filter（布隆过滤器） 从相应的HFile中读取目标行的cell的数据。
 	由于可能需要查找多个地方，因而存在一定的读放大
 ![](attachments/20240506202346.jpg)
+
 ### MemStore flush到磁盘
 
 MemStore存在于内存中，其中存储的是按键排好序的待写入硬盘的数据。数据也是按键排好序写入HFile中的。每一个Region中的每一个Column family对应一个MemStore文件。因此对数据的更新也是对应于每一个Column family。
