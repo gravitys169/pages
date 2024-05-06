@@ -12,13 +12,10 @@ Hbase的主要应用场景如下：
 ## HMaster
 
 - 调控Region server的工作
-
-    - 在集群启动的时候分配region，根据恢复服务或者负载均衡的需要重新分配region。
-
-    - 监控集群中的Region server的工作状态。（通过监听zookeeper对于ephemeral node状态的通知）。
-
+	- 在集群启动的时候分配region，根据恢复服务或者负载均衡的需要重新分配region。
+	- 监控集群中的Region server的工作状态。（通过监听zookeeper对于ephemeral node状态的通知）。
 - 管理数据库
-    - 提供创建，删除或者更新表格的接口。
+	- 提供创建，删除或者更新表格的接口。
    
  ![](attachments/20240506201934.jpg)  
 
