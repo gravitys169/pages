@@ -62,7 +62,7 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 
 3. 客户端与负责其row所在region的Region Server通信，实现对该行的读写操作。
 	在未来的读写操作中，客户端会根据缓存寻找相应的Region server地址。除非该Region server不再可达。这时客户端会重新访问META table并更新缓存。这一过程如下图所示：
-![[Pasted image 20230731194230.png]]
+![](attachments/20240506202131.jpg)
 ### 写操作
 
 当HBase的用户发出一个 PUT 请求时（也就是HBase的写请求），HBase进行处理的第一步是将数据写入HBase的write-ahead log（WAL）中。
@@ -71,7 +71,7 @@ META table中保存了HBase中所有region的信息，格式类似于B tree。�
 
 - 当server出现问题之后，WAL可以被用来恢复尚未写入HBase中的数据（因为WAL是保存在硬盘上的）。
 	当数据被成功写入WAL后，HBase将数据存入MemStore。这时HBase就会通知用户PUT操作已经成功了。
-![[Pasted image 20230731194337.png]]
+![](attachments/20240506202324.jpg)
 ### 读操作
 
 1. HBase会首先从Block cache（HBase的读缓存）中寻找所需的数据。
