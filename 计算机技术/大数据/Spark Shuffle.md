@@ -75,7 +75,7 @@ executor*mapper个文件 ^MprMud7S
 问题：
 1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，
 而bypass一直持有，一个分区对应一个文件
-2.当前的buffer内存未被统计，executor offheap memory中，
+2.当前的buffer内存未被统计（更新：已统计），executor offheap memory中，
 当一个节点运行多个task时，可能存在大量未被统计的内存使用，
 如典配下：96核*2GB=192GB内存未被统计，导致杀进程 ^engw6p6o
 
@@ -438,8 +438,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1309,
-			"versionNonce": 2024982038,
+			"version": 1311,
+			"versionNonce": 1362014181,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -461,7 +461,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597790,
+			"updated": 1715154949623,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -490,8 +490,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1399,
-			"versionNonce": 1857861782,
+			"version": 1401,
+			"versionNonce": 1419098789,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -513,7 +513,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597790,
+			"updated": 1715154949624,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -866,8 +866,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 489,
-			"versionNonce": 332139286,
+			"version": 491,
+			"versionNonce": 1346966885,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -889,7 +889,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597793,
+			"updated": 1715154949627,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1026,8 +1026,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 428,
-			"versionNonce": 429576214,
+			"version": 430,
+			"versionNonce": 709147365,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1049,7 +1049,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597796,
+			"updated": 1715154949631,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1268,8 +1268,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 711,
-			"versionNonce": 1130304790,
+			"version": 715,
+			"versionNonce": 1149345893,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1291,7 +1291,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597799,
+			"updated": 1715154949634,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1320,8 +1320,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 631,
-			"versionNonce": 669075350,
+			"version": 635,
+			"versionNonce": 457607973,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1343,7 +1343,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597800,
+			"updated": 1715154949635,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1451,8 +1451,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 846,
-			"versionNonce": 710466070,
+			"version": 848,
+			"versionNonce": 1415562725,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1474,7 +1474,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597802,
+			"updated": 1715154949637,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1657,8 +1657,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 572,
-			"versionNonce": 351128726,
+			"version": 574,
+			"versionNonce": 49893541,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1680,7 +1680,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597803,
+			"updated": 1715154949638,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1709,8 +1709,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 776,
-			"versionNonce": 1204297494,
+			"version": 778,
+			"versionNonce": 1597975397,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1732,7 +1732,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1712473597805,
+			"updated": 1715154949640,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2411,41 +2411,41 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			]
 		},
 		{
-			"id": "PgImpot8",
 			"type": "text",
-			"x": -750.252671903623,
-			"y": 1511.8416069349882,
-			"width": 40,
-			"height": 24,
-			"angle": 0,
-			"strokeColor": "#e03131",
-			"backgroundColor": "transparent",
+			"version": 2,
+			"versionNonce": 1799321866,
+			"isDeleted": false,
+			"id": "PgImpot8",
 			"fillStyle": "solid",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
 			"roughness": 1,
 			"opacity": 100,
+			"angle": 0,
+			"x": -750.252671903623,
+			"y": 1511.8416069349882,
+			"strokeColor": "#e03131",
+			"backgroundColor": "transparent",
+			"width": 40,
+			"height": 24,
+			"seed": 1970867414,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
-			"seed": 1970867414,
-			"version": 2,
-			"versionNonce": 1799321866,
-			"isDeleted": false,
-			"boundElements": null,
+			"boundElements": [],
 			"updated": 1712473705580,
 			"link": null,
 			"locked": false,
-			"text": "示意",
-			"rawText": "示意",
 			"fontSize": 20,
 			"fontFamily": 4,
+			"text": "示意",
+			"rawText": "示意",
 			"textAlign": "center",
 			"verticalAlign": "middle",
-			"baseline": 19,
 			"containerId": "s8Ijd5vfARR8PHVta8CY5",
 			"originalText": "示意",
-			"lineHeight": 1.2
+			"lineHeight": 1.2,
+			"baseline": 19
 		},
 		{
 			"type": "arrow",
@@ -2501,8 +2501,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 309,
-			"versionNonce": 1104219094,
+			"version": 319,
+			"versionNonce": 1434530789,
 			"isDeleted": false,
 			"id": "engw6p6o",
 			"fillStyle": "solid",
@@ -2531,24 +2531,24 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1712454182566,
+			"updated": 1715223330127,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
 			"fontFamily": 4,
-			"text": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计，executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
-			"rawText": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计，executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
+			"text": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计（更新：已统计），executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
+			"rawText": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计（更新：已统计），executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计，executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
+			"originalText": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计（更新：已统计），executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
 			"lineHeight": 1.2,
 			"baseline": 187
 		},
 		{
 			"type": "arrow",
-			"version": 619,
-			"versionNonce": 614362070,
+			"version": 645,
+			"versionNonce": 18300581,
 			"isDeleted": false,
 			"id": "EiuvY9OY5ogIeuKBU7PK5",
 			"fillStyle": "solid",
@@ -2557,12 +2557,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -451.8369061069134,
-			"y": 1837.8451854212349,
+			"x": -451.83690610691343,
+			"y": 1837.4884455306205,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 110.45175978017818,
-			"height": 50.69191351858899,
+			"width": 110.45175978017829,
+			"height": 50.800321366806884,
 			"seed": 277276650,
 			"groupIds": [],
 			"frameId": null,
@@ -2570,7 +2570,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1715223330128,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2592,15 +2592,15 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					0
 				],
 				[
-					110.45175978017818,
-					50.69191351858899
+					110.45175978017829,
+					50.800321366806884
 				]
 			]
 		},
 		{
 			"type": "arrow",
-			"version": 360,
-			"versionNonce": 1269785738,
+			"version": 386,
+			"versionNonce": 624531813,
 			"isDeleted": false,
 			"id": "HcNhqWClRqF_WH6r7HGpa",
 			"fillStyle": "solid",
@@ -2609,12 +2609,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -122.93196992870867,
-			"y": 1811.327316384574,
+			"x": -120.18458059526995,
+			"y": 1833.478258065473,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 20.652936316097595,
-			"height": 56.918126566693445,
+			"width": 17.143483905665278,
+			"height": 34.76718488579445,
 			"seed": 1811965354,
 			"groupIds": [],
 			"frameId": null,
@@ -2622,7 +2622,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1715223330129,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2644,8 +2644,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					0
 				],
 				[
-					-20.652936316097595,
-					56.918126566693445
+					-17.143483905665278,
+					34.76718488579445
 				]
 			]
 		},
@@ -2934,8 +2934,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 2127.821049458011,
-		"scrollY": -545.6308434981138,
+		"scrollX": 1584.0393838451778,
+		"scrollY": -974.4278397302602,
 		"zoom": {
 			"value": 0.8348939081797636
 		},
