@@ -1,7 +1,5 @@
 ---
-
 mindmap-plugin: basic
-
 ---
 
 # Intel
@@ -11,8 +9,8 @@ mindmap-plugin: basic
     - oneAPI is an open source specification that aims to simplify the life of developers looking to create accelerator-based applications and who want to **support a variety of hardware architectures and hardware vendors**. As a major supporter of this effort, Intel has provided implementations of the specification and tooling to support developers writing oneAPI applications. However, this is not a unilateral effort. The implementation of this specification is supported by various software and hardware companies and this number will grow over time.
     - SYCL
         - SYCL is an open alternative to single-architecture proprietary languages. It allows developers to reuse code across hardware targets (CPUs and accelerators such as GPUs and FPGAs) and also perform custom tuning for a specific accelerator. These code walkthroughs introduce you to basic principles and practices of SYCL programming.
-        - ![[Pasted image 20230901095839.png]]
-    - ![[Pasted image 20230901095231.png]]
+        - ![](attachments/20240516141929.jpg)
+    - 
     - ![[Pasted image 20230901095255.png]]
     - ![[Pasted image 20230901095505.png]]
 - OAP
