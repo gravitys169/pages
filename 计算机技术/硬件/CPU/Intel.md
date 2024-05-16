@@ -14,13 +14,12 @@ mindmap-plugin: basic
         - SYCL is an open alternative to single-architecture proprietary languages. It allows developers to reuse code across hardware targets (CPUs and accelerators such as GPUs and FPGAs) and also perform custom tuning for a specific accelerator. These code walkthroughs introduce you to basic principles and practices of SYCL programming.
         - ![](attachments/20240516141929.jpg)
     - ![](attachments/20240516142024.jpg)
-    - 
-    - ![[Pasted image 20230901095505.png]]
+    
 - OAP
     - 架构
         - 架构图有点out of date，gazelle被gluten替换， CloudTik等都没有列上来。
         - 当前除了gluten与CloudTik外，其他子项目都不再活跃
-        - ![[Pasted image 20230901110434.png]]
+        - ![](attachments/20240516151820.jpg)
     - Optimized Analytics Package for Spark* Platform (OAP for Spark* Platform) is a project to optimize Apache Spark* in various aspects including cache, shuffle, execution engine, MLlib and so on. Currently, OAP for Spark Platform includes the following optimizations:
         - SQL Data Source Cache: Optimize Spark* SQL Data Source using PMem as input data cache.
         - RDD Cache PMem Extension: Optimize Spark* RDD Cache using PMem.
