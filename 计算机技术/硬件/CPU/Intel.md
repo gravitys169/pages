@@ -30,8 +30,7 @@ mindmap-plugin: basic
         - Unified Arrow Data Source and Native SQL Engine: Optimize SQL execuiton engine using vectorization, native, and columnar data.
             - Gazelle Plugin ：A Native Engine for Spark SQL with vectorized SIMD optimizations；Gazelle引擎已停止开发
             - **Gluten**：当前的重点，不在发力自身的native engine，而依靠社区的其他native engine，如Velox、Clickhouse
-                - ![[Pasted image 20230901110613.png]]
-- BDTK
+                - ![](attachments/20240516151957.jpg)
     - Purpose：assembling & building becomes a new trend for data analytic solution providers. More and more SQL based solutions were built based on some primitive building blocks over the last five years. Having some performt OOB building blocks (as libraries) can significantly reduce time-to-value for building everything from scratch. With such general-purpose toolkit, it can significantly reduce time-to-value for analytic solution developers.
     - Modules[¶](https://intel.github.io/BDTK/user/modules.html#modules "Permalink to this headline")
         - [Intel Codec Library User Guide](https://intel.github.io/BDTK/user/modules/ICL-module.html)
