@@ -10,7 +10,7 @@ mindmap-plugin: basic
     - SYCL
         - SYCL is an open alternative to single-architecture proprietary languages. It allows developers to reuse code across hardware targets (CPUs and accelerators such as GPUs and FPGAs) and also perform custom tuning for a specific accelerator. These code walkthroughs introduce you to basic principles and practices of SYCL programming.
         - ![](attachments/20240516141929.jpg)
-    - 
+    - ![](attachments/20240516142024.jpg)
     - ![[Pasted image 20230901095255.png]]
     - ![[Pasted image 20230901095505.png]]
 - OAP
