@@ -1,6 +1,7 @@
 #### 参考文献
 [FPGA, CPU, GPU, ASIC区别，FPGA为何这么牛 - 知乎](https://zhuanlan.zhihu.com/p/471174552#:~:text=FPGA%2C%20CPU%2C%20GPU%2C%20ASIC%E5%8C%BA%E5%88%AB%EF%BC%8CFPGA%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E7%89%9B)
 [CPU，GPU和FPGA的计算体系结构比较 - 知乎](https://zhuanlan.zhihu.com/p/372518433)
+[FPGA和CPU、GPU有什么区别？为什么越来越重要？](https://www.bilibili.com/read/cv25712075/)
 ## CPU
 ![](attachments/20240508115553%201.jpg)
 #### 优势
