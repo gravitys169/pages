@@ -38,20 +38,23 @@
 - [HBase](计算机技术/大数据/HBase.md)
 - [Native_Engine](计算机技术/大数据/Native_Engine.md)
 - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
-
+- [性能调优](计算机技术/大数据/性能调优.md)
 #### 硬件
 - [服务器](计算机技术/硬件/服务器.md)
 - [光模块](计算机技术/硬件/光模块.md)
 - [GPU](计算机技术/硬件/GPU.md)
 - CPU
-	- [Intel](计算机技术/硬件/CPU/Intel.md)
+	- [Intel软硬件产品](计算机技术/硬件/CPU/Intel软硬件产品.md)
 - [FPGA](计算机技术/硬件/FPGA.md)
 - [存储硬件](计算机技术/硬件/存储硬件.md)
 - [半导体存储](计算机技术/硬件/半导体存储.md)
-## AI
+#### AI
 - [AI大模型系统实战笔记](计算机技术/AI/AI大模型系统实战/AI大模型系统实战笔记.md)
 - [State of GPT](计算机技术/AI/State%20of%20GPT.md)
 - [Data4AI](计算机技术/AI/Data4AI.md)
+#### Coding
+- [Start from a project](计算机技术/Coding/Start%20from%20a%20project.md)
+- 
 ## 读书笔记
 #### 计算机
 - [计算机组成与设计](读书笔记/书籍/计算机组成与设计.md)

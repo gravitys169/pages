@@ -1,9 +1,3 @@
----
-mindmap-plugin: basic
----
-
-# Intel
-
 ## Software
 - [OneAPI](https://www.intel.cn/content/www/cn/zh/developer/articles/technical/oneapi-what-is-it.html#gs.4kztoc) 当前主推的软件平台，涵盖了1.基础的数学库、数据分析库，2.HPC加速库 3.图像渲染库 4.AI加速库 5. OpenVINO
 - ![](attachments/20240516144600.jpg)
