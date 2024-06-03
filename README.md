@@ -1,5 +1,3 @@
-# 前言
-
 ## Why pages
 “吾生也有涯，而知也无涯，以有涯随无涯，殆已！”
 
@@ -18,6 +16,7 @@
 3. 注重原创，better to draw the pictures by myself
 4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
 5. English first, try to use  English to write the article
+6. 百闻不如一见，百见不如一干
 
 # 目录
 ## 灵感

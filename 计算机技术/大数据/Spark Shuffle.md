@@ -438,8 +438,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1313,
-			"versionNonce": 755194018,
+			"version": 1319,
+			"versionNonce": 548231969,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -461,7 +461,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715465,
+			"updated": 1717399858342,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -490,8 +490,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1403,
-			"versionNonce": 1914378274,
+			"version": 1409,
+			"versionNonce": 1016579809,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -513,7 +513,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715466,
+			"updated": 1717399858343,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -782,8 +782,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 189,
-			"versionNonce": 73377982,
+			"version": 190,
+			"versionNonce": 234918657,
 			"isDeleted": false,
 			"id": "ss7mnIys",
 			"fillStyle": "hachure",
@@ -808,7 +808,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1716173680592,
+			"updated": 1717399855630,
 			"link": null,
 			"locked": false,
 			"fontSize": 15.7894736842105,
@@ -820,7 +820,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "Pt1 buffer\naddress list",
 			"lineHeight": 1.2,
-			"baseline": 33
+			"baseline": 34
 		},
 		{
 			"type": "text",
@@ -866,8 +866,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 493,
-			"versionNonce": 1827207074,
+			"version": 499,
+			"versionNonce": 1042956961,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -889,7 +889,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715470,
+			"updated": 1717399858345,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1026,8 +1026,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 432,
-			"versionNonce": 696719010,
+			"version": 438,
+			"versionNonce": 1480026657,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1049,7 +1049,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715474,
+			"updated": 1717399858348,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1078,8 +1078,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 340,
-			"versionNonce": 828033570,
+			"version": 341,
+			"versionNonce": 1044830607,
 			"isDeleted": false,
 			"id": "2ADQjYT7",
 			"fillStyle": "solid",
@@ -1099,7 +1099,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680594,
+			"updated": 1717399855633,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1111,12 +1111,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "满一定大小后（2GB），\n进行序列化、\n压缩spill",
 			"lineHeight": 1.2,
-			"baseline": 66
+			"baseline": 67
 		},
 		{
 			"type": "text",
-			"version": 181,
-			"versionNonce": 1042800894,
+			"version": 182,
+			"versionNonce": 1364757217,
 			"isDeleted": false,
 			"id": "8rFGr3eC",
 			"fillStyle": "solid",
@@ -1136,7 +1136,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680595,
+			"updated": 1717399855634,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1148,12 +1148,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "pt buffer list",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "text",
-			"version": 275,
-			"versionNonce": 25245154,
+			"version": 276,
+			"versionNonce": 1987235759,
 			"isDeleted": false,
 			"id": "VzZypjhL",
 			"fillStyle": "solid",
@@ -1173,7 +1173,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680597,
+			"updated": 1717399855637,
 			"link": null,
 			"locked": false,
 			"fontSize": 14.10526315789485,
@@ -1185,7 +1185,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "buffer 满了\n申请新buffer",
 			"lineHeight": 1.2,
-			"baseline": 31
+			"baseline": 30
 		},
 		{
 			"type": "rectangle",
@@ -1268,8 +1268,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 719,
-			"versionNonce": 43890082,
+			"version": 731,
+			"versionNonce": 78959009,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1291,7 +1291,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715477,
+			"updated": 1717399858351,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1320,8 +1320,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 639,
-			"versionNonce": 1619146018,
+			"version": 651,
+			"versionNonce": 1226022241,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1343,7 +1343,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715478,
+			"updated": 1717399858352,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1451,8 +1451,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 850,
-			"versionNonce": 938267810,
+			"version": 856,
+			"versionNonce": 1770158369,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1474,7 +1474,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715480,
+			"updated": 1717399858354,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1657,8 +1657,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 576,
-			"versionNonce": 903189538,
+			"version": 582,
+			"versionNonce": 222127329,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1680,7 +1680,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715480,
+			"updated": 1717399858355,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1709,8 +1709,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 780,
-			"versionNonce": 691303330,
+			"version": 786,
+			"versionNonce": 1015046305,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1732,7 +1732,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715841715482,
+			"updated": 1717399858356,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1861,8 +1861,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 157,
-			"versionNonce": 985600318,
+			"version": 158,
+			"versionNonce": 2057733825,
 			"isDeleted": false,
 			"id": "NRlF12hV",
 			"fillStyle": "solid",
@@ -1882,7 +1882,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680598,
+			"updated": 1717399855637,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1894,12 +1894,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "Task",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "text",
-			"version": 156,
-			"versionNonce": 560212386,
+			"version": 157,
+			"versionNonce": 1308295631,
 			"isDeleted": false,
 			"id": "vx5PT4yf",
 			"fillStyle": "solid",
@@ -1928,7 +1928,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1716173680598,
+			"updated": 1717399855638,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1940,12 +1940,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "merge",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "text",
-			"version": 183,
-			"versionNonce": 897988990,
+			"version": 184,
+			"versionNonce": 1686767265,
 			"isDeleted": false,
 			"id": "usiFav72",
 			"fillStyle": "solid",
@@ -1965,7 +1965,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680599,
+			"updated": 1717399855638,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1977,7 +1977,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "partition",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "rectangle",
@@ -2021,8 +2021,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 292,
-			"versionNonce": 2016585058,
+			"version": 293,
+			"versionNonce": 100134895,
 			"isDeleted": false,
 			"id": "RW60pcrQ",
 			"fillStyle": "solid",
@@ -2044,7 +2044,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680600,
+			"updated": 1717399855639,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2056,12 +2056,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "OmniRuntime native shuffle\n占用大量内存，但无需持有多个文件句柄",
 			"lineHeight": 1.2,
-			"baseline": 42
+			"baseline": 43
 		},
 		{
 			"type": "text",
-			"version": 57,
-			"versionNonce": 1438538174,
+			"version": 58,
+			"versionNonce": 1773308545,
 			"isDeleted": false,
 			"id": "3dskBaTI",
 			"fillStyle": "solid",
@@ -2081,7 +2081,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680600,
+			"updated": 1717399855640,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2093,12 +2093,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "map*reduce*executor个小文件",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "text",
-			"version": 91,
-			"versionNonce": 792439074,
+			"version": 92,
+			"versionNonce": 678566415,
 			"isDeleted": false,
 			"id": "ZGSHiltx",
 			"fillStyle": "solid",
@@ -2118,7 +2118,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680601,
+			"updated": 1717399855640,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2130,12 +2130,12 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "reducer*executor个文件",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "text",
-			"version": 268,
-			"versionNonce": 847802878,
+			"version": 269,
+			"versionNonce": 1658819169,
 			"isDeleted": false,
 			"id": "MprMud7S",
 			"fillStyle": "solid",
@@ -2155,7 +2155,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1716173680601,
+			"updated": 1717399855641,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2167,7 +2167,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "executor*mapper个文件",
 			"lineHeight": 1.2,
-			"baseline": 18
+			"baseline": 19
 		},
 		{
 			"type": "arrow",
@@ -2223,8 +2223,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 175,
-			"versionNonce": 1844327650,
+			"version": 176,
+			"versionNonce": 1784807471,
 			"isDeleted": false,
 			"id": "de9w8rht",
 			"fillStyle": "hachure",
@@ -2249,7 +2249,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1716173680603,
+			"updated": 1717399855644,
 			"link": "[[Spark Native列式Shuffle.pptx]]",
 			"locked": false,
 			"fontSize": 47.968177056968024,
@@ -2261,7 +2261,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "📍[[Spark Native列式Shuffle.pptx]]",
 			"lineHeight": 1.2,
-			"baseline": 46
+			"baseline": 45
 		},
 		{
 			"type": "arrow",
@@ -2501,8 +2501,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 320,
-			"versionNonce": 1457881662,
+			"version": 321,
+			"versionNonce": 1692442177,
 			"isDeleted": false,
 			"id": "engw6p6o",
 			"fillStyle": "solid",
@@ -2531,7 +2531,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1716173680607,
+			"updated": 1717399855649,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2543,7 +2543,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"containerId": null,
 			"originalText": "当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，\n因而减少了生成的文件\n问题：\n1. 没有一直持有文件句柄，因而一个分区可能会生成多个小文件，\n而bypass一直持有，一个分区对应一个文件\n2.当前的buffer内存未被统计（更新：已统计），executor offheap memory中，\n当一个节点运行多个task时，可能存在大量未被统计的内存使用，\n如典配下：96核*2GB=192GB内存未被统计，导致杀进程",
 			"lineHeight": 1.2,
-			"baseline": 186
+			"baseline": 187
 		},
 		{
 			"type": "arrow",
