@@ -10,3 +10,7 @@
 ![](attachments/Pasted%20image%2020240605092838.png)
 经过一次随机行列变换
 ![](attachments/Pasted%20image%2020240605093252.png)
+每次变换取最小的不为1的下标值作为签名，故两次变换后S1={1,1}，S2={3,6}。。。
+- 基于Hash的签名矩阵：将上述矩阵变换操作改为Hash操作，并使用Fast Min hashing算法可求得每个集合的hash signature集合
+- ![](attachments/Pasted%20image%2020240605094122.png)
+- 
