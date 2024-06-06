@@ -8,6 +8,8 @@
 - 集合的矩阵表示与行列变换
 考虑集合 S1 = {1， 2， 5} S2 = {3} S3 = {2， 3， 4， 6} S4 = {1， 4， 6}，集合可矩阵表示为
 ![](attachments/Pasted%20image%2020240605092838.png)
+
+
 经过一次随机行列变换
 ![](attachments/Pasted%20image%2020240605093252.png)
 每次变换取最小的不为1的下标值作为签名，故两次变换后S1={1,1}，S2={3,6}。。。
@@ -17,5 +19,9 @@
 - 在表示element时，往往不以原始的值做运算，而是对值取sha1
 
 ## 参考文献
+
+[BigCode 背后的大规模数据去重](https://huggingface.co/blog/zh/dedup)
+
+
 [Data Preprocessing — Deduplication with MinHash and LSH | by Wenjing Zhan | Medium](https://wenjingzhan.medium.com/data-preprocessing-deduplication-with-minhash-and-lsh-99c5e10703d)
 [Python的datasketch库中的MinHashLSH-CSDN博客](https://blog.csdn.net/IOT_victor/article/details/104044453)
