@@ -9,10 +9,14 @@
 
 
 考虑集合 S1 = {1， 2， 5} S2 = {3} S3 = {2， 3， 4， 6} S4 = {1， 4， 6}，集合可矩阵表示为
+
+
 ![](attachments/Pasted%20image%2020240605092838.png)
 
 
 经过一次随机行列变换
+
+
 ![](attachments/Pasted%20image%2020240605093252.png)
 
 
@@ -29,7 +33,7 @@
 [BigCode 背后的大规模数据去重](https://huggingface.co/blog/zh/dedup)
 
 
-[Data Preprocessing — Deduplication with MinHash and LSH | by Wenjing Zhan | Medium](https://wenjingzhan.medium.com/data-preprocessing-deduplication-with-minhash-and-lsh-99c5e10703d)
+[Data Preprocessing — Deduplication with MinHash and LSH | Medium](https://wenjingzhan.medium.com/data-preprocessing-deduplication-with-minhash-and-lsh-99c5e10703d)
 
 
 [Python的datasketch库中的MinHashLSH-CSDN博客](https://blog.csdn.net/IOT_victor/article/details/104044453)
