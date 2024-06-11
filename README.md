@@ -9,19 +9,16 @@
 故而通过pages这个平台，记录自己的知识经验，一方面在撰写的过程中提炼总结，另一方面也为了方便自己温故知新。
 
 吾生也有涯，所知所留概莫超过一本书的厚度，望本pages能成为吾生之精粹。
-## How to write pages
-**Below are key points when writing pages：**
-1. 宁缺毋滥，dont write pages only for just write
-2. 提纲挈领，勿长篇累牍的记录，复杂事项应提供以一概之的一句话总结
-3. 注重原创，better to draw the pictures by myself
-4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
-5. English first, try to use  English to write the article
-6. 百闻不如一见，百见不如一干
+
 
 # 目录
+
+[Tips](Tips.md)
+
 ## 灵感
 - [技术灵感](技术灵感.md)
 - [名言警句](人文经史/名言警句.md)
+
 ## 计算机技术
 #### 系统架构
 - CPU
@@ -39,6 +36,7 @@
 - [Native_Engine](计算机技术/大数据/Native_Engine.md)
 - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
 - [性能调优](计算机技术/大数据/性能调优.md)
+
 #### 硬件
 - [服务器](计算机技术/硬件/服务器.md)
 - [光模块](计算机技术/硬件/光模块.md)
@@ -48,6 +46,7 @@
 - [FPGA](计算机技术/硬件/FPGA.md)
 - [存储硬件](计算机技术/硬件/存储硬件.md)
 - [半导体存储](计算机技术/硬件/半导体存储.md)
+
 #### AI
 - [AI大模型系统实战笔记](计算机技术/AI/AI大模型系统实战/AI大模型系统实战笔记.md)
 - [State of GPT](计算机技术/AI/State%20of%20GPT.md)
@@ -55,7 +54,7 @@
 - [业界洞察](计算机技术/AI/业界洞察.md)
 #### Coding
 - [Start from a project](计算机技术/Coding/Start%20from%20a%20project.md)
-- 
+
 ## 读书笔记
 #### 计算机
 - [计算机组成与设计](读书笔记/书籍/计算机组成与设计.md)
@@ -64,7 +63,7 @@
 - [Flink核心技术与实践](读书笔记/书籍/Flink核心技术与实践.md)
 #### 经管
 - [债务危机](读书笔记/书籍/债务危机.md)
-- 
+
 ## 人文经史
 - [名言警句](人文经史/名言警句.md)
 #### 职场人生
