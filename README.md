@@ -49,9 +49,8 @@
 
 #### AI
 - [AI大模型系统实战笔记](计算机技术/AI/AI大模型系统实战/AI大模型系统实战笔记.md)
-- [State of GPT](计算机技术/AI/State%20of%20GPT.md)
 - [Data4AI](计算机技术/AI/Data4AI.md)
-- [业界洞察](计算机技术/AI/业界洞察.md)
+- [行业洞察](计算机技术/AI/行业洞察.md)
 #### Coding
 - [Start from a project](计算机技术/Coding/Start%20from%20a%20project.md)
 
