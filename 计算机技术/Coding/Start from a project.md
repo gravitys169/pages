@@ -8,3 +8,13 @@
 1. Maven编译指令
 mvn clean install -DskipTests -Dscala-2.11 -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -Drat.skip=true -Dgit.commit.id.skip=true -T16
 #### C++
+
+#### python
+内网代理
+vi /etc/pip.conf
+[global]
+no-cache-dir = true
+index-url = https://pypi.org/simple
+extra-index-url = http://cmc-cd-mirror.rnd.huawei.com/pypi/simple/
+trusted-host = cmc-cd-mirror.rnd.huawei.com
+timeout = 2
