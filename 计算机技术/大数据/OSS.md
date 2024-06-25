@@ -51,8 +51,8 @@ import com.aliyun.oss.model.PutObjectRequest;
 public class GetStartedSample {
 
     private static String endpoint = "oss-cn-chengdu.aliyuncs.com";
-    private static String accessKeyId = "LTAIudb2MnAe6fs7";
-    private static String accessKeySecret = "UOPIb3V49O0En6puI6IvOzrUbt3CoN";
+    private static String accessKeyId = "x";
+    private static String accessKeySecret = "x";
     private static String bucketName = "hong-img";
     private static String key = "key";
 
