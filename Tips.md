@@ -13,3 +13,4 @@
 4. 旁征博引，凡能查询到的已有知识，借助引用而不是再记录一遍
 5. English first, try to use  English to write the article
 6. 百闻不如一见，百见不如一干
+
