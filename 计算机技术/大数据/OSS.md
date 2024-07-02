@@ -1,6 +1,6 @@
+aliyun:
 
-```java
-*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,8 +18,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-package oss;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -51,10 +49,10 @@ import com.aliyun.oss.model.PutObjectRequest;
 public class GetStartedSample {
 
     private static String endpoint = "oss-cn-chengdu.aliyuncs.com";
-    private static String accessKeyId = "x";
-    private static String accessKeySecret = "x";
+    private static String accessKeyId = "LTAIudb2MnAe6fs7";
+    private static String accessKeySecret = "UOPIb3V49O0En6puI6IvOzrUbt3CoN";
     private static String bucketName = "hong-img";
-    private static String key = "key";
+    private static String key = "key12";
 
     public static void main(String[] args) throws IOException {
         /*
@@ -123,7 +121,7 @@ public class GetStartedSample {
              * List objects in your bucket by prefix
              */
             System.out.println("Listing objects");
-            ObjectListing objectListing = ossClient.listObjects(bucketName, "My");
+            ObjectListing objectListing = ossClient.listObjects(bucketName, "");
             for (OSSObjectSummary objectSummary : objectListing.getObjectSummaries()) {
                 System.out.println(" - " + objectSummary.getKey() + "  " +
                         "(size = " + objectSummary.getSize() + ")");
@@ -133,8 +131,8 @@ public class GetStartedSample {
             /*
              * Delete an object
              */
-            System.out.println("Deleting an object\n");
-            ossClient.deleteObject(bucketName, key);
+//            System.out.println("Deleting an object\n");
+//            ossClient.deleteObject(bucketName, key);
 
         } catch (OSSException oe) {
             System.out.println("Caught an OSSException, which means your request made it to OSS, "
@@ -182,4 +180,3 @@ public class GetStartedSample {
     }
 
 }
-```
