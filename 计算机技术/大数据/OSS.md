@@ -1,24 +1,11 @@
 aliyun:
 
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+查看
 
+
+[阿里云登录 - 欢迎登录阿里云，安全稳定的云计算服务平台](https://oss.console.aliyun.com/bucket/oss-cn-chengdu/hong-img/object)
+
+```java
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -49,8 +36,8 @@ import com.aliyun.oss.model.PutObjectRequest;
 public class GetStartedSample {
 
     private static String endpoint = "oss-cn-chengdu.aliyuncs.com";
-    private static String accessKeyId = "LTAIudb2MnAe6fs7";
-    private static String accessKeySecret = "UOPIb3V49O0En6puI6IvOzrUbt3CoN";
+    private static String accessKeyId = "xx";
+    private static String accessKeySecret = "xx";
     private static String bucketName = "hong-img";
     private static String key = "key12";
 
@@ -180,3 +167,5 @@ public class GetStartedSample {
     }
 
 }
+```
+
