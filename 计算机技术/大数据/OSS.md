@@ -1,9 +1,4 @@
-aliyun:
-
-查看
-
-
-[阿里云登录 - 欢迎登录阿里云，安全稳定的云计算服务平台](https://oss.console.aliyun.com/bucket/oss-cn-chengdu/hong-img/object)
+Aliyun查看 OSS 对象：[阿里云登录 - 欢迎登录阿里云，安全稳定的云计算服务平台](https://oss.console.aliyun.com/bucket/oss-cn-chengdu/hong-img/object)
 
 ```java
 import java.io.BufferedReader;

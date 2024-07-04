@@ -62,7 +62,7 @@
 - [训练与推理](计算机技术/AI/训练与推理.md)
 
 #### Coding
-- [Start from a project](计算机技术/Coding/Start%20from%20a%20project.md)
+- [Start_from_a_project](计算机技术/Coding/Start_from_a_project.md)
 
 ## 读书笔记
 #### 计算机
