@@ -65,7 +65,7 @@
 
 #### Coding
 - [Start_from_a_project](计算机技术/Coding/Start_from_a_project.md)
-![](attachments/Pasted%20image%2020240718151018.png)
+
 ## 读书笔记
 #### 计算机
 
