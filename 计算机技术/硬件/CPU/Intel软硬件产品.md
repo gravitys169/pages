@@ -30,8 +30,8 @@
         - [Intel Codec Library User Guide](https://intel.github.io/BDTK/user/modules/ICL-module.html)
         - [Expression Evaluation Module Introduction](https://intel.github.io/BDTK/user/modules/expr-eval-module.html)
         - [Hash Table Module Introduction](https://intel.github.io/BDTK/user/modules/hash-table-module.html)
-    - ![[Pasted image 20230901101904.png]]
-    - ![[Pasted image 20230901101917.png]]
+    - ![[Pasted image 20230901101904.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230901101904.png)
+    - ![[Pasted image 20230901101917.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230901101917.png)
 - BigDL
     - BigDL makes it easier for data scientists and data engineers to build end-to-end, distributed AI applications. The BigDL release provides the following features:
         - DLlib: A distributed deep learning library for Apache Spark* (that is, the original BigDL framework with a Keras*-style API and Spark machine learning pipeline support).With _DLlib_, you can write distributed deep learning applications as standard (**Scala** or **Python**) Spark programs, using the same **Spark DataFrames** and **ML Pipeline** APIs.
@@ -45,19 +45,19 @@
         - Chronos: Scalable time-series analysis using AutoML
         - PPML: Privacy preserving big data analysis and machine learning
     - 如何选择组件：
-        - ![[Pasted image 20230901111928.png]]
+        - ![[Pasted image 20230901111928.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230901111928.png)
 - SGX
 
 ## Processor
 - Intel Core
-    - ![[Pasted image 20230809170315.png]]
+    - ![[Pasted image 20230809170315.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230809170315.png)
     - 历史代号
         - [Haswell](https://zh.wikipedia.org/zh-cn/Haswell)
         - [Broadwel](https://zh.wikipedia.org/wiki/Broadwell "Broadwell")
         - [Skylake](https://zh.wikipedia.org/zh-cn/Skylake%E5%BE%AE%E6%9E%B6%E6%A7%8B "Skylake微架构")
         - [Kaby Lake](https://zh.wikipedia.org/zh-cn/Kaby_Lake "Kaby Lake")
 - Intel Xeon
-    - ![[Pasted image 20230809165857.png]]
+    - ![[Pasted image 20230809165857.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230809165857.png)
     - Scalable Processors
         - 加速器
             - Advanced Matrix Extensions， AMX
@@ -77,9 +77,9 @@
             - Dynamic Load Balancer， 英特尔® DLB
                 - 可随系统负载的变化将网络数据动态地分配 到多个 CPU 内核上，基于硬件高效实现负载平衡。
         - SKU
-           -![[Pasted image 20230811143649.png]]
+           -![[Pasted image 20230811143649.png](../../../../Compute%20Arch/attachments/Pasted%20image%2020230811143649.png)
         - 历史架构代号
-            - ![[Paste image 1690773631695image.png]]
+            - ![[Paste image 1690773631695image.png](../../../../Compute%20Arch/attachments/Paste%20image%201690773631695image.png)
     - MAX
         - 首款也是唯一一款 x86 高带宽内存 (HBM) 处理器，可最大程度提高带宽。
     - D Processor

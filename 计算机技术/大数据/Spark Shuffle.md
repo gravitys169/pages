@@ -68,7 +68,7 @@ reducer*executor个文件 ^ZGSHiltx
 
 executor*mapper个文件 ^MprMud7S
 
-[[Spark Native列式Shuffle.pptx]] ^de9w8rht
+[[Spark Native列式Shuffle.pptx](../../../Huawei/OmniRuntime/Spark%20Native%E5%88%97%E5%BC%8FShuffle.pptx) ^de9w8rht
 
 当前Omni shuffle的实现与bypass几乎一样，除了spark.shuffle.file.buffer设置为了2GB，
 因而减少了生成的文件
