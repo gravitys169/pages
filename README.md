@@ -63,7 +63,7 @@
 - [数据清洗算子](计算机技术/AI/Data4AI/数据清洗算子.md)
 - [行业洞察](计算机技术/AI/行业洞察.md)
 - [训练与推理](计算机技术/AI/训练与推理.md)
-
+- [State of GPT](https://cdn.public-pdf.com/28f49ed64417b384c115ac6db1f5b07d.pdf)
 #### Coding
 - [Start_from_a_project](计算机技术/Coding/Start_from_a_project.md)
 
