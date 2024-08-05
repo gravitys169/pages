@@ -8,14 +8,14 @@
 
 而当 `cpu` 读取一个数据的时候，会先尝试从 `cache` 中读取。如果发生 `cache miss` 的时候，才会将数据从主存中加载到 `cache` 中再读取。而值得注意的是，`cpu` 每一次的读取都是以 `cache line` (**一般为64Byte，8个 long**)为单位的。也就是说，`cpu` 在读取一个数据的时候，也会将该数据相邻的、一个 `cache line` 内的数据也加载到 `cache` 中。而二维数组在内存中是按行排布的，换句话说，数组中相邻的两行是首尾相连排列的。所以在读取 `arr[i]` 的时候，`arr[i + 1]` 、`arr[i + 2]` 等相邻的数组元素也会被加载到 `cache` 中，而当下一次迭代中，需要读取数组元素 `arr[i + 1]` 时，就能直接从 `cache` 中取出，速度非常快。而因为以列读取数组时，`arr[i][j]` 和 `arr[i + 1][j]` 在内存中的位置就不再是紧密相连，而是相距一个数组行大小。这也导致了在读取 `arr[i][j]` 时，`arr[i + 1][j]` 并没有被加载到 `cache` 中。在下一次迭代时就会发生 `cache miss` 也就导致读取速度大幅下降。
 
-![mmbiz.qpic.cn/sz\_mmbiz\_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttQr0x956yib02WGnp4l2xmKADMbusianI8Vjib9LaZ6vC0n11uk8ibwNntA/640?wx\_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx\_lazy=1&wx\_co=1](https://mmbiz.qpic.cn/sz_mmbiz_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttQr0x956yib02WGnp4l2xmKADMbusianI8Vjib9LaZ6vC0n11uk8ibwNntA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-
 ## Prefetch
 Cache prefetching can be accomplished either by hardware or by software.
 
 - **Hardware based prefetching** is typically accomplished by having a dedicated hardware mechanism in the processor that watches the stream of instructions or data being requested by the executing program, recognizes the next few elements that the program might need based on this stream and prefetches into the processor's cache.
 - **Software based prefetching** is typically accomplished by having the compiler analyze the code and insert additional "prefetch" instructions in the program during compilation itself.
 而 `random_access` 会让 `prefetching` 的机制失效，使得运行效率进一步下降。
+
+![](attachments/Pasted%20image%2020240805104611.png)
 
 ## cache associativity
 
