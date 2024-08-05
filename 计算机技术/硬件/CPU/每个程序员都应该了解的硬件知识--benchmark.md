@@ -40,6 +40,16 @@ Cache prefetching can be accomplished either by hardware or by software.
 我们可以看到，`L1 cache` 大小为 `4 x 32 KB (128KB)` ，采取 8 路组相联，缓存行大小为 `64 bytes` 。也就是说，该缓存共有 `4x32x1024 byte/64 byte = 2048` 行，共分为 `2048/8 = 256` 组。也就是说，当迭代数组的步长为 2^n时，数据更可能会被分到同一个组内，导致 `cache miss` 更加频繁，从而导致效率下降。
 
 ## Pipeline
-- 分支预测
-- 数据依赖
-![mmbiz.qpic.cn/sz\_mmbiz\_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttaheZx5DwU95vJ361EWRRdEPyMyOb9RnfjBibRZKS50P0XZlbdqloRSg/640?wx\_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx\_lazy=1&wx\_co=1](https://mmbiz.qpic.cn/sz_mmbiz_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttaheZx5DwU95vJ361EWRRdEPyMyOb9RnfjBibRZKS50P0XZlbdqloRSg/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+CPU流水线（Pipeline）是现代处理器提高指令吞吐率的一种技术。在流水线中，指令的执行被分解成多个阶段，每个阶段由不同的硬件单元处理。然而，流水线的设计和执行过程中可能会遇到以下三种冒险（Hazard），它们会导致流水线的性能下降：
+
+1. **结构冒险（Structural Hazard）**： 结构冒险发生在硬件资源冲突时，即两个或多个指令在同一时间需要使用同一个硬件资源。例如，如果流水线中的两个阶段需要同时访问缓存，而缓存只有一个访问端口，就会发生结构冒险。
+        - **解决方法**：通常通过增加硬件资源来避免结构冒险，比如增加缓存端口、寄存器文件或者其他必要的硬件单元。
+2. **数据冒险（Data Hazard）**： 数据冒险是最常见的一类冒险，它发生在指令之间存在数据依赖时。数据冒险分为以下几种类型：
+        - **RAW（Read After Write）**：后一条指令需要读取前一条指令写入的结果，但在流水线中该结果尚未准备好。
+    - **WAR（Write After Read）**：后一条指令写入一个寄存器或内存位置，而这个位置是前一条指令需要读取的。
+    - **WAW（Write After Write）**：后一条指令写入一个寄存器或内存位置，而这个位置前一条指令也要写入。
+    - **解决方法**：可以通过转发（Forwarding）/旁路（Bypassing）、插入气泡（Stall）或指令重排（Reordering）等技术来解决数据冒险。
+3. **控制冒险（Control Hazard）**： 控制冒险发生在分支指令（如条件跳转或函数调用）导致的程序控制流改变时。由于分支指令的结果通常在执行阶段才能确定，这可能导致流水线中的后续指令需要被取消或者重新取指。
+        - **解决方法**：可以通过分支预测（Branch Prediction）、延迟分支（Branch Delay）或者动态调度（Dynamic Scheduling）等技术来减少控制冒险的影响。
+
+![](attachments/20240805105237.jpg)
