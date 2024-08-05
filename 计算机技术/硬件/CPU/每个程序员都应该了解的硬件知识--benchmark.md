@@ -1,6 +1,6 @@
 [原文](https://mp.weixin.qq.com/s?__biz=MjM5ODYwMjI2MA==&mid=2649783116&idx=1&sn=c9ac909295a595759431ed5f93093ba9&chksm=becce83789bb6121102d2a621a425c7aac933f3221f1cf31b7c86f02c24e8c4d714a73d99fa2#rd)
 
-![](attachments/20240801171702.jpg)
+![](../attachments/20240801171702.jpg)
 
 ![xx](https://mmbiz.qpic.cn/sz_mmbiz_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttrbYNiaAFtvxMjNG9hxuZ2KxicVXhfIMVIVn9QheickicMdsQ8v7aXj3Crw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
