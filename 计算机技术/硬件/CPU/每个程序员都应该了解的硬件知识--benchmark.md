@@ -2,7 +2,7 @@
 
 ![](../attachments/20240801171702.jpg)
 
-![xx](https://mmbiz.qpic.cn/sz_mmbiz_png/j3gficicyOvas9My0bKkl0yDSVcxEFl3ttrbYNiaAFtvxMjNG9hxuZ2KxicVXhfIMVIVn9QheickicMdsQ8v7aXj3Crw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](attachments/20240802165658.jpg)
 
 ## Cache Miss
 
