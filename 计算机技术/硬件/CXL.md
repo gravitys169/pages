@@ -1,3 +1,5 @@
+
+[CXL，最强科普](https://mp.weixin.qq.com/s?__biz=Mzg2NDgzNTQ4MA==&mid=2247749286&idx=1&sn=abbbbf641ff9dd21f9a7a45824c7b048&chksm=ce6e0c51f919854701ad321b572554de18fea32349e938afee1467f14bf4b6df09b91e5c1c8c#rd)
 ## CXL版本
 - CXL1.0
 	- PCIe5.0, 32GT/s, only support one host to use the CXL memory
