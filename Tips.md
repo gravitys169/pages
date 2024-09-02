@@ -14,3 +14,9 @@
 5. English first, try to use  English to write the article
 6. 百闻不如一见，百见不如一干
 
+
+
+兼顾好交付与预研，研究部到底是关注技术的孵化，成果收割的问题
+
+非全职 lab 主任，怎么拉通资源，形成1+1>2的能力
+
