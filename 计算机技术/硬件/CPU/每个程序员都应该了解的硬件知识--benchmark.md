@@ -1,7 +1,5 @@
 [原文](https://mp.weixin.qq.com/s?__biz=MjM5ODYwMjI2MA==&mid=2649783116&idx=1&sn=c9ac909295a595759431ed5f93093ba9&chksm=becce83789bb6121102d2a621a425c7aac933f3221f1cf31b7c86f02c24e8c4d714a73d99fa2#rd)
 
-<font color='#F0F8FF'>浅粉色</font>
-
 ![](../attachments/20240801171702.jpg)
 
 ![](attachments/20240802165658.jpg)
