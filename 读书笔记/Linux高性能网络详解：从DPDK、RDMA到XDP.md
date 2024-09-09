@@ -13,3 +13,6 @@
 ## 硬件 
 
 ![](attachments/Pasted%20image%2020240909113611.png)
+
+体系结构
+
