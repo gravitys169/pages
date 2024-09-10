@@ -14,5 +14,18 @@
 
 ![](attachments/Pasted%20image%2020240909113611.png)
 
-体系结构
+#### 体系结构
 
+![](attachments/Pasted%20image%2020240909113913.png)
+
+#### Cache
+
+cache line 一次从内存取 N 个字节到 Cache 中，N 一般为64Byte
+
+cache 写策略：
+
+1. write-through：同时写 cache 和内存
+2. write-back：只写 cache，cache line 标记为 dirty，不同步写内存
+#### cache 一致性
+
+![](attachments/Pasted%20image%2020240910090836.png)
