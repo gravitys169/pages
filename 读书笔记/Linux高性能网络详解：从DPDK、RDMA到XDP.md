@@ -67,6 +67,7 @@ cache 写策略：
 ![](attachments/Pasted%20image%2020240911160037.png)
 
 PCIe 域与内存域
+
 ![](attachments/20240911165524.jpg)
 处理器核能直接使用的地址是内存域，而 PCIe 设备能使用的则是 PCIe 总线域的地址
 
