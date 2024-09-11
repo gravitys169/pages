@@ -14,6 +14,9 @@
 
 所谓的以太网对应的是链路层和物理层
 
+封装和解析
+![](attachments/Pasted%20image%2020240911173257.png)
+
 ## 计算机硬件 
 
 ![](attachments/Pasted%20image%2020240909113611.png)
