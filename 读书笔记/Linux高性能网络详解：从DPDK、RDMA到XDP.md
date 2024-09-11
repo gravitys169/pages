@@ -85,8 +85,8 @@ PCIe 域与内存域
 - RJ45接口的双端口以太网网卡，每个端口1GE，PCIe2.0 * 4
 ![](attachments/Pasted%20image%2020240911170929.png)
 - 双端口，通过光模块链接，支持10/1GE 速率，PCIe3.0 * 8，支持以太网和 RoCE
- 
+ ![](attachments/20240911171249.jpg)
 - 高性能单端口网卡，支持100/50/40/25/10/1GE，通过光模块+光纤对外连接，支持以太网、ROCE、DPDK 和 XDP（后两者依靠软件实现）
 
 - 浪潮 FPGA 加速卡
-![](attachments/Pasted%20image%2020240911171720.png)
+
