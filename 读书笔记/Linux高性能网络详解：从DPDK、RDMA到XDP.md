@@ -25,6 +25,7 @@
 
 ![](attachments/Pasted%20image%2020240909113913.png)
 
+![](attachments/Pasted%20image%2020240911173336.png)
 #### Cache
 
 cache line 一次从内存取 N 个字节到 Cache 中，N 一般为64Byte
