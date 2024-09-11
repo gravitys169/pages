@@ -44,3 +44,14 @@ cache 写策略：
 - Flush：将目标地址范围的所有 cache line，先 clean 再 Invalid
 #### NUMA
 ![](attachments/20240911092511.jpg)
+除了内存存在 non-unifor memory access 以外，外设（如网卡）也存在直连与非直连的情况
+
+因而网卡0写入内存0，比写入内存1快
+
+#### 总线
+
+总线带宽（bit/s）=频率 * 宽度
+
+###### PCI Express 总线
+
+![](attachments/Pasted%20image%2020240911160037.png)
