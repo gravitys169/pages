@@ -81,6 +81,7 @@ cache 写策略：
 PCIe 域与内存域
 
 ![](attachments/20240911165524.jpg)
+
 处理器核能直接使用的地址是内存域，而 PCIe 设备能使用的则是 PCIe 总线域的地址
 
 处理器核要访问 PCIe 设备，先发送地址信号到内部总线，此地址会被 PCIe 控制器截获，并翻译为 PCIe 总线域的地址，在转发到对应 PCIe 设备。
@@ -132,5 +133,19 @@ PCIe 域与内存域
 
 ![](attachments/Pasted%20image%2020240912092545.png)
 
+- 进程调度：微观串行、宏观并行
+- 内存管理：页表、malloc/free
+- 虚拟文件系统：一切皆文件，socket、硬件设备（如磁盘）等都被映射为文件，对上层应用程序提供统一的 vfs_read () 与 vfs_write () 接口
 
+![](attachments/Pasted%20image%2020240912110305.png)
+- 进程间通信：信号量，共享内存，消息队列，管道，socket
+- 网络接口
+
+![](attachments/20240912110038.jpg)
+
+## 软硬件交互
+#### 寄存器
+
+#### 数据缓存
+![](attachments/Pasted%20image%2020240912110727.png)
 
