@@ -147,5 +147,5 @@ PCIe 域与内存域
 #### 寄存器
 
 #### 数据缓存
-![](attachments/Pasted%20image%2020240912110727.png)
+![](attachments/20240912110723.jpg)
 
