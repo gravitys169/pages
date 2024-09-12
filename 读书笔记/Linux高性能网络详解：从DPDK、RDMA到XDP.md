@@ -130,5 +130,7 @@ PCIe 域与内存域
 
 #### 内核组成
 
+![](attachments/Pasted%20image%2020240912092545.png)
+
 
 
