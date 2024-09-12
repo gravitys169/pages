@@ -28,6 +28,7 @@
 ![](attachments/Pasted%20image%2020240911173336.png)
 #### Cache
 ![](attachments/20240911173359.jpg)
+
 cache line 一次从内存取 N 个字节到 Cache 中，N 一般为64Byte
 
 cache 写策略：
@@ -50,8 +51,10 @@ cache 写策略：
 - Clean：dirty （cache 修改过，但尚未写回内存）的 cache line 写到内存中
 - Invalid：将目标地址范围的所有 cache line 设置为无效，下次直接访问内存
 - Flush：将目标地址范围的所有 cache line，先 clean 再 Invalid
+
 #### NUMA
 ![](attachments/20240911092511.jpg)
+
 除了内存存在 non-unifor memory access 以外，外设（如网卡）也存在直连与非直连的情况
 
 因而网卡0写入内存0，比写入内存1快
@@ -65,6 +68,7 @@ cache 写策略：
 **内存带宽 = 64位 × 3.2GHz / 8 = 25.6 GB/s**
 
 典型的 DDR 带宽速率如下
+
 ![](attachments/20240911164940.jpg)
 #### 总线
 
@@ -91,13 +95,18 @@ PCIe 域与内存域
 
 ###### 典型网卡
 - RJ45接口的双端口以太网网卡，每个端口1GE，PCIe2.0 * 4
+
 ![](attachments/Pasted%20image%2020240911170929.png)
 - 双端口，通过光模块链接，支持10/1GE 速率，PCIe3.0 * 8，支持以太网和 RoCE
+
  ![](attachments/20240911171249.jpg)
 - 高性能单端口网卡，支持100/50/40/25/10/1GE，通过光模块（QSFP28）+光纤对外连接，支持以太网、ROCE、DPDK 和 XDP（后两者依靠软件实现）
+
 ![](attachments/20240911171450.jpg)
 - 浪潮 FPGA 加速卡
+
 ![](attachments/20240911171715.jpg)
+
 ![](attachments/20240911171728.jpg)
 
 这是一个 AI 计算加速卡，不过其带有 100GE 的FPGA 芯片，再加上 Corundum 开源网卡解决方案，即可形成一个100GE 网卡使用
@@ -106,4 +115,20 @@ PCIe 域与内存域
 
 #### 虚拟地址
 
+32位虚拟地址的最大内存空间是4GB，其中
+###### 页表
+
 ![](attachments/Pasted%20image%2020240912090315.png)
+
+一级页表的弊端：32到12位共2^20 项，每个表项占据4Byte，那么需要4MB 的内存空间，如果程序代码段加数据段只占据几 KB 的话，页表内存占用浪费巨大
+
+![](attachments/Pasted%20image%2020240912090626.png)
+
+###### TLB（translation lookaside buffer）
+
+专门的 Cache 来缓存内存页表，一般缓存几十到几百个表项，TLB 缓存前20位（31:12），如果匹配到虚拟地址，再“与”上虚拟地址的后12位
+
+#### 内核组成
+
+
+
