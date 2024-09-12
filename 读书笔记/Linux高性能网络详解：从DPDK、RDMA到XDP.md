@@ -154,4 +154,4 @@ PCIe 域与内存域
 队列
 
 
-![[attachments/Pasted image 20240912141101.png]]
+![[attachments/Pasted image 20240912141101.png](attachments/Pasted%20image%2020240912141101.png)
