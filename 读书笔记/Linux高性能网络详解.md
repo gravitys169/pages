@@ -151,16 +151,26 @@ PCIe 域与内存域
 
 写和读都通过DMA操作， CPU通过数据发送寄存器通知硬件，而硬件通过中断通知CPU
 
-队列
+###### 队列
 
-![[attachments/Pasted image 20240912142016.png]]
+描述符和对应数据均位于内存中，这是一种非常常见的数据映射方法
+
+![](attachments/Pasted%20image%2020240912143635.png)
 
 环形队列
-![[attachments/Pasted image 20240912142117.png]]
-![[attachments/Pasted image 20240912142342.png]]
-![[attachments/Pasted image 20240912142408.png]]
-![[attachments/Pasted image 20240912142424.png]]
-![[attachments/Pasted image 20240912142511.png]]
+
+生产者（sw）消费者（hw）
+![](attachments/Pasted%20image%2020240912144251.png)
+
+![](attachments/Pasted%20image%2020240912144323.png)
+
+![](attachments/Pasted%20image%2020240912144337.png)
+
+![](attachments/Pasted%20image%2020240912144350.png)
+
+![](attachments/Pasted%20image%2020240912144425.png)
+
 两个问题边界问题：
 - 如何判断队列已满
 - 如何判断队列为空
+- 
