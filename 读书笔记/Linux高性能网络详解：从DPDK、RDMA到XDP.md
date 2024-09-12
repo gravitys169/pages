@@ -137,7 +137,7 @@ PCIe 域与内存域
 - 内存管理：页表、malloc/free
 - 虚拟文件系统：一切皆文件，socket、硬件设备（如磁盘）等都被映射为文件，对上层应用程序提供统一的 vfs_read () 与 vfs_write () 接口
 
-![](attachments/Pasted%20image%2020240912110305.png)
+![](attachments/20240912110300.jpg)
 - 进程间通信：信号量，共享内存，消息队列，管道，socket
 - 网络接口
 
