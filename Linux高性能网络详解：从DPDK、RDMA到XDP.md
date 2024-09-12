@@ -150,3 +150,8 @@ PCIe 域与内存域
 ![](attachments/20240912110723.jpg)
 
 写和读都通过DMA操作， CPU通过数据发送寄存器通知硬件，而硬件通过中断通知CPU
+
+队列
+
+
+![[attachments/Pasted image 20240912141101.png]]
