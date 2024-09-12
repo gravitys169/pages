@@ -153,5 +153,14 @@ PCIe 域与内存域
 
 队列
 
-
 ![[attachments/Pasted image 20240912142016.png]]
+
+环形队列
+![[attachments/Pasted image 20240912142117.png]]
+![[attachments/Pasted image 20240912142342.png]]
+![[attachments/Pasted image 20240912142408.png]]
+![[attachments/Pasted image 20240912142424.png]]
+![[attachments/Pasted image 20240912142511.png]]
+两个问题边界问题：
+- 如何判断队列已满
+- 如何判断队列为空
