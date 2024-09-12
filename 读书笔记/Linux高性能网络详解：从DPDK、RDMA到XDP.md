@@ -104,3 +104,6 @@ PCIe 域与内存域
 
 ## Linux 操作系统
 
+#### 虚拟地址
+
+![](attachments/Pasted%20image%2020240912090315.png)
