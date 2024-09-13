@@ -192,6 +192,28 @@ DMA 控制器（网卡自带）通过总线将内存中的数据复制到 DMA �
 详述一次完整的数据收发流程：
 ![](attachments/Pasted%20image%2020240912151755.png)
 
+数据流：数据共复制了 5 次，其中 2, 3，4 为不同硬件不可避免
+
+![](attachments/Pasted%20image%2020240912152726.png)
+
+问题：
+
+- 内核态和用户态上下文（程序调用栈，寄存器等）频繁切换，TLB miss
+- 数据复制，消耗大量 CPU 时间
+- 网络协议包封装与解包消耗 CPU 时钟
+
+解决上述问题的方案包括: RDMA/DPDK/XDP 等
+
+## Corundum--FPGA 100 GE 网卡方案
+
+#### Corundum 队列
+
+![](attachments/Pasted%20image%2020240913144647.png)
+
+![](attachments/Pasted%20image%2020240913145951.png)
+
+
+
 
 
 
