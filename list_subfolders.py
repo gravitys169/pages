@@ -30,7 +30,7 @@ def list_subfolders(directory='.'):
 def list_markdown_files(directory='.', output_file='README.md'):
     """
     遍历指定目录下的所有文件，将Markdown文件的路径和名称以多级目录形式输出到README.md
-    如果文件名中包含空格，则将空格替换为下划��
+    如果文件名中包含空格，则将空格替换为下划线
     使用正斜杠(/)作为目录分隔符
     每次运行都会覆盖原有的README.md文件
     
@@ -80,20 +80,24 @@ def list_markdown_files(directory='.', output_file='README.md'):
                 current_level[path_parts[-1]] = relative_path
 
     def write_markdown_tree(tree, f, level=0):
-        """递归写入Markdown树结构"""
-        for key, value in sorted(tree.items()):
-            if isinstance(value, dict):
-                # 如果是目录
-                f.write("  " * level + f"- {key}\n")
-                write_markdown_tree(value, f, level + 1)
-            else:
-                # 如果是文件
-                file_name = os.path.splitext(key)[0]
-                f.write("  " * level + f"- [{file_name}]({value})\n")
+        """递归写入Markdown树结构，文件放在子目录前面"""
+        # 分离文件和目录
+        files = [(k, v) for k, v in tree.items() if not isinstance(v, dict)]
+        directories = [(k, v) for k, v in tree.items() if isinstance(v, dict)]
+        
+        # 先处理文件
+        for key, value in sorted(files):
+            file_name = os.path.splitext(key)[0]
+            f.write("  " * level + f"- [{file_name}]({value})\n")
+        
+        # 再处理目录
+        for key, value in sorted(directories):
+            f.write("  " * level + f"- {key}\n")
+            write_markdown_tree(value, f, level + 1)
 
     # 写入文件
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write("# 目录\n\n")  # 修改这里，将标题改为"目录"
+        f.write("# 目录\n\n")
         write_markdown_tree(markdown_files, f)
 
     print(f"Markdown文件列表已写入到 {output_file}")
