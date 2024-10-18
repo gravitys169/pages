@@ -30,7 +30,9 @@ def list_subfolders(directory='.'):
 def list_markdown_files(directory='.', output_file='README.md'):
     """
     遍历指定目录下的所有文件，将Markdown文件的路径和名称以多级目录形式输出到README.md
-    如果文件名中包含空格，则将空格替换为下划线
+    如果文件名中包含空格，则将空格替换为下划��
+    使用正斜杠(/)作为目录分隔符
+    每次运行都会覆盖原有的README.md文件
     
     :param directory: 要搜索的目录路径，默认为当前目录
     :param output_file: 输出文件的名称，默认为'README.md'
@@ -62,10 +64,10 @@ def list_markdown_files(directory='.', output_file='README.md'):
                     # 更新文件名为新文件名
                     file = new_file
                 
-                # 构建相对路径
-                relative_path = os.path.relpath(os.path.join(root, file), directory)
+                # 构建相对路径，并将反斜杠替换为正斜杠
+                relative_path = os.path.relpath(os.path.join(root, file), directory).replace('\\', '/')
                 # 将路径分割成目录层级
-                path_parts = relative_path.split(os.sep)
+                path_parts = relative_path.split('/')
                 
                 # 递归创建嵌套字典
                 current_level = markdown_files
@@ -89,26 +91,12 @@ def list_markdown_files(directory='.', output_file='README.md'):
                 file_name = os.path.splitext(key)[0]
                 f.write("  " * level + f"- [{file_name}]({value})\n")
 
-    # 读取现有的README.md内容
-    existing_content = ""
-    if os.path.exists(output_file):
-        with open(output_file, 'r', encoding='utf-8') as f:
-            existing_content = f.read()
-
     # 写入文件
     with open(output_file, 'w', encoding='utf-8') as f:
-        # 首先写入现有内容
-        f.write(existing_content)
-        
-        # 如果现有内容不为空且不以换行符结束，添加一个换行符
-        if existing_content and not existing_content.endswith('\n'):
-            f.write('\n')
-        
-        # 添加目录标题和内容
-        f.write("\n## Markdown文件目录\n\n")
+        f.write("# 目录\n\n")  # 修改这里，将标题改为"目录"
         write_markdown_tree(markdown_files, f)
 
-    print(f"Markdown文件列表已追加到 {output_file}")
+    print(f"Markdown文件列表已写入到 {output_file}")
 
 # 调用函数，遍历当前目录下的Markdown文件并输出到README.md
 list_markdown_files()
