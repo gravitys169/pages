@@ -20,3 +20,9 @@
 
 非全职 lab 主任，怎么拉通资源，形成1+1>2的能力
 
+![](attachments/Pasted%20image%2020241114225804.png)
+
+![](attachments/Pasted%20image%2020241114230146.png)
+
+
+301502. SZ 在 20240102 的数据，跳过该股票。
