@@ -100,8 +100,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 	"elements": [
 		{
 			"type": "image",
-			"version": 123,
-			"versionNonce": 1186433942,
+			"version": 124,
+			"versionNonce": 1509916874,
 			"isDeleted": false,
 			"id": "qGOA0orT",
 			"fillStyle": "hachure",
@@ -130,7 +130,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -142,8 +142,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "image",
-			"version": 214,
-			"versionNonce": 1258889418,
+			"version": 215,
+			"versionNonce": 1749895382,
 			"isDeleted": false,
 			"id": "q0UfM9A5",
 			"fillStyle": "hachure",
@@ -168,7 +168,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -180,8 +180,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 152,
-			"versionNonce": 506308822,
+			"version": 153,
+			"versionNonce": 78174090,
 			"isDeleted": false,
 			"id": "H8yEu0pu4GrPJmq1-tPlU",
 			"fillStyle": "solid",
@@ -208,14 +208,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "rectangle",
-			"version": 277,
-			"versionNonce": 1669232522,
+			"version": 278,
+			"versionNonce": 412728854,
 			"isDeleted": false,
 			"id": "ZweovvZ4paPJxhQTPCqjF",
 			"fillStyle": "hachure",
@@ -237,14 +237,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 966,
-			"versionNonce": 1754792266,
+			"version": 967,
+			"versionNonce": 628708938,
 			"isDeleted": false,
 			"id": "sbquvKrx",
 			"fillStyle": "hachure",
@@ -264,7 +264,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1712473596733,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 25.293877932962715,
@@ -280,8 +280,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 362,
-			"versionNonce": 1486550602,
+			"version": 363,
+			"versionNonce": 170232662,
 			"isDeleted": false,
 			"id": "zATQgjeO",
 			"fillStyle": "hachure",
@@ -310,7 +310,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 25.26315789473683,
@@ -326,8 +326,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "embeddable",
-			"version": 100,
-			"versionNonce": 1265494870,
+			"version": 101,
+			"versionNonce": 1028390154,
 			"isDeleted": false,
 			"id": "VB2HOsuD_WHVo9SrjfaEa",
 			"fillStyle": "hachure",
@@ -349,7 +349,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": "https://medium.com/@philipp.brunenberg/understanding-apache-spark-hash-shuffle-b9aed2d587b0",
 			"locked": false,
 			"scale": [
@@ -359,8 +359,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 82,
-			"versionNonce": 1530502410,
+			"version": 83,
+			"versionNonce": 189116566,
 			"isDeleted": false,
 			"id": "RRuSFIIYJTjtc4J48l8Yp",
 			"fillStyle": "hachure",
@@ -395,14 +395,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"id": "Wl0WMcKy"
 				}
 			],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 290,
-			"versionNonce": 1149374614,
+			"version": 291,
+			"versionNonce": 2040253386,
 			"isDeleted": false,
 			"id": "Wl0WMcKy",
 			"fillStyle": "hachure",
@@ -422,7 +422,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190990,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -438,8 +438,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1319,
-			"versionNonce": 548231969,
+			"version": 1322,
+			"versionNonce": 1471098326,
 			"isDeleted": false,
 			"id": "tdhpmyk1w6ZHjFgI5tb-L",
 			"fillStyle": "hachure",
@@ -461,7 +461,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858342,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -490,8 +490,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 1409,
-			"versionNonce": 1016579809,
+			"version": 1412,
+			"versionNonce": 545505930,
 			"isDeleted": false,
 			"id": "yLA_Bww1lYOWEG7R_T17A",
 			"fillStyle": "hachure",
@@ -513,7 +513,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858343,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -542,8 +542,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 162,
-			"versionNonce": 394879626,
+			"version": 163,
+			"versionNonce": 1819738902,
 			"isDeleted": false,
 			"id": "DALM_EuqnZjUNpc7BxYaB",
 			"fillStyle": "solid",
@@ -578,14 +578,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 192,
-			"versionNonce": 169566998,
+			"version": 193,
+			"versionNonce": 2092884298,
 			"isDeleted": false,
 			"id": "NPmy1VTC",
 			"fillStyle": "hachure",
@@ -605,7 +605,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -621,8 +621,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 218,
-			"versionNonce": 1108377930,
+			"version": 219,
+			"versionNonce": 1544695894,
 			"isDeleted": false,
 			"id": "vJvGV98mYjoDRY2-D3fWy",
 			"fillStyle": "hachure",
@@ -644,14 +644,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "line",
-			"version": 100,
-			"versionNonce": 103452758,
+			"version": 101,
+			"versionNonce": 1235757066,
 			"isDeleted": false,
 			"id": "Z5Lz88gJO0Z36mcOZzwae",
 			"fillStyle": "hachure",
@@ -673,7 +673,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -694,8 +694,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "line",
-			"version": 118,
-			"versionNonce": 868599818,
+			"version": 119,
+			"versionNonce": 576042390,
 			"isDeleted": false,
 			"id": "oiP38NmNSgPRgfwWrgjgk",
 			"fillStyle": "hachure",
@@ -717,7 +717,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -738,8 +738,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "line",
-			"version": 110,
-			"versionNonce": 711071126,
+			"version": 111,
+			"versionNonce": 523933386,
 			"isDeleted": false,
 			"id": "K7zCWmjjLhn5Ymw7EsX7U",
 			"fillStyle": "hachure",
@@ -761,7 +761,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -782,8 +782,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 190,
-			"versionNonce": 234918657,
+			"version": 191,
+			"versionNonce": 2021036758,
 			"isDeleted": false,
 			"id": "ss7mnIys",
 			"fillStyle": "hachure",
@@ -808,7 +808,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1717399855630,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 15.7894736842105,
@@ -824,8 +824,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 210,
-			"versionNonce": 2146890454,
+			"version": 211,
+			"versionNonce": 1578184074,
 			"isDeleted": false,
 			"id": "yEQBlUBQ",
 			"fillStyle": "hachure",
@@ -850,7 +850,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 16.711962961619193,
@@ -866,8 +866,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 499,
-			"versionNonce": 1042956961,
+			"version": 502,
+			"versionNonce": 688506902,
 			"isDeleted": false,
 			"id": "L2PGgG5dHo1QgEU0A45sC",
 			"fillStyle": "hachure",
@@ -889,7 +889,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858345,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -918,8 +918,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 281,
-			"versionNonce": 561915926,
+			"version": 282,
+			"versionNonce": 459729994,
 			"isDeleted": false,
 			"id": "-iPbTJESz2Q6XjR58ss9f",
 			"fillStyle": "hachure",
@@ -941,14 +941,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "rectangle",
-			"version": 194,
-			"versionNonce": 1525189706,
+			"version": 195,
+			"versionNonce": 1678005590,
 			"isDeleted": false,
 			"id": "ZOEQ0tH1iR0da3GpL6XIE",
 			"fillStyle": "solid",
@@ -983,14 +983,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 212,
-			"versionNonce": 250393942,
+			"version": 213,
+			"versionNonce": 219599626,
 			"isDeleted": false,
 			"id": "dQI20SQX",
 			"fillStyle": "hachure",
@@ -1010,7 +1010,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1026,8 +1026,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 438,
-			"versionNonce": 1480026657,
+			"version": 441,
+			"versionNonce": 314260118,
 			"isDeleted": false,
 			"id": "izPh5encIbKc-3iHDP0sr",
 			"fillStyle": "solid",
@@ -1049,7 +1049,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858348,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1078,8 +1078,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 341,
-			"versionNonce": 1044830607,
+			"version": 342,
+			"versionNonce": 1973150154,
 			"isDeleted": false,
 			"id": "2ADQjYT7",
 			"fillStyle": "solid",
@@ -1099,7 +1099,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855633,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1115,8 +1115,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 182,
-			"versionNonce": 1364757217,
+			"version": 183,
+			"versionNonce": 736327638,
 			"isDeleted": false,
 			"id": "8rFGr3eC",
 			"fillStyle": "solid",
@@ -1136,7 +1136,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855634,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1152,8 +1152,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 276,
-			"versionNonce": 1987235759,
+			"version": 277,
+			"versionNonce": 269555850,
 			"isDeleted": false,
 			"id": "VzZypjhL",
 			"fillStyle": "solid",
@@ -1173,7 +1173,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855637,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 14.10526315789485,
@@ -1189,8 +1189,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 328,
-			"versionNonce": 1870051466,
+			"version": 329,
+			"versionNonce": 127012118,
 			"isDeleted": false,
 			"id": "75c51V2QzEAqv7Srgx6za",
 			"fillStyle": "hachure",
@@ -1225,14 +1225,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 167,
-			"versionNonce": 1926655254,
+			"version": 168,
+			"versionNonce": 2083616586,
 			"isDeleted": false,
 			"id": "grQz5EwG",
 			"fillStyle": "solid",
@@ -1252,7 +1252,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1268,8 +1268,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 731,
-			"versionNonce": 78959009,
+			"version": 736,
+			"versionNonce": 859568726,
 			"isDeleted": false,
 			"id": "Whbq0M-5PoxYZ2Huve9Au",
 			"fillStyle": "solid",
@@ -1291,7 +1291,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858351,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1320,8 +1320,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 651,
-			"versionNonce": 1226022241,
+			"version": 656,
+			"versionNonce": 710409738,
 			"isDeleted": false,
 			"id": "77vY-qNkLkLwBM2o2HzhQ",
 			"fillStyle": "solid",
@@ -1343,7 +1343,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858352,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1372,8 +1372,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 431,
-			"versionNonce": 1691721226,
+			"version": 432,
+			"versionNonce": 1169571734,
 			"isDeleted": false,
 			"id": "R2U3VydDkTMdNIKw3EsHS",
 			"fillStyle": "solid",
@@ -1408,14 +1408,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 254,
-			"versionNonce": 862101398,
+			"version": 255,
+			"versionNonce": 1199549642,
 			"isDeleted": false,
 			"id": "MdapwiCt",
 			"fillStyle": "solid",
@@ -1435,7 +1435,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1451,8 +1451,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 856,
-			"versionNonce": 1770158369,
+			"version": 859,
+			"versionNonce": 859167958,
 			"isDeleted": false,
 			"id": "7LcR-NauLucK90nvuufcG",
 			"fillStyle": "solid",
@@ -1474,7 +1474,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858354,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1503,8 +1503,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 552,
-			"versionNonce": 1817590998,
+			"version": 553,
+			"versionNonce": 692290442,
 			"isDeleted": false,
 			"id": "jjc6fJ0OfMgPy2Z4CXlUy",
 			"fillStyle": "solid",
@@ -1535,14 +1535,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 374,
-			"versionNonce": 1490625418,
+			"version": 375,
+			"versionNonce": 558879254,
 			"isDeleted": false,
 			"id": "w6Iq9SnH",
 			"fillStyle": "solid",
@@ -1562,7 +1562,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1578,8 +1578,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 572,
-			"versionNonce": 392442390,
+			"version": 573,
+			"versionNonce": 970883658,
 			"isDeleted": false,
 			"id": "miGWRGi71Z0Hur-egiOYE",
 			"fillStyle": "solid",
@@ -1614,14 +1614,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 399,
-			"versionNonce": 633348682,
+			"version": 400,
+			"versionNonce": 989405014,
 			"isDeleted": false,
 			"id": "fPQXoKrV",
 			"fillStyle": "solid",
@@ -1641,7 +1641,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1657,8 +1657,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 582,
-			"versionNonce": 222127329,
+			"version": 585,
+			"versionNonce": 1680582922,
 			"isDeleted": false,
 			"id": "pjtODo5pl-owDTxml6xKf",
 			"fillStyle": "solid",
@@ -1680,7 +1680,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858355,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1709,8 +1709,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 786,
-			"versionNonce": 1015046305,
+			"version": 789,
+			"versionNonce": 75941014,
 			"isDeleted": false,
 			"id": "RT0iWn0hXhSYb49iOzYI5",
 			"fillStyle": "solid",
@@ -1732,7 +1732,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1717399858356,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1761,8 +1761,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 390,
-			"versionNonce": 151200918,
+			"version": 391,
+			"versionNonce": 2141583306,
 			"isDeleted": false,
 			"id": "jcfNzIZfQ-P2D-SIUOAY-",
 			"fillStyle": "hachure",
@@ -1789,14 +1789,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"id": "9t8P9BGS"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 229,
-			"versionNonce": 1470076874,
+			"version": 230,
+			"versionNonce": 799916502,
 			"isDeleted": false,
 			"id": "9t8P9BGS",
 			"fillStyle": "solid",
@@ -1816,7 +1816,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1832,8 +1832,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 536,
-			"versionNonce": 631120342,
+			"version": 537,
+			"versionNonce": 1013477002,
 			"isDeleted": false,
 			"id": "CFiTe8YnaROUs4LizF41U",
 			"fillStyle": "hachure",
@@ -1855,14 +1855,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 3
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 158,
-			"versionNonce": 2057733825,
+			"version": 159,
+			"versionNonce": 1870862102,
 			"isDeleted": false,
 			"id": "NRlF12hV",
 			"fillStyle": "solid",
@@ -1882,7 +1882,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855637,
+			"updated": 1737014272816,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1898,8 +1898,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 157,
-			"versionNonce": 1308295631,
+			"version": 158,
+			"versionNonce": 254676298,
 			"isDeleted": false,
 			"id": "vx5PT4yf",
 			"fillStyle": "solid",
@@ -1928,7 +1928,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1717399855638,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1944,8 +1944,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 184,
-			"versionNonce": 1686767265,
+			"version": 185,
+			"versionNonce": 1283179606,
 			"isDeleted": false,
 			"id": "usiFav72",
 			"fillStyle": "solid",
@@ -1965,7 +1965,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855638,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1981,8 +1981,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 351,
-			"versionNonce": 164897878,
+			"version": 352,
+			"versionNonce": 491901962,
 			"isDeleted": false,
 			"id": "YisGBxNhiQGLjb8JbFLtg",
 			"fillStyle": "solid",
@@ -2015,14 +2015,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 293,
-			"versionNonce": 100134895,
+			"version": 294,
+			"versionNonce": 2020395414,
 			"isDeleted": false,
 			"id": "RW60pcrQ",
 			"fillStyle": "solid",
@@ -2044,7 +2044,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855639,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2060,8 +2060,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 58,
-			"versionNonce": 1773308545,
+			"version": 59,
+			"versionNonce": 684638922,
 			"isDeleted": false,
 			"id": "3dskBaTI",
 			"fillStyle": "solid",
@@ -2081,7 +2081,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855640,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2097,8 +2097,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 92,
-			"versionNonce": 678566415,
+			"version": 93,
+			"versionNonce": 579544790,
 			"isDeleted": false,
 			"id": "ZGSHiltx",
 			"fillStyle": "solid",
@@ -2118,7 +2118,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855640,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2134,8 +2134,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 269,
-			"versionNonce": 1658819169,
+			"version": 270,
+			"versionNonce": 2084559242,
 			"isDeleted": false,
 			"id": "MprMud7S",
 			"fillStyle": "solid",
@@ -2155,7 +2155,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1717399855641,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2171,8 +2171,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 402,
-			"versionNonce": 70613386,
+			"version": 403,
+			"versionNonce": 1265359894,
 			"isDeleted": false,
 			"id": "dQNJ3rkcmTTAKGhACn0ZV",
 			"fillStyle": "solid",
@@ -2194,7 +2194,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2223,8 +2223,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 176,
-			"versionNonce": 1784807471,
+			"version": 177,
+			"versionNonce": 1457526858,
 			"isDeleted": false,
 			"id": "de9w8rht",
 			"fillStyle": "hachure",
@@ -2237,7 +2237,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"y": 1932.4569660772636,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 755.791259765625,
+			"width": 781.3636474609375,
 			"height": 57.56181246836163,
 			"seed": 24306,
 			"groupIds": [],
@@ -2249,24 +2249,24 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1717399855644,
-			"link": "[[Spark Native列式Shuffle.pptx]]",
+			"updated": 1737014272817,
+			"link": "[[../../../Huawei/OmniRuntime/Spark%20Native%E5%88%97%E5%BC%8FShuffle.pptx]]",
 			"locked": false,
 			"fontSize": 47.968177056968024,
 			"fontFamily": 4,
-			"text": "📍[[Spark Native列式Shuffle.pptx]]",
-			"rawText": "[[Spark Native列式Shuffle.pptx]]",
+			"text": "📍[[[Spark Native列式Shuffle.pptx]]",
+			"rawText": "[[Spark Native列式Shuffle.pptx](../../../Huawei/OmniRuntime/Spark%20Native%E5%88%97%E5%BC%8FShuffle.pptx)",
 			"textAlign": "center",
 			"verticalAlign": "top",
 			"containerId": null,
-			"originalText": "📍[[Spark Native列式Shuffle.pptx]]",
+			"originalText": "📍[[[Spark Native列式Shuffle.pptx]]",
 			"lineHeight": 1.2,
 			"baseline": 45
 		},
 		{
 			"type": "arrow",
-			"version": 188,
-			"versionNonce": 253868106,
+			"version": 193,
+			"versionNonce": 1351903126,
 			"isDeleted": false,
 			"id": "PYE_0NkjbmzhEQ-LXpfHy",
 			"fillStyle": "solid",
@@ -2275,11 +2275,11 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 862.9580152534143,
+			"x": 876.7281975897347,
 			"y": 1834.4910569863546,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 51.36181190775119,
+			"width": 57.51361864522801,
 			"height": 92.00000000000045,
 			"seed": 2030557546,
 			"groupIds": [],
@@ -2288,7 +2288,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014286446,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2310,15 +2310,15 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					0
 				],
 				[
-					51.36181190775119,
+					57.51361864522801,
 					92.00000000000045
 				]
 			]
 		},
 		{
 			"type": "embeddable",
-			"version": 297,
-			"versionNonce": 925649238,
+			"version": 298,
+			"versionNonce": 1485471498,
 			"isDeleted": false,
 			"id": "V_k65EI6JDJ0dU-0s3kNF",
 			"fillStyle": "solid",
@@ -2345,7 +2345,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": "https://blog.csdn.net/lidongmeng0213/article/details/109409210",
 			"locked": false,
 			"scale": [
@@ -2355,8 +2355,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 399,
-			"versionNonce": 331335626,
+			"version": 400,
+			"versionNonce": 715673238,
 			"isDeleted": false,
 			"id": "s8Ijd5vfARR8PHVta8CY5",
 			"fillStyle": "solid",
@@ -2383,7 +2383,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"id": "PgImpot8"
 				}
 			],
-			"updated": 1712473706398,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2412,8 +2412,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "text",
-			"version": 2,
-			"versionNonce": 1799321866,
+			"version": 3,
+			"versionNonce": 1840909770,
 			"isDeleted": false,
 			"id": "PgImpot8",
 			"fillStyle": "solid",
@@ -2433,7 +2433,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1712473705580,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2449,8 +2449,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 605,
-			"versionNonce": 616869526,
+			"version": 618,
+			"versionNonce": 1308637642,
 			"isDeleted": false,
 			"id": "Dt-OLJhVo9-wX5PQSFl8x",
 			"fillStyle": "solid",
@@ -2459,11 +2459,11 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -901.1711396195313,
+			"x": -900.478790243478,
 			"y": 2224.7013286317288,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 11.924423370318777,
+			"width": 11.764643866946358,
 			"height": 139.7058086533625,
 			"seed": 2054285622,
 			"groupIds": [],
@@ -2472,7 +2472,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014282683,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2494,15 +2494,15 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					0
 				],
 				[
-					11.924423370318777,
+					11.764643866946358,
 					139.7058086533625
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 321,
-			"versionNonce": 1692442177,
+			"version": 322,
+			"versionNonce": 998884490,
 			"isDeleted": false,
 			"id": "engw6p6o",
 			"fillStyle": "solid",
@@ -2531,7 +2531,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1717399855649,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2547,8 +2547,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 645,
-			"versionNonce": 18300581,
+			"version": 646,
+			"versionNonce": 1850351894,
 			"isDeleted": false,
 			"id": "EiuvY9OY5ogIeuKBU7PK5",
 			"fillStyle": "solid",
@@ -2570,7 +2570,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715223330128,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2599,8 +2599,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "arrow",
-			"version": 386,
-			"versionNonce": 624531813,
+			"version": 387,
+			"versionNonce": 196387658,
 			"isDeleted": false,
 			"id": "HcNhqWClRqF_WH6r7HGpa",
 			"fillStyle": "solid",
@@ -2622,7 +2622,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1715223330129,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2651,8 +2651,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 63,
-			"versionNonce": 349077782,
+			"version": 64,
+			"versionNonce": 835817046,
 			"isDeleted": false,
 			"id": "sMecAvQ0Z24r3yxVssl9_",
 			"fillStyle": "solid",
@@ -2679,14 +2679,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "arrow",
-			"version": 72,
-			"versionNonce": 1176912714,
+			"version": 73,
+			"versionNonce": 949332490,
 			"isDeleted": false,
 			"id": "k_gvwaHCVNIQC_zmgs15-",
 			"fillStyle": "solid",
@@ -2708,7 +2708,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -2737,8 +2737,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "image",
-			"version": 11,
-			"versionNonce": 1221193302,
+			"version": 12,
+			"versionNonce": 75060118,
 			"isDeleted": false,
 			"id": "i5kBrlwS",
 			"fillStyle": "hachure",
@@ -2758,7 +2758,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -2770,8 +2770,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "rectangle",
-			"version": 44,
-			"versionNonce": 1943226890,
+			"version": 45,
+			"versionNonce": 422041802,
 			"isDeleted": false,
 			"id": "BxKSYaDIcXvzqPTatvR6G",
 			"fillStyle": "solid",
@@ -2802,14 +2802,14 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "image",
-			"version": 64,
-			"versionNonce": 1566946198,
+			"version": 65,
+			"versionNonce": 1349939414,
 			"isDeleted": false,
 			"id": "yq9bTB0vZ_jaDps2pz1xE",
 			"fillStyle": "solid",
@@ -2842,7 +2842,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 					"type": "arrow"
 				}
 			],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -2854,8 +2854,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "image",
-			"version": 57,
-			"versionNonce": 1538357450,
+			"version": 58,
+			"versionNonce": 1829121930,
 			"isDeleted": false,
 			"id": "vHSezlvtD2HmRk_OMRjaQ",
 			"fillStyle": "solid",
@@ -2875,7 +2875,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -2887,8 +2887,8 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		},
 		{
 			"type": "image",
-			"version": 101,
-			"versionNonce": 215404758,
+			"version": 102,
+			"versionNonce": 1901979158,
 			"isDeleted": false,
 			"id": "xk1ElFM6",
 			"fillStyle": "hachure",
@@ -2908,7 +2908,7 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1709260190991,
+			"updated": 1737014272817,
 			"link": null,
 			"locked": false,
 			"status": "pending",
@@ -2917,6 +2917,122 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 				1,
 				1
 			]
+		},
+		{
+			"id": "ScXTJKff1hyL2MVYN65kt",
+			"type": "freedraw",
+			"x": 36.29415101477571,
+			"y": 2339.272902082467,
+			"width": 175.20961796685128,
+			"height": 46.722564791160494,
+			"angle": 0,
+			"strokeColor": "#e03131",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1404673994,
+			"version": 13,
+			"versionNonce": 1215016522,
+			"isDeleted": true,
+			"boundElements": null,
+			"updated": 1737014272817,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					11.680641197790237,
+					4.380240449171652
+				],
+				[
+					29.20160299447525,
+					10.220561048066429
+				],
+				[
+					46.722564791160266,
+					14.600801497237626
+				],
+				[
+					70.08384718674051,
+					20.441122096132858
+				],
+				[
+					97.82537003149196,
+					26.28144269502809
+				],
+				[
+					132.8672936248622,
+					36.502003743094065
+				],
+				[
+					154.76849587071865,
+					42.3423243419893
+				],
+				[
+					173.74953781712748,
+					46.722564791160494
+				],
+				[
+					175.20961796685128,
+					46.722564791160494
+				],
+				[
+					175.20961796685128,
+					46.722564791160494
+				]
+			],
+			"pressures": [],
+			"simulatePressure": true,
+			"lastCommittedPoint": [
+				175.20961796685128,
+				46.722564791160494
+			]
+		},
+		{
+			"id": "SyDlvvm9",
+			"type": "text",
+			"x": 117.07254969875385,
+			"y": 2435.6381919642354,
+			"width": 7.8125,
+			"height": 24,
+			"angle": 0,
+			"strokeColor": "#e03131",
+			"backgroundColor": "transparent",
+			"fillStyle": "solid",
+			"strokeWidth": 1,
+			"strokeStyle": "solid",
+			"roughness": 1,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 1327487126,
+			"version": 4,
+			"versionNonce": 304316426,
+			"isDeleted": true,
+			"boundElements": null,
+			"updated": 1737014281883,
+			"link": null,
+			"locked": false,
+			"text": "",
+			"rawText": "",
+			"fontSize": 20,
+			"fontFamily": 4,
+			"textAlign": "center",
+			"verticalAlign": "top",
+			"baseline": 19,
+			"containerId": null,
+			"originalText": "",
+			"lineHeight": 1.2
 		}
 	],
 	"appState": {
@@ -2934,10 +3050,10 @@ e4eb39e08814d5189208887ec133cbc78383c8cf: [[绘图/attachments/Pasted Image 2024
 		"currentItemTextAlign": "center",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1584.0393838451778,
-		"scrollY": -974.4278397302602,
+		"scrollX": 1262.4471421645087,
+		"scrollY": -963.7177047763096,
 		"zoom": {
-			"value": 0.8348939081797636
+			"value": 0.6848939081797635
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
