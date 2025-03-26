@@ -73,7 +73,7 @@ PS：要想sql执行的快，加快算子执行速度是一个重要方向，而
 所谓火山模型的本质是一个operator的输出是另一个operator的输入，一般通过迭代器模式的next（Spark）或者addInput/getOutput（Presto）来实现
 在数据库中火山模型的输入是one row，而在大数据引擎中，输入为一个vectorbatch，便于对每个vector进行批量操作，顾常被叫做 **“向量化执行”模式** 
 
-![[attachments/大数据分析算子算法分析 2025-01-17 11.49.05.excalidraw|10%]]
+![[attachments/大数据分析算子算法分析 2025-01-17 11.49.05.excalidraw|20%]]
 
 这里的operator一般是通过多态实现的，代码上是通过父类operator来操作各子类，因而存在一定的虚函数开销。
 为了减少虚函数的开销，产生了另外一种执行模式：Codegen
@@ -92,7 +92,7 @@ SQL引擎的算子执行也采用Pipeline理念。
 所以我们所说的吞吐就是理论吞吐，其实就是算子处理数据所花费的时间。
 下面通过算子吞吐提升与下降两种场景来分析对Pipeline性能的影响。
 
-![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-21 20.37.22.excalidraw|40%]]
+![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-21 20.37.22.excalidraw]]
 ##### 算子吞吐提升
 假设从磁盘读取100GB，Scan由于做了优化（比如data cache等）吞吐从10GB/s提升到20GB/s，那么scan算子将加速5s
 **下游算子由于输入数据变快了，比如filter也将加速5s吗？----答案是No**
@@ -151,6 +151,7 @@ process1和process2算子执行速度下降3倍
 凡事无绝对，Pipeline算子吞吐也不例外，下述两种情况需要单独说明下算子之间的相互影响
 1. 在实际的执行引擎中，往往还存在block机制，比如在Presto中，Join的probe侧需要block直到build侧完成，统计Join probe算子时间的时候，join的probe一般会加上block time，但这个block time就完全受build的执行时间影响，可以算做上游影响下游的一个特例。
 2. 上面也提到shuffle引起的背压机制，当下游不再接受数据时，上游的buffer可能需要额外申请内存来存储生产的数据，如果这部分buffer内存是之前从来没有申请过的，那么便会触发Page Fault，导致产生额外的开销，也可以算作上游影响下游的一个特例
+
 # 典型算子算法
 ## Scan
 Scan算子读取持久化的数据并经过解压缩、解码等操作转化为内存数据结构，主要处理的对象是ORC 和Parquet这两种大数据格式。
@@ -203,7 +204,7 @@ filter和project算子本质上都是求解表达式的过程
 由于其表达式可能非常复杂，遍历表达式与数据类型需要大量分支判断且性能不高，同时支持范围有限，因而软件上往往采取code gen的方式。
 codegen可以有效避免数据类型判断、分支判断与虚函数等操作，能有效提升数据处理性能。
 #### 代码生成过程
-![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-20 19.42.56.excalidraw|40%]]
+![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-20 19.42.56.excalidraw]]
 
 llvm生成的函数都是逐行处理的，很难生成向量化的函数。在向量化执行引擎中，代码生成对列式数据结构并不友好。
 
@@ -228,7 +229,7 @@ UDF是为了满足用户的业务逻辑而编写的自定义函数，主要包�
 
 HashAgg简而言之，根据某些列进行分组，然后根据分组后的结果，针对部分列做聚合运算。
 这个过程主要通过实现一个高度优化、定制化的hashtable来完成。
-![[attachments/大数据分析算子算法分析 2025-01-17 15.19.31.excalidraw|40%]]
+![[attachments/大数据分析算子算法分析 2025-01-17 15.19.31.excalidraw]]
 #### 算法过程
 HashAgg 算子的实现主要步骤如下：
 1. 输入一个vectorbatch，计算 group by 列的hash 值，根据group by列的个数与大小可以分为三种情况：
@@ -268,7 +269,7 @@ presto 在传给 LookupJoinOperatorFactory 的类中，附带了所有的 build 
 HashJoin 算子主要分为两个阶段：build和probe
 
 #### 构建 HashTable
-![[attachments/大数据分析算子算法分析 2025-01-20 10.53.50.excalidraw|40%]]
+![[attachments/大数据分析算子算法分析 2025-01-20 10.53.50.excalidraw]]
 ##### 算法过程
 1. 接受输入 VB，构建出 PageIndex，即编码得到valuesAdress
 2. 计算每列的 join key 的 hash 值，如果多列，则求 combineHash 值
@@ -285,7 +286,7 @@ HashJoin 算子主要分为两个阶段：build和probe
 如上图的hash table array可以简化为下图，其他不变：![[attachments/大数据分析算子算法分析 2025-01-20 11.25.44.excalidraw]]
 #### Probe  过程
 ##### 算法过程
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 11.58.33.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 11.58.33.excalidraw]]
 
 1. probe 侧输入一个 vectorBatch，计算出整个 vectorBatch 列对应 join key 的 hash 值
 2. 对 probe 的每一行，计算出 probe 行的 hash 值，如果build侧 slot[hash]不为空，且probe侧值与 build侧 数据行侧相同
@@ -301,7 +302,7 @@ HashJoin 算子主要分为两个阶段：build和probe
  
 ## HashTable 归一
 由于HashAgg与HashJoin均是基于hashtable完成主要计算逻辑的算子，因此有必要考虑二者共用同一套hashtable，以便简化维护代价
-![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-21 17.16.07.excalidraw|40%]]
+![[attachments/万字长文一次性搞懂常见大数据算子算法 2025-01-21 17.16.07.excalidraw]]
 #### 共同点
 1. hashtable 计算hash的方式相同，根据key 列的size来选择是否序列化，一般采用crc32 hash或者MurmurHash
 2. slot存储的信息如Key、Hash等字段相同，特别的agg存储了State，而Join存储了batchID和rowID
@@ -311,7 +312,7 @@ HashJoin 算子主要分为两个阶段：build和probe
 3. null：hashagg中空值为一个组别，需要计算state，而join中只要key列中有一列为null，那么就不应该join上
 
 ## Sort  
-![[attachments/大数据分析算子算法分析 2025-01-20 09.56.19.excalidraw|40%]]
+![[attachments/大数据分析算子算法分析 2025-01-20 09.56.19.excalidraw]]
 
 Sort 主要对全量数据进行排序，其重点是如何在大数据量下组织数据进行排序。
 #### 算法过程
@@ -326,7 +327,7 @@ Sort 算子主要需要累积数据，然后根据 Sort Key 进行快排。
 ## SortMergeJoin
 
 #### 算法过程
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 14.36.43.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 14.36.43.excalidraw]]
 sort merge join主要涉及3个步骤：
 1. 待join的两表的按照分区分别排序，并采用range shuffle将相同range分区到同一个节点
 2. merge sort算子的游标根据join key在两表上移动
@@ -337,7 +338,7 @@ sort merge join主要涉及3个步骤：
 上述两种join算法适用于join的build和probe表都较大的时候，如果其中一个表的size较小，比如小于10MB，那么可以将小表广播到各task中，直接进行小表和大表的join，以避免hash运算以及shuffle操作，从而大幅提升性能。
 
 BHJ算法构建hash与probe的过程与HashJoin类似，区别在于第一步，driver需要广播小表的数据到各executor。
-![[attachments/万字长文搞懂常见大数据分析算子算法 2025-01-20 17.34.54.excalidraw|40%]]
+![[attachments/万字长文搞懂常见大数据分析算子算法 2025-01-20 17.34.54.excalidraw]]
 
 ## Shuffle
 
@@ -349,22 +350,22 @@ shuffle一般用于切分stage，在spark中也是可靠性的承载算子。
 **可以说，shuffle算子是Spark与Presto的最大不同，二者存在根本性区别，而其他算子二者则都存在相互借鉴的地方，甚至在最近的Trino版本上（Presto的分叉）也开始完善Stage by Stage的执行能力了，二者的差异日益缩小。
 而Clickhouse从立项伊始就对shuffle，特别是shuffle join支持不够**
 #### 基于线程的hash shuffle
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 14.58.09.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 14.58.09.excalidraw]]
 算法实现简单直接，每个task线程维度，按hashagg groupby或join key进行hash分桶
 最大的问题：单个节点上生成的小文件太多，比如map 200，reduce 200，executor 10，那么生成文件400000个，甚至可能超过linux默认的文件句柄上限（1048576）
 ##### Note
 1. **对于全内存的执行引擎，比如presto，不存在上图的file落盘操作，也就不存在小文件问题**
 2. 由于上游stage的输出各自独立，因而下游任务可以即时运行，将不同task的输出当做不同批次的输入，无需等待所有task执行完成，**从而形成pipeline，大幅提升性能**
 #### 基于进程的hash shuffle
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.12.51.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.12.51.excalidraw]]
 优化了每个task的输出，在executor维度即进程维度，按hashagg groupby或join key进行hash分桶
 最大的问题：由于跨线程共享分区buffer，需要多线程操作，增加了锁开销
 #### 基于reduce的hash shuffle
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.21.38.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.21.38.excalidraw]]
 基于进程的hash shuffle主要针对map进行优化，本算法针对的reduce进行优化，通过引入额外的index文件，来记录不同分区的offset
 相比而言，减少了多进程锁开销，但引入了额外的index，这是当前主流的hash shuffle方法
 #### sort shuffle
-![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.38.06.excalidraw|40%]]
+![[attachments/一文搞懂大数据分析算子算法 2025-01-20 15.38.06.excalidraw]]
 
 #### Note
 无论是hash shuffle还是sort shuffle，储存分区好或排序好数据的buffer的大小非常关键，需要平衡内存占用与性能来设置buffer大小，更大的buffer可以减少生成的file数量以及减少file合并次数，但同时意味着更高的内存占用
