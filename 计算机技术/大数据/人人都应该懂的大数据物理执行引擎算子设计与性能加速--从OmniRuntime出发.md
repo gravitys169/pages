@@ -78,7 +78,7 @@ PS：要想sql执行的快，加快算子执行速度是一个重要方向，而
 这里的operator一般是通过多态实现的，代码上是通过父类operator来操作各子类，因而存在一定的虚函数开销。
 为了减少虚函数的开销，产生了另外一种执行模式：Codegen
 即运行时根据算子种类、算子处理的数据类型等信息，直接生成stage级别的算子，在spark中叫做wholestage codegen
-除了减少虚函数开销，代码生成还有利于cache：上个算子处理外的数据可以尽快被下游算子处理，减少了内存物化 
+除了减少虚函数开销，代码生成还有利于cache：上个算子处理外的数据可以尽快被下游算子处理，减少了内存物化 。同时代码生成可以针对列式数据生成优化的标量代码，甚至结合循环展开和 SIMD 指令实现向量化执行
 
 #### Pipeline与算子吞吐
 Pipeline设计理念贯穿了计算机系统设计的各个领域，典型的如CPU的流水线设计。
@@ -174,8 +174,8 @@ ORC和Parquet在设计理念上有诸多类似之处，从逻辑上都是文件-
 Scan的过程是将持久化字节流转成可处理的内存字节流的过程，这其中涉及多次字节流的转换，比如压缩前后，解码前后（可能不止一次数据格式的转换），减少数据转换开销是提升性能的关键。
 #### 元数据
 Parquet与ORC格式的细微差别在于二者如何处理元数据以及提供索引粒度的不同。
-二者在file级别、Strepe/RowGroup级别都有元数据，用于统计行数、max/min/sum等信息。
-而不同点在于 ORC在Row Group（约10000行，与Parquet的row group概念不同）级别有统计信息
+二者在file级别、Stripe（orc）/RowGroup（Parquet）级别都有元数据，用于统计行数、max/min/sum等信息。
+而不同点在于 ORC在Row Group（约10000行，与Parquet的row group概念不同）级别有统计信息，而Parquet在 Column Chunk 级别的统计信息（如最大值、最小值）
 
 二者的对比如下表：
 
@@ -264,7 +264,7 @@ HashAgg 算子的实现主要步骤如下：
 Join 是指将两张表根据 join key 进行关联，并输出某些列的操作。
 presto 在传给 LookupJoinOperatorFactory 的类中，附带了所有的 build 侧的 hashtable 信息，在 probe 时，LookupJoinOperator 需要找到对应分区的 hashtable 进行 join。
 而 Spark 的实现则简单一些，一个 LookupJoinOperator 对应一个 hashtable，且当 hashtable 完成后，lookupJoinOp 才开始构建。
-二者的区别是presto一个task可能要处理多个分区，而spark一个task仅处理一个分区
+二者的区别是presto一个task可能要处理多个分区，而spark一个task仅处理一个分区（在某些优化场景（如 bucket join 或小分区合并）中，一个 task 可能处理多个分区。）
 
 HashJoin 算子主要分为两个阶段：build和probe
 
@@ -418,23 +418,25 @@ Rank/Row_Number/SUM/Max/(column3) OVER (PARTITION BY column1 ORDER BY column2 RA
 SIMD指令一般包含三个过程：
 1. load数据到向量寄存器
 2. 进行向量化计算，主要包括add、sub、mul、div等算术运算指令，and、or与xor等逻辑运算指令
-3. sotre回内存
+3. store回内存
 要使用SIMD指令，一般有两种方式
-1. 一种是依靠编译器自动生成SIMD指令，这要求编程时在循环中代码应尽量简单，仅包含可能向量化的运算，如add等；
-2. 另一种是显示的使用SIMD Intrinsics指令，比如mm256_loadu_ps、_mm256_add_ps、_mm256_storeu_ps等。
+4. 一种是依靠编译器自动生成SIMD指令，这要求编程时在循环中代码应尽量简单，仅包含可能向量化的运算，如add等；
+5. 另一种是显式的使用SIMD Intrinsics指令，比如mm256_loadu_ps、_mm256_add_ps、_mm256_storeu_ps等。
 
 在上面介绍的算子中不少都存在进行向量化优化的空间：
 1. 算子中涉及不少内存的批量操作，比如典型的shuffle Gather：同一VectorBatch中，Gather同一分区多个离散值到一个连续的分区buffer中
 2. Agg算子的Sum，Count运算可以通过SIMD add指令加速。
 3. Hash运算中涉及的异或等逻辑运算可以通过SIMD xor指令加速
 
+不过，向量化对数据对齐（alignment）和连续性要求较高，若数据离散存储（如变长类型的指针访问），需额外的 gather/scatter 操作，加速效果将打折扣。
+
 ## 内存优化
 内存优化是软件开发永恒的话题。
 对于Java、Go等具备垃圾回收型的语言，选择合适的GC算法，通过监测Full GC状态来评估对象New是否合理，是常规的调优方法；
 而对于C++，经典的内存坑就包括：
-1. 内存泄漏（忘delete、异常导致走不到delete）
+1. 内存泄漏（忘delete、异常导致走不到delete等）
 2. 悬空指针
-3. 重复释放
+3. double free
 
 另外选择合适的内存数据结构，以增强cache友好性，以及便于Cache Line预取，这是列式Vector大行其道的原因
 
