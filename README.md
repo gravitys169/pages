@@ -1,6 +1,8 @@
 # 目录
 
 - [Tips](Tips.md)
+- [Untitled_1](Untitled_1.md)
+- [Untitled_2](Untitled_2.md)
 - [Why_pages](Why_pages.md)
 - [milestone_of_myself](milestone_of_myself.md)
 - [业界大牛](业界大牛.md)
@@ -13,14 +15,18 @@
   - [健康](人文经史/健康.md)
   - [名言警句](人文经史/名言警句.md)
   - 职场人生
+    - [PLR](人文经史/职场人生/PLR.md)
     - [向优秀学习](人文经史/职场人生/向优秀学习.md)
     - [客户界面交流](人文经史/职场人生/客户界面交流.md)
     - [管理哲学](人文经史/职场人生/管理哲学.md)
     - [辩论](人文经史/职场人生/辩论.md)
     - [项目管理](人文经史/职场人生/项目管理.md)
 - 投资
+  - [AI投资课](投资/AI投资课.md)
   - [程序员的个人财富课](投资/程序员的个人财富课.md)
+  - [简报](投资/简报.md)
   - [警世恒言](投资/警世恒言.md)
+  - [量化开发](投资/量化开发.md)
   - 我的投资
     - [投资策略](投资/我的投资/投资策略.md)
   - 重远投资观
@@ -33,9 +39,10 @@
 - 计算机技术
   - [参考](计算机技术/参考.md)
   - [竞品分析](计算机技术/竞品分析.md)
-  - [量化开发](投资/量化开发.md)
   - AI
+    - [Deep_dive_into_LLMs_like_chatgpt--Andrej_Karpathy](计算机技术/AI/Deep_dive_into_LLMs_like_chatgpt--Andrej_Karpathy.md)
     - [How_LLM_works](计算机技术/AI/How_LLM_works.md)
+    - [LLM_Test_case](计算机技术/AI/LLM_Test_case.md)
     - [LLM原理](计算机技术/AI/LLM原理.md)
     - [华为产品](计算机技术/AI/华为产品.md)
     - [行业洞察](计算机技术/AI/行业洞察.md)
@@ -50,20 +57,49 @@
       - [数据合成.excalidraw](计算机技术/AI/Data4AI/数据合成.excalidraw.md)
       - [数据清洗算子](计算机技术/AI/Data4AI/数据清洗算子.md)
   - Coding
+    - [Git](计算机技术/Coding/Git.md)
     - [Start_from_a_project](计算机技术/Coding/Start_from_a_project.md)
   - 大数据
     - [HBase](计算机技术/大数据/HBase.md)
     - [HDFS](计算机技术/大数据/HDFS.md)
     - [Hands_on](计算机技术/大数据/Hands_on.md)
     - [Hive](计算机技术/大数据/Hive.md)
-    - [人人都应该懂的大数据物理执行引擎算子设计与性能加速--从OmniRuntime出发](计算机技术/大数据/人人都应该懂的大数据物理执行引擎算子设计与性能加速--从OmniRuntime出发.md)
-    - [OSS](计算机技术/大数据/OSS.md)
     - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
     - [Spark](计算机技术/大数据/Spark.md)
     - [Spark_Shuffle](计算机技术/大数据/Spark_Shuffle.md)
     - [Yarn](计算机技术/大数据/Yarn.md)
-    - [大数据技术概览](计算机技术/大数据/大数据技术概览.md)
+    - [人人都应该懂的大数据物理执行引擎算子设计与性能加速--从OmniRuntime出发](计算机技术/大数据/人人都应该懂的大数据物理执行引擎算子设计与性能加速--从OmniRuntime出发.md)
     - [性能调优](计算机技术/大数据/性能调优.md)
+    - attachments
+      - [一文搞懂大数据分析算子算法_2025-01-20_11.58.33.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_11.58.33.excalidraw.md)
+      - [一文搞懂大数据分析算子算法_2025-01-20_14.36.43.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_14.36.43.excalidraw.md)
+      - [一文搞懂大数据分析算子算法_2025-01-20_14.58.09.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_14.58.09.excalidraw.md)
+      - [一文搞懂大数据分析算子算法_2025-01-20_15.12.51.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_15.12.51.excalidraw.md)
+      - [一文搞懂大数据分析算子算法_2025-01-20_15.21.38.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_15.21.38.excalidraw.md)
+      - [一文搞懂大数据分析算子算法_2025-01-20_15.38.06.excalidraw](计算机技术/大数据/attachments/一文搞懂大数据分析算子算法_2025-01-20_15.38.06.excalidraw.md)
+      - [万字长文一次性搞懂常见大数据算子算法_2025-01-20_19.42.56.excalidraw](计算机技术/大数据/attachments/万字长文一次性搞懂常见大数据算子算法_2025-01-20_19.42.56.excalidraw.md)
+      - [万字长文一次性搞懂常见大数据算子算法_2025-01-21_17.16.07.excalidraw](计算机技术/大数据/attachments/万字长文一次性搞懂常见大数据算子算法_2025-01-21_17.16.07.excalidraw.md)
+      - [万字长文一次性搞懂常见大数据算子算法_2025-01-21_20.37.22.excalidraw](计算机技术/大数据/attachments/万字长文一次性搞懂常见大数据算子算法_2025-01-21_20.37.22.excalidraw.md)
+      - [万字长文搞懂常见大数据分析算子算法_2025-01-20_16.44.04.excalidraw](计算机技术/大数据/attachments/万字长文搞懂常见大数据分析算子算法_2025-01-20_16.44.04.excalidraw.md)
+      - [万字长文搞懂常见大数据分析算子算法_2025-01-20_16.51.26.excalidraw](计算机技术/大数据/attachments/万字长文搞懂常见大数据分析算子算法_2025-01-20_16.51.26.excalidraw.md)
+      - [万字长文搞懂常见大数据分析算子算法_2025-01-20_17.34.54.excalidraw](计算机技术/大数据/attachments/万字长文搞懂常见大数据分析算子算法_2025-01-20_17.34.54.excalidraw.md)
+      - [万字长文还不够？两万字一次性搞懂大数据物理执行算子_2025-01-23_15.31.50.excalidraw](计算机技术/大数据/attachments/万字长文还不够？两万字一次性搞懂大数据物理执行算子_2025-01-23_15.31.50.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_16.22.06.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_16.22.06.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_16.24.52.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_16.24.52.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_16.52.46.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_16.52.46.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_17.06.53.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_17.06.53.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_17.30.18.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_17.30.18.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_20.13.12.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_20.13.12.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_20.19.51.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_20.19.51.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-16_20.24.24.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-16_20.24.24.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-17_11.49.05.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-17_11.49.05.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-17_14.21.57.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-17_14.21.57.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-17_14.53.45.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-17_14.53.45.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-17_15.19.31.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-17_15.19.31.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-17_15.58.11.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-17_15.58.11.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-20_09.56.19.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-20_09.56.19.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-20_10.53.50.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-20_10.53.50.excalidraw.md)
+      - [大数据分析算子算法分析_2025-01-20_11.25.44.excalidraw](计算机技术/大数据/attachments/大数据分析算子算法分析_2025-01-20_11.25.44.excalidraw.md)
     - 绘图
       - [SQL_process_procedure](计算机技术/大数据/绘图/SQL_process_procedure.md)
   - 数据结构
@@ -72,6 +108,7 @@
     - [CXL](计算机技术/硬件/CXL.md)
     - [FPGA](计算机技术/硬件/FPGA.md)
     - [GPU](计算机技术/硬件/GPU.md)
+    - [Nvidia产品序列](计算机技术/硬件/Nvidia产品序列.md)
     - [光模块](计算机技术/硬件/光模块.md)
     - [半导体存储](计算机技术/硬件/半导体存储.md)
     - [存储硬件](计算机技术/硬件/存储硬件.md)
@@ -83,6 +120,9 @@
       - [每个程序员都应该了解的硬件知识--benchmark](计算机技术/硬件/CPU/每个程序员都应该了解的硬件知识--benchmark.md)
   - 网络
     - [Bus_or_Network](计算机技术/网络/Bus_or_Network.md)
+    - [SSH反向隧道实现：远程vscode-〉vps-〉macbook](计算机技术/网络/SSH反向隧道实现：远程vscode-〉vps-〉macbook.md)
+  - 软件工程
+    - [Git](计算机技术/软件工程/Git.md)
 - 读书笔记
   - 人文管理
     - [学会提问](读书笔记/人文管理/学会提问.md)
