@@ -48,6 +48,18 @@ def list_markdown_files(directory='.', output_file='README.md'):
 
     # 遍历目录及其子目录
     for root, dirs, files in os.walk(directory):
+        # 如果当前目录是attachments或者在attachments目录下，则跳过
+        # 使用os.path.normpath确保路径分隔符一致
+        normalized_root = os.path.normpath(root)
+        if 'attachments' in normalized_root.split(os.sep):
+            # 从dirs列表中移除attachments，防止进一步遍历
+            if 'attachments' in dirs:
+                dirs.remove('attachments')
+            continue  # 跳过当前attachments目录下的文件处理
+
+        # 过滤掉 'attachments' 目录本身，防止它被处理
+        dirs[:] = [d for d in dirs if d != 'attachments']
+
         for file in files:
             if file.endswith('.md') and file != 'README.md':  # 排除README.md本身
                 # 检查文件名是否包含空格
