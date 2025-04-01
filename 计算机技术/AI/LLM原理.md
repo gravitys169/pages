@@ -7,7 +7,9 @@ tags: [excalidraw]
 ==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
 
 
-# Text Elements
+# Excalidraw Data
+
+## Text Elements
 LLM ^O51oFMXA
 
 核心观点：
@@ -15,412 +17,59 @@ multi-head用于提取上下文信息并保存在多头层组成的多维向量�
 feed forward层用于模式匹配已知的知识
 训练出来的大模型类似一个将万亿知识封装在一层层的模型参数之后的预测体，能够根据前文预测下一个单词 ^lzoXgeSz
 
+## Element Links
+8OARNY4k: https://www.understandingai.org/p/large-language-models-explained-with
 
-# Embedded files
+## Embedded Files
 6faa1c67b4cff5c93f276c0818892038b88d2e0b: https://raw.githubusercontent.com/gravitys169/images_upload/master/202407101418032.jpg
 
 %%
-# Drawing
-```json
-{
-	"type": "excalidraw",
-	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.20",
-	"elements": [
-		{
-			"type": "rectangle",
-			"version": 20,
-			"versionNonce": 1333557984,
-			"isDeleted": false,
-			"id": "OE6B5MHtKxzX897J5jhT0",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 719.5,
-			"y": 559.15625,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 460,
-			"height": 143,
-			"seed": 655802144,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 3
-			},
-			"boundElements": [
-				{
-					"id": "rqw-zcjmMnAijQ2-rF1Jy",
-					"type": "arrow"
-				},
-				{
-					"type": "text",
-					"id": "O51oFMXA"
-				},
-				{
-					"id": "DYeBGH6Py9XowB42ZDeHy",
-					"type": "arrow"
-				}
-			],
-			"updated": 1720592528894,
-			"link": null,
-			"locked": false
-		},
-		{
-			"type": "text",
-			"version": 2,
-			"versionNonce": 52251360,
-			"isDeleted": false,
-			"id": "O51oFMXA",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 929.8600082397461,
-			"y": 618.15625,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 39.27998352050781,
-			"height": 25,
-			"seed": 373980960,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1720592523031,
-			"link": null,
-			"locked": false,
-			"fontSize": 20,
-			"fontFamily": 1,
-			"text": "LLM",
-			"rawText": "LLM",
-			"textAlign": "center",
-			"verticalAlign": "middle",
-			"containerId": "OE6B5MHtKxzX897J5jhT0",
-			"originalText": "LLM",
-			"lineHeight": 1.25,
-			"baseline": 18
-		},
-		{
-			"type": "embeddable",
-			"version": 72,
-			"versionNonce": 1536551648,
-			"isDeleted": false,
-			"id": "_QdEzsiKGTcZeRaflsc8K",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 1610.5,
-			"y": 123.15625,
-			"strokeColor": "transparent",
-			"backgroundColor": "transparent",
-			"width": 638.9999999999999,
-			"height": 840,
-			"seed": 343282400,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 3
-			},
-			"boundElements": [
-				{
-					"id": "rqw-zcjmMnAijQ2-rF1Jy",
-					"type": "arrow"
-				},
-				{
-					"id": "uIQUXaF-fOIyAswsmu7N_",
-					"type": "arrow"
-				}
-			],
-			"updated": 1720592741195,
-			"link": "https://www.understandingai.org/p/large-language-models-explained-with",
-			"locked": false,
-			"scale": [
-				1,
-				1
-			]
-		},
-		{
-			"type": "arrow",
-			"version": 138,
-			"versionNonce": 2027283168,
-			"isDeleted": false,
-			"id": "rqw-zcjmMnAijQ2-rF1Jy",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 1172.1425229387612,
-			"y": 540.15625,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 423.35747706123925,
-			"height": 62.75006580274487,
-			"seed": 293852960,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"boundElements": [],
-			"updated": 1720592870778,
-			"link": null,
-			"locked": false,
-			"startBinding": {
-				"elementId": "OE6B5MHtKxzX897J5jhT0",
-				"gap": 19,
-				"focus": -0.5445567294441892
-			},
-			"endBinding": {
-				"elementId": "_QdEzsiKGTcZeRaflsc8K",
-				"gap": 15,
-				"focus": 0.24677033492822967
-			},
-			"lastCommittedPoint": null,
-			"startArrowhead": null,
-			"endArrowhead": "arrow",
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					423.35747706123925,
-					-62.75006580274487
-				]
-			]
-		},
-		{
-			"type": "image",
-			"version": 113,
-			"versionNonce": 19291936,
-			"isDeleted": false,
-			"id": "NK90umyf",
-			"fillStyle": "hachure",
-			"strokeWidth": 1,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 5.376379690949193,
-			"y": 224.15625,
-			"strokeColor": "#000000",
-			"backgroundColor": "transparent",
-			"width": 521.2472406181016,
-			"height": 657.7298050139276,
-			"seed": 90420,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [
-				{
-					"id": "DYeBGH6Py9XowB42ZDeHy",
-					"type": "arrow"
-				}
-			],
-			"updated": 1720592562719,
-			"link": null,
-			"locked": false,
-			"status": "pending",
-			"fileId": "6faa1c67b4cff5c93f276c0818892038b88d2e0b",
-			"scale": [
-				1,
-				1
-			]
-		},
-		{
-			"type": "arrow",
-			"version": 142,
-			"versionNonce": 1126345440,
-			"isDeleted": false,
-			"id": "DYeBGH6Py9XowB42ZDeHy",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 701.5,
-			"y": 593.4172464446558,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 165,
-			"height": 5.890529950417772,
-			"seed": 633917216,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"boundElements": [],
-			"updated": 1720592870779,
-			"link": null,
-			"locked": false,
-			"startBinding": {
-				"elementId": "OE6B5MHtKxzX897J5jhT0",
-				"gap": 18,
-				"focus": 0.3547797592790976
-			},
-			"endBinding": {
-				"elementId": "NK90umyf",
-				"gap": 9.876379690949193,
-				"focus": 0.0734799737146603
-			},
-			"lastCommittedPoint": null,
-			"startArrowhead": null,
-			"endArrowhead": "arrow",
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					-165,
-					-5.890529950417772
-				]
-			]
-		},
-		{
-			"type": "text",
-			"version": 112,
-			"versionNonce": 1381210912,
-			"isDeleted": false,
-			"id": "lzoXgeSz",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 836.5,
-			"y": -57.84375,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 960,
-			"height": 100,
-			"seed": 1158650592,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [
-				{
-					"id": "uIQUXaF-fOIyAswsmu7N_",
-					"type": "arrow"
-				}
-			],
-			"updated": 1720592889839,
-			"link": null,
-			"locked": false,
-			"fontSize": 20,
-			"fontFamily": 1,
-			"text": "核心观点：\nmulti-head用于提取上下文信息并保存在多头层组成的多维向量中\nfeed forward层用于模式匹配已知的知识\n训练出来的大模型类似一个将万亿知识封装在一层层的模型参数之后的预测体，能够根据前文预测下一个单词",
-			"rawText": "核心观点：\nmulti-head用于提取上下文信息并保存在多头层组成的多维向量中\nfeed forward层用于模式匹配已知的知识\n训练出来的大模型类似一个将万亿知识封装在一层层的模型参数之后的预测体，能够根据前文预测下一个单词",
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"containerId": null,
-			"originalText": "核心观点：\nmulti-head用于提取上下文信息并保存在多头层组成的多维向量中\nfeed forward层用于模式匹配已知的知识\n训练出来的大模型类似一个将万亿知识封装在一层层的模型参数之后的预测体，能够根据前文预测下一个单词",
-			"lineHeight": 1.25,
-			"baseline": 93
-		},
-		{
-			"type": "arrow",
-			"version": 185,
-			"versionNonce": 239031072,
-			"isDeleted": false,
-			"id": "uIQUXaF-fOIyAswsmu7N_",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"angle": 0,
-			"x": 1585.5,
-			"y": 279.9778089816508,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"width": 347.4971726652889,
-			"height": 225.8215589816508,
-			"seed": 838828832,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"boundElements": [],
-			"updated": 1720592889839,
-			"link": null,
-			"locked": false,
-			"startBinding": {
-				"elementId": "_QdEzsiKGTcZeRaflsc8K",
-				"focus": 0.0657465830458072,
-				"gap": 25
-			},
-			"endBinding": {
-				"elementId": "lzoXgeSz",
-				"focus": 0.312247962488294,
-				"gap": 12
-			},
-			"lastCommittedPoint": null,
-			"startArrowhead": null,
-			"endArrowhead": "arrow",
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					-347.4971726652889,
-					-225.8215589816508
-				]
-			]
-		}
-	],
-	"appState": {
-		"theme": "light",
-		"viewBackgroundColor": "#ffffff",
-		"currentItemStrokeColor": "#1e1e1e",
-		"currentItemBackgroundColor": "transparent",
-		"currentItemFillStyle": "solid",
-		"currentItemStrokeWidth": 2,
-		"currentItemStrokeStyle": "solid",
-		"currentItemRoughness": 1,
-		"currentItemOpacity": 100,
-		"currentItemFontFamily": 1,
-		"currentItemFontSize": 20,
-		"currentItemTextAlign": "left",
-		"currentItemStartArrowhead": null,
-		"currentItemEndArrowhead": "arrow",
-		"scrollX": -54,
-		"scrollY": 331,
-		"zoom": {
-			"value": 1
-		},
-		"currentItemRoundness": "round",
-		"gridSize": null,
-		"gridColor": {
-			"Bold": "#C9C9C9FF",
-			"Regular": "#EDEDEDFF"
-		},
-		"currentStrokeOptions": null,
-		"previousGridSize": null,
-		"frameRendering": {
-			"enabled": true,
-			"clip": true,
-			"name": true,
-			"outline": true
-		}
-	},
-	"files": {}
-}
+## Drawing
+```compressed-json
+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=
 ```
 %%
