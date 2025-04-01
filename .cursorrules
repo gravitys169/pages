@@ -44,3 +44,7 @@
 - 使用类图
 - 使用状态图
 - 使用活动图
+
+# Mermaid常见错误
+- 针对特殊符号，比如加减乘除等，使用双引号包裹。Explicitly tells Mermaid to treat the content as a literal string.
+- 针对[]或{}中使用()的场景，改为使用: 
