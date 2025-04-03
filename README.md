@@ -1,19 +1,89 @@
 # 目录
 
 - [Tips](Tips.md)
-- [Untitled_1](Untitled_1.md)
 - [Untitled_2](Untitled_2.md)
 - [Why_pages](Why_pages.md)
-- [milestone_of_myself](milestone_of_myself.md)
 - [业界大牛](业界大牛.md)
 - [常用操作](常用操作.md)
 - [灵感想法](灵感想法.md)
+- .venv
+  - lib
+    - python3.13
+      - site-packages
+        - httpcore-1.0.7.dist-info
+          - licenses
+            - [LICENSE](.venv/lib/python3.13/site-packages/httpcore-1.0.7.dist-info/licenses/LICENSE.md)
+        - httpx-0.28.1.dist-info
+          - licenses
+            - [LICENSE](.venv/lib/python3.13/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md)
+        - idna-3.10.dist-info
+          - [LICENSE](.venv/lib/python3.13/site-packages/idna-3.10.dist-info/LICENSE.md)
+- AI_BOOK
+  - [破局：构建下一代AI计算平台_挑战GPU霸权的硬件与软件协同之路](AI_BOOK/破局：构建下一代AI计算平台_挑战GPU霸权的硬件与软件协同之路.md)
+  - [聪明的交易者：价值发现与技术择时的完美结合](AI_BOOK/聪明的交易者：价值发现与技术择时的完美结合.md)
+  - Operating_Systems
+    - [Appendix_A_常用系统调用接口](AI_BOOK/Operating_Systems/Appendix_A_常用系统调用接口.md)
+    - [Appendix_B_术语表](AI_BOOK/Operating_Systems/Appendix_B_术语表.md)
+    - [Appendix_C_参考文献](AI_BOOK/Operating_Systems/Appendix_C_参考文献.md)
+    - [Chapter_01_操作系统导论](AI_BOOK/Operating_Systems/Chapter_01_操作系统导论.md)
+    - [Chapter_02_进程与线程](AI_BOOK/Operating_Systems/Chapter_02_进程与线程.md)
+    - [Chapter_03_并发与同步](AI_BOOK/Operating_Systems/Chapter_03_并发与同步.md)
+    - [Chapter_04_内存管理](AI_BOOK/Operating_Systems/Chapter_04_内存管理.md)
+    - [Chapter_05_文件系统](AI_BOOK/Operating_Systems/Chapter_05_文件系统.md)
+    - [Chapter_06_输入输出管理](AI_BOOK/Operating_Systems/Chapter_06_输入输出管理.md)
+    - [Chapter_07_虚拟化技术](AI_BOOK/Operating_Systems/Chapter_07_虚拟化技术.md)
+    - [Chapter_08_分布式系统](AI_BOOK/Operating_Systems/Chapter_08_分布式系统.md)
+    - [Chapter_09_操作系统安全](AI_BOOK/Operating_Systems/Chapter_09_操作系统安全.md)
+    - [Chapter_10_嵌入式与实时操作系统](AI_BOOK/Operating_Systems/Chapter_10_嵌入式与实时操作系统.md)
+    - [Chapter_11_Linux_操作系统剖析](AI_BOOK/Operating_Systems/Chapter_11_Linux_操作系统剖析.md)
+    - [Chapter_12_Windows_操作系统剖析](AI_BOOK/Operating_Systems/Chapter_12_Windows_操作系统剖析.md)
+    - [Chapter_13_macOS_操作系统剖析](AI_BOOK/Operating_Systems/Chapter_13_macOS_操作系统剖析.md)
+    - [Chapter_14_移动操作系统_Android_iOS_简介](AI_BOOK/Operating_Systems/Chapter_14_移动操作系统_Android_iOS_简介.md)
+    - [Chapter_15_操作系统的未来趋势](AI_BOOK/Operating_Systems/Chapter_15_操作系统的未来趋势.md)
+    - [Foreword](AI_BOOK/Operating_Systems/Foreword.md)
+    - [TOC](AI_BOOK/Operating_Systems/TOC.md)
+  - 大数据引擎内核：原理、设计与实现
+    - [00_Preface](AI_BOOK/大数据引擎内核：原理、设计与实现/00_Preface.md)
+    - [01_Fundamentals_of_Distributed_Computing](AI_BOOK/大数据引擎内核：原理、设计与实现/01_Fundamentals_of_Distributed_Computing.md)
+    - [02_Common_Design_Challenges](AI_BOOK/大数据引擎内核：原理、设计与实现/02_Common_Design_Challenges.md)
+    - [03_Spark_Architecture_Core_Abstractions](AI_BOOK/大数据引擎内核：原理、设计与实现/03_Spark_Architecture_Core_Abstractions.md)
+    - [04_Spark_Job_Execution_Flow](AI_BOOK/大数据引擎内核：原理、设计与实现/04_Spark_Job_Execution_Flow.md)
+    - [05_Spark_Scheduling_System_in_Detail](AI_BOOK/大数据引擎内核：原理、设计与实现/05_Spark_Scheduling_System_in_Detail.md)
+    - [06_Spark_Memory_Management](AI_BOOK/大数据引擎内核：原理、设计与实现/06_Spark_Memory_Management.md)
+    - [07_Spark_Shuffle_Understanding](AI_BOOK/大数据引擎内核：原理、设计与实现/07_Spark_Shuffle_Understanding.md)
+    - [08_Spark_容错与Structured_Streaming内核](AI_BOOK/大数据引擎内核：原理、设计与实现/08_Spark_容错与Structured_Streaming内核.md)
+    - [09_Flink架构与核心概念](AI_BOOK/大数据引擎内核：原理、设计与实现/09_Flink架构与核心概念.md)
+    - [10_Flink_作业执行与调度](AI_BOOK/大数据引擎内核：原理、设计与实现/10_Flink_作业执行与调度.md)
+    - [11_Flink_状态管理与容错](AI_BOOK/大数据引擎内核：原理、设计与实现/11_Flink_状态管理与容错.md)
+    - [12_Flink_时间与窗口机制](AI_BOOK/大数据引擎内核：原理、设计与实现/12_Flink_时间与窗口机制.md)
+    - [13_Flink_网络与数据传输](AI_BOOK/大数据引擎内核：原理、设计与实现/13_Flink_网络与数据传输.md)
+    - [14_Flink_批处理内核](AI_BOOK/大数据引擎内核：原理、设计与实现/14_Flink_批处理内核.md)
+    - [15_Presto_Trino_架构与设计哲学](AI_BOOK/大数据引擎内核：原理、设计与实现/15_Presto_Trino_架构与设计哲学.md)
+    - [16_Presto_Trino_查询执行流程](AI_BOOK/大数据引擎内核：原理、设计与实现/16_Presto_Trino_查询执行流程.md)
+    - [17_Presto_Trino_优化器与调度](AI_BOOK/大数据引擎内核：原理、设计与实现/17_Presto_Trino_优化器与调度.md)
+    - [18_Presto_Trino_内存管理与数据交换](AI_BOOK/大数据引擎内核：原理、设计与实现/18_Presto_Trino_内存管理与数据交换.md)
+    - [19_Presto_Trino_Connector机制](AI_BOOK/大数据引擎内核：原理、设计与实现/19_Presto_Trino_Connector机制.md)
+    - [20_主流引擎架构模型对比](AI_BOOK/大数据引擎内核：原理、设计与实现/20_主流引擎架构模型对比.md)
+    - [21_处理模型与执行机制对比](AI_BOOK/大数据引擎内核：原理、设计与实现/21_处理模型与执行机制对比.md)
+    - [22_调度与资源管理对比](AI_BOOK/大数据引擎内核：原理、设计与实现/22_调度与资源管理对比.md)
+    - [23_内存管理与Shuffle对比](AI_BOOK/大数据引擎内核：原理、设计与实现/23_内存管理与Shuffle对比.md)
+    - [24_容错与状态管理对比](AI_BOOK/大数据引擎内核：原理、设计与实现/24_容错与状态管理对比.md)
+    - [25_优化器对比](AI_BOOK/大数据引擎内核：原理、设计与实现/25_优化器对比.md)
+    - [26_生态与适用场景](AI_BOOK/大数据引擎内核：原理、设计与实现/26_生态与适用场景.md)
+    - [27_其他代表性引擎简析](AI_BOOK/大数据引擎内核：原理、设计与实现/27_其他代表性引擎简析.md)
+    - [28_大数据引擎的未来展望](AI_BOOK/大数据引擎内核：原理、设计与实现/28_大数据引擎的未来展望.md)
+    - [29_Conclusion](AI_BOOK/大数据引擎内核：原理、设计与实现/29_Conclusion.md)
+    - [Appendix_A_Glossary](AI_BOOK/大数据引擎内核：原理、设计与实现/Appendix_A_Glossary.md)
+    - [Appendix_B_Key_Parameters](AI_BOOK/大数据引擎内核：原理、设计与实现/Appendix_B_Key_Parameters.md)
+    - [Appendix_C_References](AI_BOOK/大数据引擎内核：原理、设计与实现/Appendix_C_References.md)
+    - [TOC](AI_BOOK/大数据引擎内核：原理、设计与实现/TOC.md)
 - 业界洞察
   - [Databricks_Data&AI2024](业界洞察/Databricks_Data&AI2024.md)
   - [夏晶](业界洞察/夏晶.md)
 - 人文经史
   - [健康](人文经史/健康.md)
   - [名言警句](人文经史/名言警句.md)
+  - [赋能男性：重塑性健康与亲密关系](人文经史/赋能男性：重塑性健康与亲密关系.md)
   - 职场人生
     - [PLR](人文经史/职场人生/PLR.md)
     - [向优秀学习](人文经史/职场人生/向优秀学习.md)
@@ -24,7 +94,6 @@
 - 投资
   - [程序员的个人财富课](投资/程序员的个人财富课.md)
   - [简报](投资/简报.md)
-  - [聪明的交易者：价值发现与技术择时的完美结合](投资/聪明的交易者：价值发现与技术择时的完美结合.md)
   - [警世恒言](投资/警世恒言.md)
   - [量化开发](投资/量化开发.md)
   - 我的投资
@@ -45,7 +114,6 @@
     - [LLM_Test_case](计算机技术/AI/LLM_Test_case.md)
     - [LLM原理](计算机技术/AI/LLM原理.md)
     - [华为产品](计算机技术/AI/华为产品.md)
-    - [破局：构建下一代AI计算平台——挑战GPU霸权的硬件与软件协同之路](计算机技术/AI/破局：构建下一代AI计算平台——挑战GPU霸权的硬件与软件协同之路.md)
     - [行业洞察](计算机技术/AI/行业洞察.md)
     - [训练与推理](计算机技术/AI/训练与推理.md)
     - AI大模型系统实战
@@ -65,6 +133,7 @@
     - [HDFS](计算机技术/大数据/HDFS.md)
     - [Hands_on](计算机技术/大数据/Hands_on.md)
     - [Hive](计算机技术/大数据/Hive.md)
+    - [MCP_Server](计算机技术/大数据/MCP_Server.md)
     - [SQL算子算法](计算机技术/大数据/SQL算子算法.md)
     - [Spark](计算机技术/大数据/Spark.md)
     - [Spark_Shuffle](计算机技术/大数据/Spark_Shuffle.md)
