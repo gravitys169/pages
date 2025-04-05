@@ -6,18 +6,6 @@
 - [业界大牛](业界大牛.md)
 - [常用操作](常用操作.md)
 - [灵感想法](灵感想法.md)
-- .venv
-  - lib
-    - python3.13
-      - site-packages
-        - httpcore-1.0.7.dist-info
-          - licenses
-            - [LICENSE](.venv/lib/python3.13/site-packages/httpcore-1.0.7.dist-info/licenses/LICENSE.md)
-        - httpx-0.28.1.dist-info
-          - licenses
-            - [LICENSE](.venv/lib/python3.13/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md)
-        - idna-3.10.dist-info
-          - [LICENSE](.venv/lib/python3.13/site-packages/idna-3.10.dist-info/LICENSE.md)
 - AI_BOOK
   - [破局：构建下一代AI计算平台_挑战GPU霸权的硬件与软件协同之路](AI_BOOK/破局：构建下一代AI计算平台_挑战GPU霸权的硬件与软件协同之路.md)
   - [聪明的交易者：价值发现与技术择时的完美结合](AI_BOOK/聪明的交易者：价值发现与技术择时的完美结合.md)
@@ -77,6 +65,23 @@
     - [Appendix_B_Key_Parameters](AI_BOOK/大数据引擎内核：原理、设计与实现/Appendix_B_Key_Parameters.md)
     - [Appendix_C_References](AI_BOOK/大数据引擎内核：原理、设计与实现/Appendix_C_References.md)
     - [TOC](AI_BOOK/大数据引擎内核：原理、设计与实现/TOC.md)
+  - 职场厚黑学大师指南
+    - [00_前言](AI_BOOK/职场厚黑学大师指南/00_前言.md)
+    - [01_第一章_人性密码](AI_BOOK/职场厚黑学大师指南/01_第一章_人性密码.md)
+    - [02_第二章_权力游戏](AI_BOOK/职场厚黑学大师指南/02_第二章_权力游戏.md)
+    - [03_第三章_厚字诀](AI_BOOK/职场厚黑学大师指南/03_第三章_厚字诀.md)
+    - [04_第四章_黑字诀](AI_BOOK/职场厚黑学大师指南/04_第四章_黑字诀.md)
+    - [05_第五章_识别与应对小人](AI_BOOK/职场厚黑学大师指南/05_第五章_识别与应对小人.md)
+    - [06_第六章_关键时刻的博弈](AI_BOOK/职场厚黑学大师指南/06_第六章_关键时刻的博弈.md)
+    - [07_第七章_晋升之路](AI_BOOK/职场厚黑学大师指南/07_第七章_晋升之路.md)
+    - [08_第八章_权力与制衡](AI_BOOK/职场厚黑学大师指南/08_第八章_权力与制衡.md)
+    - [09_第九章_厚黑心法修炼](AI_BOOK/职场厚黑学大师指南/09_第九章_厚黑心法修炼.md)
+    - [0_目录](AI_BOOK/职场厚黑学大师指南/0_目录.md)
+    - [10_第十章_实践与超越](AI_BOOK/职场厚黑学大师指南/10_第十章_实践与超越.md)
+    - [11_结语](AI_BOOK/职场厚黑学大师指南/11_结语.md)
+    - [12_附录](AI_BOOK/职场厚黑学大师指南/12_附录.md)
+- chapters
+  - [chapter_09](chapters/chapter_09.md)
 - 业界洞察
   - [Databricks_Data&AI2024](业界洞察/Databricks_Data&AI2024.md)
   - [夏晶](业界洞察/夏晶.md)
