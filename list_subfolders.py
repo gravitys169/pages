@@ -48,6 +48,9 @@ def list_markdown_files(directory='.', output_file='README.md'):
 
     # 遍历目录及其子目录
     for root, dirs, files in os.walk(directory):
+        # 过滤掉以点开头的目录
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+
         # 如果当前目录是attachments或者在attachments目录下，则跳过
         # 使用os.path.normpath确保路径分隔符一致
         normalized_root = os.path.normpath(root)
