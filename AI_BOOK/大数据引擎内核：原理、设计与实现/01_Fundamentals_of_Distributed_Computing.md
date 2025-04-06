@@ -120,7 +120,7 @@ graph LR
 
 ```mermaid
 flowchart TD
-    A[Input Data (HDFS)] --> B(Map Tasks)
+    A[Input Data ：HDFS] --> B(Map Tasks)
     B -- Intermediate Key/Value Pairs (Local Disk) --> C{Shuffle & Sort}
     C -- Grouped Key/Value Pairs --> D(Reduce Tasks)
     D -- Final Output (HDFS) --> E[Output Data]
@@ -145,7 +145,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph Spark DAG Example (Word Count)
+    subgraph Spark DAG Example （(Word Count）)
         A[Input: textFile()] --> B(Map: _.flatMap(_.split(" ")))
         B --> C(Map: (_, 1))
         C -- Shuffle --> D(ReduceByKey: _ + _)
