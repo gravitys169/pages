@@ -79,7 +79,7 @@ PEFT 的核心目标是在保持预训练模型强大能力的同时，显著降
 
 下面我们将详细介绍几种主流的 PEFT 技术。
 
-### 7.2.2 主流 PEFT 方法深度剖析：Adapter, Prompt/Prefix Tuning, LoRA (含数学原理), QLoRA
+### 7.2.2 主流 PEFT 方法深度剖析：Adapter, Prefix-Tuning, LoRA (含数学原理), QLoRA
 
 #### 7.2.2.1 Adapter Tuning："即插即用"的小模块
 
@@ -88,11 +88,11 @@ PEFT 的核心目标是在保持预训练模型强大能力的同时，显著降
 
 *   **Adapter 结构**:
     *   通常是一个 **瓶颈结构 (Bottleneck Architecture)** ：
-        1.  一个 **下投影 (Down-project)** 线性层，将高维的 Transformer 隐藏状态 $h \in \mathbb{R}^d$ 投影到一个低维空间 $ \mathbb{R}^m $，其中 $m \ll d$ (e.g., $m$ 可以是 16, 32, 64)。
+        1.  一个 **下投影 (Down-project)** 线性层，将高维的 Transformer 隐藏状态 $h \in \mathbb{R}^d$ 投影到一个低维空间 $\mathbb{R}^m$，其中 $m \ll d$ (e.g., $m$ 可以是 16, 32, 64)。
         2.  一个非线性激活函数 (如 GeLU, ReLU)。
-        3.  一个 **上投影 (Up-project)** 线性层，将低维表示投影回原始的高维空间 $ \mathbb{R}^d $。
+        3.  一个 **上投影 (Up-project)** 线性层，将低维表示投影回原始的高维空间 $\mathbb{R}^d$。
         4.  一个 **残差连接 (Residual Connection)** ：将 Adapter 的输出加到其输入上。
-    *   数学表示: $ \text{Adapter}(h) = h + W_{up}(\sigma(W_{down}h)) $
+    *   数学表示: $\text{Adapter}(h) = h + W_{up}(\sigma(W_{down}h))$
     *   可训练参数主要在 $W_{down} \in \mathbb{R}^{d \times m}$ 和 $W_{up} \in \mathbb{R}^{m \times d}$ 中。由于 $m$ 很小，Adapter 的参数量远小于 Transformer 层本身。
 
 *   **示意图：Adapter 插入位置**
@@ -104,13 +104,13 @@ graph TD
     end
 
     subgraph "Adapter Tuning"
-        Input_A --> Norm1_A --> MHA_A --> Insert1((+)) -- After MHA --> Adapter1[Adapter Module] --> Add1_A --> Norm2_A --> FFN_A --> Insert2((+)) -- After FFN --> Adapter2[Adapter Module] --> Add2_A --> Output_A
+        Input_A --> Norm1_A --> MHA_A --> Insert1((+)) -- After MHA --> Adapter1["Adapter Module"] --> Add1_A --> Norm2_A --> FFN_A --> Insert2((+)) -- After FFN --> Adapter2["Adapter Module"] --> Add2_A --> Output_A
         MHA_A --> Insert1
         FFN_A --> Insert2
     end
 
-    style Adapter1 fill:#ccf,stroke:#333
-    style Adapter2 fill:#ccf,stroke:#333
+    style Adapter1 fill:#ccf,stroke:#333,color:#000
+    style Adapter2 fill:#ccf,stroke:#333,color:#000
 ```
 *注：Adapter 通常插入在 Attention 和 FFN 之后，并带有残差连接。微调时只训练 Adapter Module。*
 
@@ -127,13 +127,13 @@ graph TD
 *   **提出**: Li & Liang, 2021 ([Prefix-Tuning: Optimizing Continuous Prompts for Generation](https://arxiv.org/abs/2101.00190))
 *   **核心思想**: 冻结整个预训练模型。在模型 **每一层的 Multi-Head Attention (MHA)** 模块的 **输入** 前面，添加一小段 **可训练的、连续的向量序列**，称为 **前缀 (Prefix)** 。这些 Prefix 向量就像给模型的"指令"或"上下文"，引导模型关注任务相关的信息。
 *   **机制**:
-    *   对于 Transformer 的每一层，都学习一组 Prefix 向量 $ P = [p_1, ..., p_k] $，其中 $ p_i \in \mathbb{R}^d $。
+    *   对于 Transformer 的每一层，都学习一组 Prefix 向量 $P = [p_1, ..., p_k]$，其中 $p_i \in \mathbb{R}^d$。
     *   在计算 Attention 时，这些 Prefix 向量被用作额外的 Key (K) 和 Value (V) 序列，与原始输入的 K 和 V 序列拼接起来：
-        $ K_{new} = [P_K, K_{input}] $
-        $ V_{new} = [P_V, V_{input}] $
-        $ Q_{new} = Q_{input} $
+        $K_{new} = [P_K, K_{input}]$
+        $V_{new} = [P_V, V_{input}]$
+        $Q_{new} = Q_{input}$
         其中 $P_K$ 和 $P_V$ 是从可训练的 Prefix 参数生成的。
-    *   Attention 计算变为 $ \text{Attention}(Q_{new}, K_{new}, V_{new}) $。
+    *   Attention 计算变为 $\text{Attention}(Q_{new}, K_{new}, V_{new})$。
     *   微调时，**只训练这些 Prefix 参数**，模型主体不变。
 
 *   **示意图：Prefix-Tuning 机制**
@@ -141,20 +141,22 @@ graph TD
 ```mermaid
 graph TD
     subgraph "Standard Attention"
-        InputX[Layer Input (X)] --> LinearQKV{Linear Proj (Q, K, V)}
-        LinearQKV -- Q --> AttentionCalc{Attention(Q, K, V)}
+        direction LR
+        InputX["Layer Input (X)"] --> LinearQKV{"Linear Proj (Q, K, V)"}
+        LinearQKV -- Q --> AttentionCalc{"Attention(Q, K, V)"}
         LinearQKV -- K --> AttentionCalc
         LinearQKV -- V --> AttentionCalc
         AttentionCalc --> Output
     end
 
     subgraph "Prefix-Tuning"
-        InputX_P[Layer Input (X)] --> LinearQKV_P{Linear Proj (Q_in, K_in, V_in)}
-        PrefixParams[Trainable Prefix Params] -->|Generate| PKV_Prefix{Prefix (P_K, P_V)}
+        direction LR
+        InputX_P["Layer Input (X)"] --> LinearQKV_P{"Linear Proj (Q_in, K_in, V_in)"}
+        PrefixParams["Trainable Prefix Params"] -->|Generate| PKV_Prefix{"Prefix (P_K, P_V)"}
 
         LinearQKV_P -- K_in --> ConcatK{"[K_prefix, K_in]"}
         PKV_Prefix -- P_K --> ConcatK
-        ConcatK --> AttentionCalc_P{Attention(Q_in, K_new, V_new)}
+        ConcatK --> AttentionCalc_P{"Attention(Q_in, K_new, V_new)"}
 
         LinearQKV_P -- V_in --> ConcatV{"[V_prefix, V_in]"}
         PKV_Prefix -- P_V --> ConcatV
@@ -165,11 +167,11 @@ graph TD
         AttentionCalc_P --> Output_P
     end
 
-    style PrefixParams fill:#ccf,stroke:#333
+    style PrefixParams fill:#ccf,stroke:#333,color:#000
 ```
 *注：只训练 Prefix 参数，模型其他部分冻结。Prefix 作为额外的 K 和 V 参与 Attention 计算。*
 
-*   **重参数化**: 为了稳定训练，Prefix 参数通常不是直接优化的，而是通过一个较小的矩阵 $ P_{\theta} $ 和一个大的投影矩阵 $ W $ (从预训练模型复制或随机初始化) 生成：$ P = P_{\theta}W $。训练时只更新 $ P_{\theta} $。
+*   **重参数化**: 为了稳定训练，Prefix 参数通常不是直接优化的，而是通过一个较小的矩阵 $P_{\theta}$ 和一个大的投影矩阵 $W$ (从预训练模型复制或随机初始化) 生成：$P = P_{\theta}W$。训练时只更新 $P_{\theta}$。
 *   **优点**:
     *   **参数极少**: Prefix 的长度 $k$ 通常很小 (e.g., 10-100)，参数量远少于 Adapter。
     *   **不增加推理层数**: 推理时，Prefix 可以预先计算并缓存，不改变模型本身的结构，理论上不显著增加每层计算量（但可能因序列变长略增 Attention 计算）。
@@ -201,12 +203,12 @@ graph TD
 #### 7.2.2.4 LoRA (Low-Rank Adaptation)：给权重矩阵加"低秩补丁"
 
 *   **提出**: Hu et al., 2021 ([LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685))
-*   **核心思想**: 受到模型权重矩阵通常具有较低的 **"内在秩 (intrinsic rank)"** 的启发，即模型参数的更新量 $ \Delta W $ 也可以用低秩矩阵来近似。LoRA **冻结预训练模型的权重 $W_0$**，并在模型中特定层（通常是 Attention 层的 $W_Q, W_V$ 线性变换）旁边 **注入** 一对 **可训练的低秩矩阵 $A$ 和 $B$**，用它们的乘积 $ BA $ 来 **近似** 权重的更新量 $ \Delta W $。
+*   **核心思想**: 受到模型权重矩阵通常具有较低的 **"内在秩 (intrinsic rank)"** 的启发，即模型参数的更新量 $\Delta W$ 也可以用低秩矩阵来近似。LoRA **冻结预训练模型的权重 $W_0$**，并在模型中特定层（通常是 Attention 层的 $W_Q, W_V$ 线性变换）旁边 **注入** 一对 **可训练的低秩矩阵 $A$ 和 $B$**，用它们的乘积 $BA$ 来 **近似** 权重的更新量 $\Delta W$。
 *   **机制**:
-    *   原始层的前向计算是 $ h = W_0 x $。
-    *   LoRA 修改后的计算是 $ h = W_0 x + BAx $。其中 $W_0 \in \mathbb{R}^{d \times k}$ 是冻结的预训练权重，$B \in \mathbb{R}^{d \times r}$ 和 $A \in \mathbb{R}^{r \times k}$ 是可训练的低秩分解矩阵，$r$ 是 LoRA 的秩 (rank)，且 $r \ll \min(d, k)$。
-    *   微调时，**只训练 $A$ 和 $B$**。$B$ 通常用零初始化，$A$ 用高斯初始化。输出乘以一个缩放因子 $ \alpha/r $。
-    *   **推理时**: 可以将学习到的 $BA$ 与 $W_0$ **合并**：$ W = W_0 + BA $。这样，在推理时 **完全不增加额外的计算量或延迟**，因为模型的结构没有改变，只是权重值更新了。
+    *   原始层的前向计算是 $h = W_0 x$。
+    *   LoRA 修改后的计算是 $h = W_0 x + BAx$。其中 $W_0 \in \mathbb{R}^{d \times k}$ 是冻结的预训练权重，$B \in \mathbb{R}^{d \times r}$ 和 $A \in \mathbb{R}^{r \times k}$ 是可训练的低秩分解矩阵，$r$ 是 LoRA 的秩 (rank)，且 $r \ll \min(d, k)$。
+    *   微调时，**只训练 $A$ 和 $B$**。$B$ 通常用零初始化，$A$ 用高斯初始化。输出乘以一个缩放因子 $\alpha/r$。
+    *   **推理时**: 可以将学习到的 $BA$ 与 $W_0$ **合并**：$W = W_0 + BA$。这样，在推理时 **完全不增加额外的计算量或延迟**，因为模型的结构没有改变，只是权重值更新了。
 
 *   **示意图：LoRA 结构**
 
@@ -214,17 +216,17 @@ graph TD
 graph TD
     subgraph "Original Layer"
         InputX --> W0_MatMul{"MatMul (W0 * X)"} --> OutputH
-        W0[Pretrained Weight W0] --> W0_MatMul
+        W0["Pretrained Weight W0"] --> W0_MatMul
     end
 
     subgraph "LoRA Layer (Training)"
         InputX_L --> W0_MatMul_L{"MatMul (W0 * X)"} --> Add((+)) --> OutputH_L
-        W0_L[Frozen W0] --> W0_MatMul_L
+        W0_L["Frozen W0"] --> W0_MatMul_L
 
         InputX_L --> A_MatMul{"MatMul (A * X)"} --> B_MatMul{"MatMul (B * AX)"} --> Scale{"Scale by alpha/r"} --> Add
 
-        A[Trainable LoRA A (r, k)] --> A_MatMul
-        B[Trainable LoRA B (d, r)] --> B_MatMul
+        A["Trainable LoRA A (r, k)"] --> A_MatMul
+        B["Trainable LoRA B (d, r)"] --> B_MatMul
     end
 
      subgraph "LoRA Layer (Inference)"
@@ -232,9 +234,9 @@ graph TD
         W_Merged["Merged Weight W = W0 + BA"] --> W_Merged_MatMul
     end
 
-    style A fill:#ccf,stroke:#333
-    style B fill:#ccf,stroke:#333
-    style W_Merged fill:#f9f, stroke:#333
+    style A fill:#ccf,stroke:#333,color:#000
+    style B fill:#ccf,stroke:#333,color:#000
+    style W_Merged fill:#f9f, stroke:#333,color:#000
 ```
 *注：训练时只更新 A 和 B。推理时可以合并 W0 和 BA，无额外计算。*
 
@@ -276,9 +278,9 @@ graph TD
     *   学习到的 $l_K$ 和 $l_V$ 向量被用来 **逐元素乘以 (element-wise product)** Attention 层中的 Key 和 Value 向量。
     *   学习到的 $l_{FF}$ 向量被用来 **逐元素乘以** FFN 层的 **输入激活** $h_{FFN\_in}$。
     *   数学表示 (简化):
-        $ K_{new} = l_K \odot K_{original} $
-        $ V_{new} = l_V \odot V_{original} $
-        $ h'_{FFN\_in} = l_{FF} \odot h_{FFN\_in} $
+        $K_{new} = l_K \odot K_{original}$
+        $V_{new} = l_V \odot V_{original}$
+        $h'_{FFN\_in} = l_{FF} \odot h_{FFN\_in}$
     *   微调时，**只训练 $l_K, l_V, l_{FF}$ 这三个向量**。
 
 *   **优点**:
@@ -296,7 +298,7 @@ graph TD
 | **Adapter**      | 插入小型瓶颈模块                         | 新增模块 (MHA/FFN后)     | 中等   | 有       | 模块化, 性能好                                 | 增加延迟, 需调超参                           |
 | **Prefix-Tuning**| 学习添加到每层 Attention 的连续前缀      | 新增向量 (Attention K/V) | 少     | 轻微     | 参数少, 生成效果好                             | 优化可能不稳, NLU 性能可能稍弱                 |
 | **P-Tuning v2**  | 学习添加到每层 Attention 的连续提示      | 新增向量 (Attention K/V) | 少     | 轻微     | 参数少, NLU 性能好, 通用性强                  | 优化可能不稳                                   |
-| **LoRA**         | 学习权重的低秩更新量 ($BA$)            | 新增低秩矩阵 (线性层旁)  | 少     | **无**   | **无推理延迟**, 性能强, 易用, 灵活           | 需选秩 r, 需要合并权重                     |
+| **LoRA**         | 学习权重的低秩更新量 ($BA$)            | 新增低秩矩阵 (线性层旁)  | 少     | **无**   | **无推理延迟**, 性能强, 易用, 灵活           | 需选秩 $r$, 需要合并权重                     |
 | **QLoRA**        | 量化模型 + LoRA                          | 新增低秩矩阵 (量化层旁)  | 少     | 轻微     | **极致显存效率**, 性能保持好                   | 训练可能稍慢, 实现复杂                       |
 | **(IA)^3**       | 学习缩放向量乘以内部激活                 | 新增向量 (K/V/FFN 输入)  | **极少** | 轻微     | 参数极少, 实现简单                             | 性能可能不如 LoRA 全面, 轻微推理开销         |
 
@@ -451,31 +453,31 @@ RLHF 通常包含以下三个核心步骤：
 graph TD
     subgraph "Step 1: Supervised Fine-Tuning (SFT)"
         direction LR
-        PT[Pretrained LLM] --> Data1{High-Quality Instruction Data}
-        Data1 --> SFT_Train[Train SFT Model] --> SFT_Model[SFT Model]
+        PT["Pretrained LLM"] --> Data1{"High-Quality Instruction Data"}
+        Data1 --> SFT_Train["Train SFT Model"] --> SFT_Model["SFT Model"]
     end
 
     subgraph "Step 2: Reward Model (RM) Training"
         direction TB
-        SFT_Model -- Generate Multiple Responses --> Prompt1[Prompt]
-        Prompt1 --> Resp_A[Response A]
-        Prompt1 --> Resp_B[Response B]
-        Human[Human Annotator] -- Compares & Chooses --> PrefData{Preference Data (Prompt, Chosen Resp, Rejected Resp)}
-        PrefData --> RM_Train[Train Reward Model] --> RM[Reward Model (RM)]
+        SFT_Model -- Generate Multiple Responses --> Prompt1["Prompt"]
+        Prompt1 --> Resp_A["Response A"]
+        Prompt1 --> Resp_B["Response B"]
+        Human["Human Annotator"] -- Compares & Chooses --> PrefData{"Preference Data (Prompt, Chosen Resp, Rejected Resp)"}
+        PrefData --> RM_Train["Train Reward Model"] --> RM["Reward Model (RM)"]
         Resp_A --> Human
         Resp_B --> Human
     end
 
     subgraph "Step 3: RL Optimization (PPO)"
         direction TB
-        SFT_Model_RL[SFT Model (Copy)] --> Policy[Initial RL Policy (π_RL)]
-        Policy -- Generate Response --> Prompt2[Prompt from Dataset] --> Response_RL[Response y]
-        Response_RL -- Input --> RM -- Output --> Reward[Reward r = RM(Prompt, Response)]
-        Reward --> PPO_Update[PPO Algorithm updates Policy]
-        Policy -- Output --> KL_Penalty[KL Divergence Penalty (vs SFT Model)] --> PPO_Update
+        SFT_Model_RL["SFT Model (Copy)"] --> Policy["Initial RL Policy (\pi_{RL})"]
+        Policy -- Generate Response --> Prompt2["Prompt from Dataset"] --> Response_RL["Response y"]
+        Response_RL -- Input --> RM -- Output --> Reward["Reward r = RM(Prompt, Response)"]
+        Reward --> PPO_Update["PPO Algorithm updates Policy"]
+        Policy -- Output --> KL_Penalty["KL Divergence Penalty (vs SFT Model)"] --> PPO_Update
         SFT_Model_RL -- Reference --> KL_Penalty
         PPO_Update --> Policy
-        Policy -- Trained --> Final_Model[Final Aligned LLM]
+        Policy -- Trained --> Final_Model["Final Aligned LLM"]
     end
 
     PT --> SFT_Model
@@ -489,7 +491,7 @@ graph TD
 *   **目标**: 让预训练模型初步具备理解和遵循指令的能力。
 *   **数据**: 收集或购买高质量的 **指令-回答 (Instruction-Response)** 数据对。这些数据通常由人工标注者编写，或者来自用户与高质量模型的交互。数据的质量和多样性至关重要。
 *   **过程**: 使用这些数据对预训练 LLM 进行标准的监督微调（类似于 7.3 节讨论的微调，可以是全量微调或 PEFT）。
-*   **输出**: 得到一个 **SFT 模型** ($ \pi^{SFT} $)。这个模型是后续步骤的基础。
+*   **输出**: 得到一个 **SFT 模型** ($\pi^{SFT}$)。这个模型是后续步骤的基础。
 
 **步骤 2：训练奖励模型 (Reward Model, RM)** 
 
@@ -498,17 +500,17 @@ graph TD
     1.  从预先准备好的提示 (Prompt) 数据集（通常包含希望模型能处理的各种场景）中采样一个提示。
     2.  将该提示输入 **SFT 模型**，让其生成 **多个 (通常是 2 个或更多)** 不同的响应 ($y_1, y_2, ..., y_k$)。
     3.  **人类标注者** 对这些响应进行 **比较和排序**，选出最好的响应，或者按照从好到坏的顺序排列。最常见的是 **成对比较 (Pairwise Comparison)** ，即标注者指出 $y_i$ 和 $y_j$ 哪个更好。
-    4.  收集大量的这种 **偏好数据 (Preference Data)** ，格式通常是 $ (\text{prompt}, y_w, y_l) $，其中 $y_w$ 是被选中的（winning）响应，$y_l$ 是被拒绝的（losing）响应。
+    4.  收集大量的这种 **偏好数据 (Preference Data)** ，格式通常是 $(\text{prompt}, y_w, y_l)$，其中 $y_w$ 是被选中的（winning）响应，$y_l$ 是被拒绝的（losing）响应。
 *   **RM 架构**:
     *   奖励模型通常基于预训练模型（可以是 SFT 模型本身，也可以是其他规模的模型，如 RoBERTa 或 T5，甚至可以使用原始的预训练 LLM 的副本，去掉最后的输出层）。
     *   输入是 **提示 (prompt)** 和一个 **响应 (response)** 的拼接。
     *   输出是一个 **标量分数 (scalar score)** ，表示这个响应有多符合人类偏好。
 *   **RM 训练目标**: RM 的目标是给人类偏好的响应 $y_w$ 打比不偏好的响应 $y_l$ 更高的分数。常用的损失函数是基于 **Bradley-Terry 模型** 的成对比较损失：
-    \[ \mathcal{L}(\theta) = - \mathbb{E}_{(\text{prompt } x, y_w, y_l) \sim D} [\log(\sigma(r_{\theta}(x, y_w) - r_{\theta}(x, y_l)))] \]
+    $$ \mathcal{L}(\theta) = - \mathbb{E}_{(\text{prompt } x, y_w, y_l) \sim D} [\log(\sigma(r_{\theta}(x, y_w) - r_{\theta}(x, y_l)))] $$
     其中：
     *   $D$ 是人类偏好数据集。
     *   $r_{\theta}(x, y)$ 是奖励模型 RM（参数为 $\theta$）对提示 $x$ 和响应 $y$ 输出的分数。
-    *   $ \sigma $ 是 Sigmoid 函数。
+    *   $\sigma$ 是 Sigmoid 函数。
     *   这个损失函数的目标是最大化 $r_{\theta}(x, y_w)$ 和 $r_{\theta}(x, y_l)$ 之间的差值，使得 RM 能够准确地区分好坏响应。
 *   **输出**: 得到一个训练好的 **奖励模型 RM**。
 
@@ -517,20 +519,20 @@ graph TD
 *   **目标**: 使用 RM 作为奖励信号，通过 RL 算法进一步优化 SFT 模型，使其生成的响应能获得更高的奖励分数，从而更符合人类偏好。
 *   **RL 设置**:
     *   **环境 (Environment)** : 提示数据集。每次 RL 迭代，从数据集中采样一个提示 $x$。
-    *   **智能体 (Agent) / 策略 (Policy)** : 当前正在优化的语言模型 ($ \pi^{RL}_{\phi} $)，其参数为 $ \phi $。初始策略通常是 SFT 模型 ($ \phi_{init} = \phi_{SFT} $)。
+    *   **智能体 (Agent) / 策略 (Policy)** : 当前正在优化的语言模型 ($\pi^{RL}_{\phi}$)，其参数为 $\phi$。初始策略通常是 SFT 模型 ($\phi_{init} = \phi_{SFT}$)。
     *   **动作空间 (Action Space)** : 语言模型词汇表中的所有 Token。策略在给定提示 $x$ 和当前已生成的序列 $y_{<t}$ 的情况下，输出下一个 Token $y_t$ 的概率分布。
     *   **奖励函数 (Reward Function)** : 由 **奖励模型 RM** 提供。对于策略 $\pi^{RL}_{\phi}$ 生成的完整响应 $y$，奖励 $r = r_{\theta}(x, y)$。
 *   **RL 算法 (通常是 PPO)** :
     *   Proximal Policy Optimization (PPO) 是一种常用的策略梯度 (Policy Gradient) RL 算法，它在优化策略的同时，试图限制新策略与旧策略之间的变化幅度，以保证训练的稳定性。
     *   **核心思想**: 最大化期望奖励，同时惩罚 RL 策略 $\pi^{RL}_{\phi}$ 相对于原始 SFT 策略 $\pi^{SFT}$ 的 **KL 散度 (KL Divergence)** 。KL 散度惩罚项的目的是 **防止 RL 策略过度优化奖励模型**，从而偏离 SFT 模型学到的良好语言模式太远，导致生成奇怪或不连贯的文本（所谓的"模式崩溃"或"过拟合奖励模型"）。
     *   **PPO 目标函数 (简化版)** :
-        \[ \text{Objective}(\phi) = \mathbb{E}_{(x, y) \sim \pi^{RL}_{\phi}} [r_{\theta}(x, y) - \beta \text{KL}(\pi^{RL}_{\phi}(y|x) || \pi^{SFT}(y|x))] \]
+        $$ \text{Objective}(\phi) = \mathbb{E}_{(x, y) \sim \pi^{RL}_{\phi}} [r_{\theta}(x, y) - \beta \text{KL}(\pi^{RL}_{\phi}(y|x) || \pi^{SFT}(y|x))] $$
         其中：
         *   $r_{\theta}(x, y)$ 是 RM 给出的奖励。
         *   $\text{KL}(\cdot || \cdot)$ 是 KL 散度，衡量两个概率分布的差异。
-        *   $ \beta $ 是控制 KL 惩罚强度的超参数。
-    *   **优化过程**: 在每个 RL 步骤中，策略 $\pi^{RL}_{\phi}$ 生成响应，RM 评估奖励，然后使用 PPO 算法计算梯度并更新策略 $\pi^{RL}_{\phi}$ 的参数 $ \phi $。这个过程会迭代进行。
-*   **输出**: 得到一个经过 RLHF 微调的、与人类偏好 **对齐** 的最终语言模型 ($ \pi^{RL}_{final} $)。
+        *   $\beta$ 是控制 KL 惩罚强度的超参数。
+    *   **优化过程**: 在每个 RL 步骤中，策略 $\pi^{RL}_{\phi}$ 生成响应，RM 评估奖励，然后使用 PPO 算法计算梯度并更新策略 $\pi^{RL}_{\phi}$ 的参数 $\phi$。这个过程会迭代进行。
+*   **输出**: 得到一个经过 RLHF 微调的、与人类偏好 **对齐** 的最终语言模型 ($\pi^{RL}_{final}$)。
 
 **RLHF 总结**: RLHF 是一个复杂但强大的过程，它通过结合监督学习（SFT）、基于人类偏好的奖励建模（RM）和强化学习（RL），有效地将 LLM 的行为与人类期望对齐。它是许多先进聊天机器人（如 ChatGPT, Claude）背后核心的训练技术之一。
 
@@ -543,7 +545,7 @@ graph TD
 1.  **高质量的提示 (Prompts)** : 用于 RM 训练和 RL 优化的提示应该具有多样性，覆盖模型可能遇到的各种场景，包括良性的和可能诱导不良行为的。
 2.  **高质量的人类偏好数据**: 标注者的质量、一致性和对任务的理解至关重要。需要清晰的标注指南和质量控制流程。标注量也需要足够大。
 3.  **准确且泛化能力强的奖励模型 (RM)** : RM 的质量直接决定了 RL 优化的效果。如果 RM 被轻易"欺骗"（即模型找到捷径获得高分，但实际输出并不好，称为 **Reward Hacking**），或者 RM 的偏好与真实人类偏好存在偏差，那么最终模型的对齐效果就会打折扣。
-4.  **稳定的 RL 训练 (PPO)** : PPO 及其超参数（如 KL 系数 $ \beta $、学习率、ppo clip epsilon 等）需要仔细调整，以确保训练稳定并有效优化策略。KL 惩罚对于防止模式崩溃至关重要。
+4.  **稳定的 RL 训练 (PPO)** : PPO 及其超参数（如 KL 系数 $\beta$、学习率、ppo clip epsilon 等）需要仔细调整，以确保训练稳定并有效优化策略。KL 惩罚对于防止模式崩溃至关重要。
 
 **挑战**:
 
@@ -559,10 +561,10 @@ graph TD
 由于 RLHF 的复杂性，研究者们也在探索更简单、更直接的对齐方法。**直接偏好优化 (Direct Preference Optimization, DPO)** 是其中一种很有前景的方法。
 
 *   **提出**: Rafailov et al., 2023 ([Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290))
-*   **核心思想**: DPO 证明了 RLHF 中的奖励模型和最优策略之间存在一个精确的映射关系。因此，可以 **跳过显式训练奖励模型** 这一步，直接使用人类偏好数据 $ (\text{prompt}, y_w, y_l) $ 来 **直接优化语言模型策略**。
+*   **核心思想**: DPO 证明了 RLHF 中的奖励模型和最优策略之间存在一个精确的映射关系。因此，可以 **跳过显式训练奖励模型** 这一步，直接使用人类偏好数据 $(\text{prompt}, y_w, y_l)$ 来 **直接优化语言模型策略**。
 *   **损失函数**: DPO 设计了一个可以直接优化的损失函数，其目标是让模型认为人类偏好的响应 $y_w$ 的概率高于不偏好的响应 $y_l$，同时利用隐式的 KL 散度约束来防止偏离初始 SFT 模型太远。
-    \[ \mathcal{L}_{DPO}(\pi_{\phi}; \pi_{ref}) = - \mathbb{E}_{(x, y_w, y_l) \sim D} \left[ \log \sigma \left( \beta \log \frac{\pi_{\phi}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\phi}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right] \]
-    其中 $\pi_{\phi}$ 是当前优化的策略，$\pi_{ref}$ 是参考策略（通常是 SFT 模型），$ \beta $ 是控制 KL 散度的参数。
+    $$ \mathcal{L}_{DPO}(\pi_{\phi}; \pi_{ref}) = - \mathbb{E}_{(x, y_w, y_l) \sim D} \left[ \log \sigma \left( \beta \log \frac{\pi_{\phi}(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_{\phi}(y_l|x)}{\pi_{ref}(y_l|x)} \right) \right] $$
+    其中 $\pi_{\phi}$ 是当前优化的策略，$\pi_{ref}$ 是参考策略（通常是 SFT 模型），$\beta$ 是控制 KL 散度的参数。
 *   **优点**:
     *   **更简单**: 省去了训练 RM 和进行复杂 RL 训练的步骤，只需要对 SFT 模型进行一次类似监督学习的优化。
     *   **更稳定**: 避免了 RL 训练的不稳定性。
@@ -577,5 +579,3 @@ DPO 的出现为模型对齐提供了一个更简洁有效的替代方案，降�
 
 ---
 **(本章完)**
-
-</rewritten_file> 
