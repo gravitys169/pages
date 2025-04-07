@@ -56,7 +56,7 @@ graph LR
 
         subgraph "输入处理"
             InputSeq["输入序列<br> (Source Sequence)"] --> InputEmb(词嵌入);
-            InputEmb --> AddPos1("+ 位置编码");
+            InputEmb --> AddPos1("+位置编码");
         end
 
         subgraph "Encoder (N 层)"
@@ -69,7 +69,7 @@ graph LR
 
         subgraph "输出处理 (自回归)"
             direction LR
-            TargetEmb(目标词嵌入) --> AddPos2("+ 位置编码");
+            TargetEmb(目标词嵌入) --> AddPos2("+位置编码");
             PrevOutput["已生成的目标序列<br>(Shifted Right)"] --> TargetEmb;
         end
 
