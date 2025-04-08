@@ -376,12 +376,12 @@ $$ PE_{(pos, 2i+1)} = \cos(\frac{pos}{10000^{2i / d_{model}}}) $$
 graph TD
     subgraph "Transformer Layer (Encoder Example, Post-LN)"
         InputX[子层输入 x] --> MultiHeadAtt["Multi-Head Attention"];
-        InputX --> Add1("+ (Residual)");
+        InputX --> Add1("+(Residual)");
         MultiHeadAtt --> Add1;
         Add1 --> LayerNorm1(LayerNorm);
 
         LayerNorm1 --> FFN["Feed-Forward Network"];
-        LayerNorm1 --> Add2("+ (Residual)");
+        LayerNorm1 --> Add2("+(Residual)");
         FFN --> Add2;
         Add2 --> LayerNorm2(LayerNorm);
         LayerNorm2 --> OutputY[子层输出 y];
@@ -396,7 +396,7 @@ Transformer 的 Decoder 部分负责生成目标序列。为了有效地完成�
 
 ### 3.6.1 带掩码的多头自注意力 (Masked Multi-Head Self-Attention)
 
-*   **目标：** 在 Decoder 内部，模型需要根据**已经生成的部分目标序列**来预测**下一个**目标词。例如，生成 "I am fine" 时，预测 "fine" 时应该只看到 "I am <START>" (假设 <START> 是起始符)，而不能看到 "fine" 本身或之后的词。
+*   **目标：** 在 Decoder 内部，模型需要根据**已经生成的部分目标序列**来预测**下一个**目标词。例如，生成 "I am fine" 时，预测 "fine" 时应该只看到 "I am " ，而不能看到 "fine" 本身或之后的词。
 *   **问题：** 标准的自注意力机制会允许序列中的每个位置关注到所有其他位置，包括**未来的位置**。如果在 Decoder 中直接使用标准自注意力，模型在预测位置 $t$ 的词时就能"看到"位置 $t$ 及其之后的真实目标词，这相当于作弊，无法在推理时使用（因为推理时未来词是未知的）。
 *   **解决方案：掩码 (Masking)**
     *   在计算注意力分数 (Softmax 之前) 时，应用一个**注意力掩码 (Attention Mask)**。
@@ -445,18 +445,18 @@ Masked Multi-Head Self-Attention 确保了 Decoder 在生成过程中保持**自
 graph TD
     subgraph "Decoder Layer (Post-LN Example)"
         InputDec[来自上一 Decoder 层 或 嵌入层] --> MaskedMHA["Masked Multi-Head<br>Self-Attention"];
-        InputDec --> AddDec1("+");
+        InputDec --> AddDec1("+(Residual)");
         MaskedMHA --> AddDec1;
         AddDec1 --> LN_Dec1(LayerNorm);
 
         LN_Dec1 -- "Q (Query)" --> CrossAttn["Multi-Head<br>Cross-Attention"];
         InputEnc["来自 Encoder 的<br>K (Key), V (Value)"] --> CrossAttn;
-        LN_Dec1 --> AddDec2("+");
+        LN_Dec1 --> AddDec2("+(Residual)");
         CrossAttn --> AddDec2;
         AddDec2 --> LN_Dec2(LayerNorm);
 
         LN_Dec2 --> FFN_Dec["Feed-Forward<br>Network"];
-        LN_Dec2 --> AddDec3("+");
+        LN_Dec2 --> AddDec3("+(Residual)");
         FFN_Dec --> AddDec3;
         AddDec3 --> LN_Dec3(LayerNorm);
         LN_Dec3 --> OutputDec[Decoder 层输出];
@@ -567,8 +567,7 @@ Decoder 通过结合带掩码的自注意力和交叉注意力，既能处理好
     *   通常是一个**小型**神经网络，例如一个简单的线性层。
     *   **输入：** MoE 层的输入词元表示 $\mathbf{x}$ (例如，来自注意力层的输出)。
     *   **输出：** 一个 $N$ 维的向量 $\mathbf{s} = G(\mathbf{x})$，其中 $s_i$ 表示将当前词元 $\mathbf{x}$ 发送给专家 $E_i$ 的"偏好"或"权重"。
-    *   **Top-k 路由 (Top-k Routing)：** 为了实现稀疏激活，通常不使用所有专家的输出。门控网络会应用一个 **Top-k 函数** (例如，k=1 或 k=2) 来选择得分最高的 $k$ 个专家。只有这 $k$ 个被选中的专家会被激活。
-        *   $\text{Indices} = \text{TopK}(\mathbf{s}, k)$
+    *   **Top-k 路由 (Top-k Routing)：** 为了实现稀疏激活，通常不使用所有专家的输出。门控网络会应用一个 **Top-k 函数** (例如，k=1 或 k=2) 来选择得分最高的 $k$ 个专家。只有这 $k$ 个被选中的专家会被激活。 $$\text{Indices} = \text{TopK}(\mathbf{s}, k)$$
     *   **计算门控权重：** 选出 Top-k 个得分后，通常会对这些得分应用 **Softmax** 函数，得到最终的门控权重 $w_i$。这些权重表示被选中的 $k$ 个专家的输出应该如何组合。
         $$ \mathbf{w} = \text{Softmax}(\mathbf{s}_{\text{Indices}}) $$
         注意：Softmax 只在被选中的 Top-k 个得分上计算。
@@ -588,12 +587,12 @@ Decoder 通过结合带掩码的自注意力和交叉注意力，既能处理好
 graph TD
     subgraph "MoE Layer (Token x, Top-2 Gating)"
         direction LR
-        InputX[Input Token x] --> GatingNet[Gating Network G(x)];
-        GatingNet --> Scores[Scores (s1, s2, ..., sN)];
-        Scores --> TopK[TopK (k=2)];
-        TopK --> Indices[Selected Indices (e.g., i, j)];
+        InputX[Input Token x] --> GatingNet["Gating Network G(x)"];
+        GatingNet --> Scores["Scores (s1, s2, ..., sN)"];
+        Scores --> TopK["TopK (k=2)"];
+        TopK --> Indices["Selected Indices (e.g., i, j)"];
         TopK -- Scores for i, j --> Softmax;
-        Softmax --> Weights[Weights (wi, wj)];
+        Softmax --> Weights["Weights (wi, wj)"];
 
         subgraph "Experts"
             direction TB
@@ -609,8 +608,8 @@ graph TD
         InputX -- "Route to Ei" --> ExpertI;
         InputX -- "Route to Ej" --> ExpertJ;
 
-        ExpertI --> OutputEi[Output Ei(x)];
-        ExpertJ --> OutputEj[Output Ej(x)];
+        ExpertI --> OutputEi["Output Ei(x)"];
+        ExpertJ --> OutputEj["Output Ej(x)"];
 
         OutputEi -- "Multiply by wi" --> WeightedSum;
         OutputEj -- "Multiply by wj" --> WeightedSum;
@@ -663,13 +662,13 @@ graph TD
     subgraph "Transformer Block with MoE (Pre-LN)"
         InputX[Block Input x] --> LN1(LayerNorm);
         LN1 --> MHA["Multi-Head Self-Attention"];
-        MHA --> Add1("+");
+        MHA --> Add1("Residual Connection");
         InputX --> Add1;
         Add1 --> OutputAttn[Attention Output];
 
         OutputAttn --> LN2(LayerNorm);
         LN2 --> MoELayer["MoE Layer (Gating + Experts)"];
-        MoELayer --> Add2("+");
+        MoELayer --> Add2("Residual Connection");
         OutputAttn --> Add2;
         Add2 --> OutputY[Block Output y];
     end
