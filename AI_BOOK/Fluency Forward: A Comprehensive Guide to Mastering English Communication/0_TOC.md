@@ -7,8 +7,6 @@ Here is a comprehensive table of contents for a book aimed at enhancing English 
 
 **Table of Contents**
 
-**Foreword:** The Lifelong Journey of Language Mastery
-
 **Introduction: Laying the Foundation for Success**
 *   0.1 The Indispensable Role of English in a Globalized World
 *   0.2 Understanding the Interconnectedness of the Four Skills (LSRW)
