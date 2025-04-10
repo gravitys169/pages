@@ -326,6 +326,187 @@ NVIDIA能够在AI计算领域保持领先，与其清晰、快速且全面的硬
 *   **生态协同，价值即时体现：** **这是NVIDIA迭代策略成功的关键**。新硬件的发布总是伴随着**同步更新的软件栈**：新版本的CUDA Toolkit、性能大幅优化的cuDNN和cuBLAS库（充分利用新硬件特性，尤其是新的Tensor Core能力）、优化的NCCL通信库（利用新NVLink/NVSwitch）。这使得开发者能够在新硬件发布后**几乎立刻**就能通过更新软件来获得显著的性能提升，极大地加速了新硬件价值的转化和普及。
 *   **路径依赖与市场预期管理：** 这种持续、显著且可预期的性能提升，以及与之配套的成熟软件生态，让用户形成了强大的路径依赖。选择等待下一代更强的NVIDIA GPU，往往比冒险迁移到一个生态不成熟、性能不确定、未来迭代不明朗的新平台，看起来更稳妥。NVIDIA通过GTC等大会高调发布路线图，有效管理了市场预期，进一步巩固了其领导地位。
 
+### 1.5 NVIDIA GPU 体系架构图
+这是 NVIDIA GPU 体系架构图，展示了硬件组件（如 SM、CUDA Core、Warp Scheduler、Shared Memory 等）与 CUDA 编程模型中的逻辑概念（如 Grid、Block、Thread、Warp）之间的关系。
+
+```mermaid
+graph TD
+
+    %% CUDA Kernel Execution
+
+    Grid["Kernel Grid (整个内核启动)"]
+
+    Blocks["包含多个 Block"]
+
+    BlockX_Def["Block X (线程块)"]
+
+    WarpsX["包含多个 Warp"]
+
+    WarpX0["Warp 0 (32个线程)"]
+
+    T0["Thread 0"]
+
+    T31["Thread 31"]
+
+    BlockY_Def["Block Y (线程块)"]
+
+    WarpsY["包含多个 Warp"]
+
+    WarpY0["Warp 0 (32个线程)"]
+
+  
+
+    %% GPU Hardware
+
+    GPU["GPU Chip"]
+
+    L2["L2 Cache"]
+
+    GMem["Global Memory (Device DRAM)"]
+
+    SMs["多个 SM (Streaming Multiprocessors)"]
+
+    SM1["SM 1"]
+
+    WarpSched1["Warp Schedulers"]
+
+    Cores1["CUDA Cores (SPs)"]
+
+    RegFile1["Register File (寄存器文件)"]
+
+    SharedMem1["Shared Memory / L1 Cache"]
+
+    TensorCores1["(Tensor Cores)"]
+
+    RTCores1["(RT Cores)"]
+
+  
+
+    %% Connections: Logical
+
+    Grid --> Blocks
+
+    Blocks --> BlockX_Def
+
+    BlockX_Def --> WarpsX
+
+    WarpsX --> WarpX0
+
+    WarpX0 --> T0
+
+    WarpX0 --> T31
+
+    Blocks --> BlockY_Def
+
+    BlockY_Def --> WarpsY
+
+    WarpsY --> WarpY0
+
+  
+
+    %% Connections: GPU
+
+    GPU --> L2
+
+    GPU --> GMem
+
+    GPU --> SMs
+
+    SMs --> SM1
+
+    SM1 --> WarpSched1
+
+    SM1 --> Cores1
+
+    SM1 --> RegFile1
+
+    SM1 --> SharedMem1
+
+    SM1 --> TensorCores1
+
+    SM1 --> RTCores1
+
+  
+
+    %% Mapping from logic to hardware
+
+    Grid -- "映射到 (Mapped onto)" --> GPU
+
+    BlockX_Def -- "分配给 (Assigned to)" --> SM1
+
+    BlockY_Def -- "分配给 (Assigned to)" --> SM1
+
+    WarpX0 -- "由...调度 (Scheduled by)" --> WarpSched1
+
+    WarpY0 -- "由...调度 (Scheduled by)" --> WarpSched1
+
+    WarpX0 -- "在...上执行 (Executed on)" --> Cores1
+
+    T0 -- "使用 (Uses)" --> RegFile1
+
+    T31 -- "使用 (Uses)" --> RegFile1
+
+    BlockX_Def -- "可访问 (Accesses)" --> SharedMem1
+
+    Grid -- "可访问 (Accesses)" --> GMem
+
+    Grid -- "可访问 (Accesses)" --> L2
+
+  
+
+    %% Styling for clarity
+
+    style GPU fill:#lightgrey,stroke:#333,stroke-width:2px
+
+    style SM1 fill:#f9d,stroke:#333,stroke-width:2px
+
+    style Grid fill:#lightblue,stroke:#333,stroke-width:2px
+
+    style BlockX_Def fill:#ccf,stroke:#333,stroke-width:1px
+
+    style BlockY_Def fill:#ccf,stroke:#333,stroke-width:1px
+
+    style GMem fill:#eee,stroke:#333,stroke-width:1px
+
+    style L2 fill:#eee,stroke:#333,stroke-width:1px
+
+    style SharedMem1 fill:#cfc,stroke:#333,stroke-width:1px
+
+    style Cores1 fill:#ffc,stroke:#333,stroke-width:1px
+```
+
+**图解说明:**
+
+1.  **GPU Device (硬件):**
+    *   **GPU Chip:** 整个图形处理单元。
+    *   **SM (Streaming Multiprocessor):** GPU 的核心处理单元，一个 GPU 包含多个 SM。这是硬件层面的主要并行处理器。
+    *   **CUDA Cores (SPs - Streaming Processors):** SM 内部的基本算术逻辑单元（ALU），执行实际的浮点和整数运算。一个 SM 包含很多 CUDA Cores。
+    *   **Warp Schedulers:** SM 内部的硬件单元，负责调度 Warps（线程束）到 CUDA Cores 上执行。
+    *   **Shared Memory / L1 Cache:** 每个 SM 拥有的片上高速缓存，速度快但容量小。主要用于同一 Block 内线程间的通信和数据共享（作为 Shared Memory），也可配置为 L1 Cache。
+    *   **Register File:** 每个 SM 拥有的寄存器堆，用于存储线程的私有变量，访问速度最快。
+    *   **(Tensor Cores / RT Cores):** (可选) 现代 GPU SM 中包含的专用硬件单元，分别用于加速矩阵运算（AI/DL）和光线追踪计算。
+    *   **L2 Cache:** 所有 SM 共享的二级缓存，容量比 L1/Shared Memory 大，速度比 Global Memory 快。
+    *   **Global Memory (Device DRAM):** GPU 的主显存，容量最大但访问延迟最高。所有 SM 上的所有线程都可以访问。
+
+2.  **CUDA Kernel Execution (逻辑/编程模型):**
+    *   **Kernel Grid:** 当你在 CPU 上启动一个 CUDA 内核（`kernel<<<gridDim, blockDim>>>()`）时，你定义了一个 Grid。它代表了整个计算任务，由许多线程块 (Block) 组成。Grid 是一个逻辑概念。
+    *   **Thread Block:** Grid 被划分为多个 Block。每个 Block 是一组线程，它们可以在同一个 SM 上协作执行。Block 内的线程可以通过 Shared Memory 高效通信，并可以进行同步 (`__syncthreads()`)。Block 也是一个逻辑概念。
+    *   **Warp:** Block 内部的线程被进一步组织成 Warp。一个 Warp 通常包含 32 个线程。Warp 是 SM 上**调度和执行的基本单位**。同一个 Warp 中的 32 个线程以 **SIMT (Single Instruction, Multiple Threads)** 方式执行，即在任何给定时刻，它们执行相同的指令，但处理不同的数据。Warp 是逻辑分组，也是硬件调度的实体。
+    *   **Thread:** 最基本的执行单元，代表了内核代码的一次独立执行流程。每个线程有自己的程序计数器 (PC) 和寄存器状态。成千上万甚至数百万的线程构成了整个 Grid。Thread 是逻辑概念。
+
+3.  **逻辑到硬件的映射关系 (Mapping):**
+    *   **Grid -> GPU:** 整个 Kernel Grid 被加载到 GPU 设备上执行。
+    *   **Block -> SM:** CUDA 运行时系统 (Runtime) 会将 Grid 中的 **每个 Block 分配给一个 SM** 来执行。一个 Block 的生命周期完全在一个 SM 内，不会中途迁移到其他 SM。一个 SM 可以根据其资源（如寄存器、共享内存、最大 Warp 数/Block 数限制）**并发执行多个 Block**（图中 Block X 和 Block Y 都分配给了 SM 1）。
+    *   **Warp -> Warp Scheduler:** Block 中的 Warps 由其所在 SM 的 Warp Scheduler 负责管理和调度。Warp Scheduler 会选择准备就绪的 Warp，并将其指令发射到 SM 的执行单元（CUDA Cores, Tensor Cores 等）。SM 通过在不同 Warp 之间快速切换来隐藏内存访问延迟，实现高吞吐量。
+    *   **Thread -> CUDA Core (via Warp):** 一个 Warp 中的 32 个线程的指令由 Warp Scheduler 发射给 SM 内的一组 CUDA Cores (或其他执行单元) 来执行。虽然我们逻辑上认为每个 Thread 独立执行，但在硬件层面，它们是以 Warp 为单位进行分组和 SIMT 执行的。一个线程的计算最终由某个 CUDA Core 完成。
+    *   **Thread -> Register File:** 每个线程拥有自己私有的寄存器，存储在 SM 的 Register File 中。
+    *   **Block -> Shared Memory:** 同一个 Block 内的所有线程可以访问该 Block 被分配到的那个 SM 上的 Shared Memory。
+    *   **Grid -> Global Memory / L2 Cache:** Grid 中的任何线程都可以访问 GPU 的 Global Memory 和 L2 Cache。
+
+**小结:**
+
+CUDA 编程模型（Grid, Block, Thread）提供了一种逻辑上组织并行计算的方式，而 GPU 硬件（SM, Cores, Memory Hierarchy）则提供了执行这种并行计算的物理资源。理解它们之间的映射关系至关重要：开发者定义逻辑结构 (Grid/Block/Thread)，运行时系统将这些逻辑单元映射到硬件资源 (GPU/SM)，硬件通过 Warp 调度 (SIMT) 和内存层次结构高效地执行这些线程。一个 Block 绑定到一个 SM，Block 内的线程通过 Warp 的形式被 SM 调度到 CUDA Cores 上执行，并利用 SM 的 Shared Memory 和 Registers，同时可以访问全局的 L2 Cache 和 Global Memory。
+
 **本章小结：**
 
 NVIDIA GPU之所以成为AI计算的主导平台，并非单一因素作用的结果。它是GPU架构从图形处理向通用计算演进过程中的历史机遇，是SIMT并行模型与AI计算模式的高度契合，是Tensor Cores针对核心运算的革命性加速，是高带宽内存与精心设计的缓存体系提供的强大数据支撑，更是其**富有远见的CUDA软件平台战略、软硬件协同设计的持续投入、以及快速迭代与生态同步的完美执行**共同作用的结果。理解这些深层次的原因，认识到其成功是硬件、软件、生态和战略紧密结合的产物，对于我们思考如何构建一个可行的替代方案至关重要。下一章，我们将深入剖析CUDA这个"不可撼动的软件基石"。
