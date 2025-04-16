@@ -2,6 +2,9 @@
 ssh -o ServerAliveInterval=2 -N -R 9092:localhost:22 root@1.95.45.140
 ssh marco@1.95.45.140 -p 9092 or ssh marco@1.95.45.140:9092
 
+#autossh
+autossh -M 0 -f -N -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -o "ExitOnForwardFailure=yes" -R 9092:localhost:22 root@1.95.45.140
+
 #vnc
 ssh -o ServerAliveInterval=2 -N -R 9092:localhost:5900 root@1.95.45.140
 1.95.45.140:9092
