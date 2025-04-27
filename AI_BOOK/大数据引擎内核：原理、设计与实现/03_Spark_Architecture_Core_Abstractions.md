@@ -42,43 +42,43 @@ Spark 应用程序运行在一个集群之上，其架构遵循经典的 Master-
 
 ```mermaid
 graph TD
-    subgraph Spark Application
-        Driver[Driver Program: SparkContext, DAG, Scheduler]
+    subgraph "Spark Application"
+        Driver["Driver Program: SparkContext, DAG, Scheduler"]
     end
 
-    subgraph Cluster Resources
-        CM[Cluster Manager: Standalone / YARN / K8s / Mesos]
-        subgraph Worker Node 1
+    subgraph "Cluster Resources"
+        CM["Cluster Manager: Standalone / YARN / K8s / Mesos"]
+        subgraph "Worker Node 1"
             direction LR
-            Exec1[Executor: Tasks, Cache]
+            Exec1["Executor: Tasks, Cache"]
         end
-        subgraph Worker Node 2
+        subgraph "Worker Node 2"
             direction LR
-            Exec2[Executor: Tasks, Cache]
+            Exec2["Executor: Tasks, Cache"]
         end
-        subgraph Worker Node N
+        subgraph "Worker Node N"
             direction LR
-            ExecN[Executor: Tasks, Cache]
+            ExecN["Executor: Tasks, Cache"]
         end
     end
 
     UserCode -- Creates --> Driver
-    Driver -- 1. Requests Resources --> CM
-    CM -- 2. Allocates Resources & Starts Executors --> Exec1
-    CM -- 2. Allocates Resources & Starts Executors --> Exec2
-    CM -- 2. Allocates Resources & Starts Executors --> ExecN
-    Exec1 -- 3. Register --> Driver
-    Exec2 -- 3. Register --> Driver
-    ExecN -- 3. Register --> Driver
-    Driver -- 4. Sends Tasks --> Exec1
-    Driver -- 4. Sends Tasks --> Exec2
-    Driver -- 4. Sends Tasks --> ExecN
-    Exec1 -- 5. Executes Tasks & Stores Data --> Exec1
-    Exec2 -- 5. Executes Tasks & Stores Data --> Exec2
-    ExecN -- 5. Executes Tasks & Stores Data --> ExecN
-    Exec1 -- 6. Returns Results/Status --> Driver
-    Exec2 -- 6. Returns Results/Status --> Driver
-    ExecN -- 6. Returns Results/Status --> Driver
+    Driver -- "1. Requests Resources" --> CM
+    CM -- "2. Allocates Resources & Starts Executors" --> Exec1
+    CM -- "2. Allocates Resources & Starts Executors" --> Exec2
+    CM -- "2. Allocates Resources & Starts Executors" --> ExecN
+    Exec1 -- "3. Register" --> Driver
+    Exec2 -- "3. Register" --> Driver
+    ExecN -- "3. Register" --> Driver
+    Driver -- "4. Sends Tasks" --> Exec1
+    Driver -- "4. Sends Tasks" --> Exec2
+    Driver -- "4. Sends Tasks" --> ExecN
+    Exec1 -- "5. Executes Tasks & Stores Data" --> Exec1
+    Exec2 -- "5. Executes Tasks & Stores Data" --> Exec2
+    ExecN -- "5. Executes Tasks & Stores Data" --> ExecN
+    Exec1 -- "6. Returns Results/Status" --> Driver
+    Exec2 -- "6. Returns Results/Status" --> Driver
+    ExecN -- "6. Returns Results/Status" --> Driver
 
     style Driver fill:#f9f,stroke:#333,stroke-width:2px
     style Exec1 fill:#ccf,stroke:#333,stroke-width:2px
@@ -102,7 +102,7 @@ graph TD
 
 这个架构使得 Spark 能够有效地将计算任务分布到集群中，并管理资源的分配和任务的执行。
 
-### 3.2 RDD：弹性分布式数据集的设计与实现
+∂### 3.2 RDD：弹性分布式数据集的设计与实现
 
 RDD (Resilient Distributed Dataset) 是 Spark 1.x 时代最核心的数据抽象，也是理解 Spark 工作原理的基础。尽管 DataFrame/Dataset API 在 Spark 2.x 后成为主流，但它们底层仍然是基于 RDD 实现的。
 
@@ -130,22 +130,22 @@ RDD (Resilient Distributed Dataset) 是 Spark 1.x 时代最核心的数据抽象
 
 ```mermaid
 graph TD
-    subgraph RDD Properties
-        A[RDD] --> B(Partitions)
-        A --> C(Compute Function)
+    subgraph "RDD Properties"
+        A[RDD] --> B("Partitions")
+        A --> C("Compute Function")
         A --> D{Dependencies}
-        A -- Optional --> E(Partitioner)
-        A -- Optional --> F(Preferred Locations)
-        A -- Operations --> G[Transformations (Lazy)]
-        A -- Operations --> H[Actions (Trigger Execution)]
+        A -- Optional --> E("Partitioner")
+        A -- Optional --> F("Preferred Locations")
+        A -- Operations --> G["Transformations (Lazy)"]
+        A -- Operations --> H["Actions (Trigger Execution)"]
         A -- Features --> I[Immutable]
-        A -- Features --> J[Resilient (Lineage)]
-        A -- Features --> K[Persistent (Optional Cache)]
+        A -- Features --> J["Resilient (Lineage)"]
+        A -- Features --> K["Persistent (Optional Cache)"]
     end
 
-    subgraph Dependencies
-        D -- Narrow (e.g., map, filter) --> D1[Parent Partition -> 1 Child Partition]
-        D -- Wide (e.g., groupByKey, join) --> D2[Parent Partition -> N Child Partitions (Shuffle)]
+    subgraph "Dependencies"
+        D -- "Narrow (e.g., map, filter)" --> D1[Parent Partition -> 1 Child Partition]
+        D -- "Wide (e.g., groupByKey, join)" --> D2["Parent Partition -> N Child Partitions (Shuffle)"]
     end
 
     style D2 fill:#f9f,stroke:#333,stroke-width:2px
@@ -196,9 +196,9 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph Spark Data Abstractions Evolution
-        RDD[RDD: Low-Level, Flexibility, No Schema Optimization] -- Spark 1.3 --> DF[DataFrame: Schema, SQL-like DSL, Catalyst/Tungsten Optimization, Untyped (Dataset[Row])]
-        DF -- Spark 1.6 --> DS[Dataset: Type-Safe (Compile-time check), Functional + Relational API, Encoders, Best of Both Worlds (Scala/Java)]
+    subgraph "Spark Data Abstractions Evolution"
+        RDD["RDD: Low-Level, Flexibility, No Schema Optimization"] -- Spark 1.3 --> DF["DataFrame: Schema, SQL-like DSL, Catalyst/Tungsten Optimization, Untyped (Dataset[Row])"]
+        DF -- Spark 1.6 --> DS["Dataset: Type-Safe (Compile-time check), Functional + Relational API, Encoders, Best of Both Worlds (Scala/Java)"]
         DS -- Built on --> RDD
         DF -- Built on --> RDD
     end
@@ -259,12 +259,12 @@ Catalyst 是 Spark SQL 的核心，负责将用户编写的 SQL 查询或 DataFr
 
 ```mermaid
 graph TD
-    A[SQL Query / DataFrame API] --> B(Unresolved Logical Plan)
-    B -- Analysis (with Catalog) --> C(Logical Plan)
-    C -- Logical Optimization (RBO: Predicate Pushdown, Column Pruning etc.) --> D(Optimized Logical Plan)
+    A["SQL Query / DataFrame API"] --> B("Unresolved Logical Plan")
+    B -- "Analysis (with Catalog)" --> C("Logical Plan")
+    C -- "Logical Optimization (RBO: Predicate Pushdown, Column Pruning etc.)" --> D("Optimized Logical Plan")
     D -- Physical Planning --> E{Multiple Physical Plans}
-    E -- Cost-Based Optimization (CBO: Select Best Plan based on Stats & Cost Model) --> F(Selected Physical Plan)
-    F -- Code Generation (Tungsten) --> G[Executable RDD DAG (Java Bytecode)]
+    E -- "Cost-Based Optimization (CBO: Select Best Plan based on Stats & Cost Model)" --> F("Selected Physical Plan")
+    F -- "Code Generation (Tungsten)" --> G["Executable RDD DAG (Java Bytecode)"]
 
     style B fill:#eee,stroke:#333
     style C fill:#ccf,stroke:#333

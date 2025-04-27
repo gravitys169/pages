@@ -99,6 +99,125 @@ graph LR
 
 理解共识协议有助于我们理解大数据引擎如何实现核心管理节点的容错和故障恢复。
 
+**1.1.4 Raft 共识协议的详细原理**
+
+Raft 是一种用于分布式系统中达成共识的协议，由 Diego Ongaro 和 John Ousterhout 设计，目标是比 Paxos 更易于理解和实现。Raft 将复杂的共识问题分解为三个相对独立的子问题：领导人选举、日志复制和安全性。
+
+**基本概念**
+
+* **状态机复制：** Raft 使用复制状态机确保分布式系统中所有节点的一致性。每个节点维护一个日志，包含状态改变的指令序列。
+* **节点角色：** Raft 中的节点有三种角色：
+  * **领导者 (Leader)** - 处理所有客户端请求，管理日志复制
+  * **跟随者 (Follower)** - 响应领导者的请求
+  * **候选人 (Candidate)** - 在选举过程中的临时角色
+
+* **任期 (Term)：** Raft 将时间分割为任意长度的任期，每个任期有唯一的递增编号。每个任期最多有一个领导者。
+
+```mermaid
+stateDiagram-v2
+    [*] --> Follower
+    Follower --> Candidate: 选举超时
+    Candidate --> Leader: 获得多数票
+    Candidate --> Follower: 发现其他Leader或选举超时
+    Leader --> Follower: 发现更高任期号
+```
+
+**领导人选举详解**
+
+1. **选举触发**
+   * 初始状态下所有节点都是跟随者
+   * 如果跟随者在一段时间内（选举超时，通常150-300ms）没有收到领导者的心跳，则转变为候选人
+   * 为避免同时选举，每个节点的超时时间是随机的
+
+2. **投票请求**
+   * 候选人增加当前任期号并投票给自己
+   * 向所有其他节点发送 RequestVote RPC，包含自己的任期号和日志信息
+   * 节点收到投票请求后，如果任期号有效且还未投票给其他候选人，同时候选人的日志至少与接收者一样新，则投赞成票
+
+3. **选举结果**
+   * 候选人获得多数票（N/2+1）后成为领导者
+   * 如果选举超时未获得多数票，则开始新一轮选举
+   * 如果发现更高任期的领导者，则转变为跟随者
+
+**日志复制机制**
+
+1. **日志结构**
+   * 每个日志条目包含：命令、任期号和索引位置
+   * 日志按索引位置顺序编号（从1开始）
+
+2. **日志复制流程**
+
+```
++--------------------------+
+| 索引 | 任期 | 命令      |
++--------------------------+
+|  1   |  1   | SET x=3   |
+|  2   |  1   | SET y=1   |
+|  3   |  2   | SET x=1   |
+|  4   |  2   | SET y=2   |
++--------------------------+
+```
+
+   * Leader 接收客户端命令，将其追加到本地日志
+   * Leader 并行向所有 Follower 发送 AppendEntries RPC（包含新日志条目）
+   * 当日志被安全复制到多数节点后，Leader 提交该日志条目
+   * Leader 通知 Follower 哪些日志条目已被提交
+   * 所有节点按顺序将已提交的命令应用到状态机
+
+3. **一致性检查**
+   * 每个 AppendEntries RPC 包含 `prevLogIndex` 和 `prevLogTerm`，Follower 必须确认自己在该位置的日志与 Leader 一致
+   * 如果一致，追加新日志；不一致，拒绝请求
+   * Leader 对每个 Follower 维护 `nextIndex`，表示下一个要发送的日志条目索引
+   * 如果 AppendEntries 失败，Leader 递减 `nextIndex` 并重试（日志回溯）
+
+**安全性保证**
+
+1. **选举限制**
+   * 只有包含所有已提交日志的节点才能成为 Leader
+   * 投票时，候选人的日志必须至少与投票者一样新（先比较最后日志条目的任期号，再比较索引）
+
+2. **提交规则**
+   * Leader 只提交当前任期的日志条目
+   * 旧任期的日志条目通过复制当前任期的新日志条目来间接提交
+
+3. **日志匹配特性**
+   * 如果两个日志包含索引相同且任期相同的条目，则该条目之前的所有条目都相同
+   * Leader 从不覆盖或删除自己的日志条目
+
+**集群成员变更**
+
+Raft 通过两阶段方法实现集群成员安全变更：
+1. 首先切换到过渡配置（新旧配置并存），称为"共同一致"(joint consensus)
+2. 一旦共同一致状态被提交，系统再切换到新配置
+
+**处理成员宕机**
+
+* **Leader 宕机**：启动新一轮选举
+* **Follower 宕机**：Leader 继续尝试向其复制日志；系统只要多数节点正常就能继续工作
+
+**实际应用示例**
+
+假设有5个节点的 Raft 集群，节点 S1 是当前 Leader，任期为2：
+
+1. **正常操作**
+   * 客户端发送命令 "SET z=5" 到 S1
+   * S1 追加到本地日志（索引5，任期2）
+   * S1 向 S2-S5 发送 AppendEntries
+   * S2, S3, S4 成功复制（即使 S5 失败也无妨）
+   * S1 提交索引5并应用命令
+   * S1 通知客户端成功，并在下次心跳中通知 Follower 更新提交索引
+
+2. **网络分区**
+   * 假设网络分区将集群分为 {S1, S2} 和 {S3, S4, S5}
+   * S3超时后发起选举，任期增至3，获得S4, S5选票成为新Leader
+   * S1继续认为自己是Leader，但只能与S2通信
+   * 当分区恢复后:
+     * S1收到含有更高任期的消息
+     * S1发现自己已过时，转为Follower
+     * 集群在任期3的Leader (S3) 下重新统一
+
+Raft 协议广泛应用于分布式系统，如 etcd、Consul、TiKV等，用于实现服务发现、配置中理、元数据管理等功能。通过其直观的设计，有效解决了分布式一致性的核心问题。
+
 ### 1.2 大数据处理模式演进
 
 大数据处理技术并非一蹴而就，其处理模式随着硬件发展、应用需求和理论突破而不断演进。
@@ -143,17 +262,6 @@ flowchart TD
     *   **统一处理:** 基于 DAG 模型，可以更容易地在同一个引擎中支持批处理、SQL 查询、流处理、机器学习等多种计算范式。
 *   **代表:** Apache Spark, Apache Tez (作为 Hadoop MapReduce 的执行引擎改进)。
 
-```mermaid
-flowchart TD
-    subgraph Spark DAG Example （(Word Count）)
-        A[Input: textFile()] --> B(Map: _.flatMap(_.split(" ")))
-        B --> C(Map: (_, 1))
-        C -- Shuffle --> D(ReduceByKey: _ + _)
-        D --> E[Output: saveAsTextFile()]
-    end
-    style D fill:#f9f,stroke:#333,stroke-width:2px
-```
-
 **1.2.3 MPP (Massively Parallel Processing) 与 Streaming 时代**
 
 随着对低延迟查询和实时处理需求的增长，MPP 架构和流处理引擎得到了快速发展。
@@ -176,7 +284,7 @@ flowchart TD
 
 ```mermaid
 graph TD
-    subgraph MPP Query Execution (Simplified)
+    subgraph MPP Query Execution 
         Coord[Coordinator] -- Parse & Plan --> Coord
         Coord -- Distribute Fragments --> W1[Worker 1]
         Coord -- Distribute Fragments --> W2[Worker 2]
@@ -188,7 +296,7 @@ graph TD
         WN --> Output
     end
 
-    subgraph Streaming Processing (Simplified)
+    subgraph Streaming Processing 
         Input[Data Source (e.g., Kafka)] --> Op1[Operator 1 (e.g., Map)]
         Op1 -- Stream Partition --> Op2[Operator 2 (e.g., KeyBy/Window)]
         Op2 -- Stream Partition --> Op3[Operator 3 (e.g., Sink)]
@@ -258,6 +366,61 @@ graph TD
 *   **Avro:** Apache Avro 是一个数据序列化系统，设计用于支持大数据处理。它使用 JSON 定义 Schema，数据以二进制格式存储，Schema 与数据分离。适合需要动态 Schema 和强类型检查的场景。
 *   **Thrift:** Apache Thrift 是 Facebook 开发的跨语言服务开发框架，包含了一套序列化机制。类似于 Protobuf。
 *   **Apache Arrow:** 一个跨语言的、基于内存列式存储的数据格式规范。其核心特点是 **零拷贝 (Zero-Copy)** 读取。数据在内存中以标准化的列式格式组织，不同系统/进程可以直接共享或传输内存中的数据，无需序列化/反序列化开销。Arrow 正在成为大数据系统（如 Spark, Flink, Dremio, Pandas 2.0）之间高效数据交换和内存计算的标准。
+
+以下是 Apache Arrow 零拷贝特性的 Python 代码示例，展示了如何在进程间高效共享数据而无需序列化/反序列化：
+
+```python
+# 进程A：创建 Arrow 表并共享内存
+import pyarrow as pa
+import numpy as np
+import pyarrow.plasma as plasma
+import uuid
+
+# 创建一个大型数据集
+data = np.random.rand(10000000)  # 1千万个随机浮点数
+arr = pa.array(data)
+batch = pa.RecordBatch.from_arrays([arr], names=['random_values'])
+table = pa.Table.from_batches([batch])
+
+# 连接到共享内存服务
+client = plasma.connect("/tmp/plasma")  # 共享内存存储路径
+object_id = plasma.ObjectID(uuid.uuid4().bytes)
+
+# 将表放入共享内存（无需复制整个数据内容）
+buffer = pa.serialize(table).to_buffer()
+client.create(object_id, buffer.size)
+view = client.seal(object_id)
+```
+
+```python
+# 进程B：从共享内存读取数据（零拷贝）
+import pyarrow as pa
+import pyarrow.plasma as plasma
+
+# 连接到相同的共享内存
+client = plasma.connect("/tmp/plasma")
+
+# 获取对象ID（通过某种IPC机制传递）
+object_id = ... # 从进程A获取的object_id
+
+# 零拷贝方式访问数据
+[buffer] = client.get_buffers([object_id])
+table = pa.deserialize(buffer)
+
+# 直接访问数据，无需复制
+column = table.column('random_values')
+values = column.to_numpy()  # 无需复制数据
+
+# 在不复制数据的情况下处理
+mean_value = values.mean()  # 计算平均值
+```
+
+与传统序列化方式相比，Arrow 的零拷贝优势：
+
+1. **传统方式**: 进程A序列化数据 → 传输数据 → 进程B反序列化数据，需要至少2次内存复制
+2. **Arrow方式**: 进程A和B共享相同的内存区域，无需复制数据，直接引用
+
+这在大数据处理中尤为重要，例如当 Spark 执行引擎需要与 Python UDF 交换大量数据时，使用 Arrow 可以显著提升性能（相比传统的 Pickle 序列化可提高 10-100 倍）。Spark、Pandas、Dremio 等多个系统已集成 Arrow 作为数据交换格式。
 
 | 序列化库/格式 | 主要特点                                                     | 优点                                       | 缺点                                       |
 | :------------ | :----------------------------------------------------------- | :----------------------------------------- | :----------------------------------------- |

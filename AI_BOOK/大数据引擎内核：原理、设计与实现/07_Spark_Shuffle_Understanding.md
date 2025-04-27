@@ -249,31 +249,26 @@ sequenceDiagram
 
 ```mermaid
 graph TD
-    subgraph Default Shuffle (No External Service)
-        ExecA[Executor A (Map Task i)] -- Writes --> DiskA[Local Disk on Node A]
-        ExecB[Executor B (Reduce Task j)] -- Requests Block --> ExecA
-        ExecA -- Reads & Sends --> ExecB
-        ExecA -- If Dies --> DataLost[Shuffle Data Lost!]
+    subgraph Without External Shuffle Service
+        direction LR
+        ExecA[Executor A (Map Task)] -- Shuffle Write --> DiskA[Local Disk on Node A]
+        ExecB[Executor B (Reduce Task)] -- Shuffle Read --> ExecA
+        ExecA -- Dies --> ShuffleDataLost[Shuffle Data Lost!]
     end
 
-    subgraph External Shuffle Service
-        ExecA2[Executor A (Map Task i)] -- Writes Block --> ESS_A[External Shuffle Service on Node A]
-        ESS_A -- Stores --> DiskA2[Disk managed by ESS_A]
-        ExecB2[Executor B (Reduce Task j)] -- Requests Block --> ESS_A
-        ESS_A -- Reads & Sends --> ExecB2
-        ExecA2 -- Can Die Safely --> DataOK[Shuffle Data Still Available via ESS_A]
+    subgraph With External Shuffle Service
+        direction LR
+        ExecA2[Executor A (Map Task)] -- Shuffle Write --> ESS_A[External Shuffle Service on Node A]
+        ESS_A --> DiskA2[Managed Disk on Node A]
+        ExecB2[Executor B (Reduce Task)] -- Shuffle Read --> ESS_A
+        ExecA2 -- Dies --> ESS_A_Stays[Shuffle Data Still Available via ESS_A]
     end
-    style ESS_A fill:#f9f,stroke:#333,stroke-width:2px
+
+    style ShuffleDataLost fill:#f00,stroke:#333,stroke-width:2px,color:#fff
+    style ESS_A fill:#ccf,stroke:#333,stroke-width:2px
+    style ESS_A_Stays fill:#0f0,stroke:#333,stroke-width:2px,color:#000
 ```
 
-**其他优化考虑:**
+**总结:**
 
-*   **数据压缩:** 通过 `spark.shuffle.compress` (默认 true) 和 `spark.io.compression.codec` (默认 lz4) 压缩 Shuffle 数据，减少磁盘 I/O 和网络传输量，但会增加 CPU 开销。
-*   **序列化器:** 使用更快的序列化库（如 Kryo，通过 `spark.serializer` 配置）可以提升 Shuffle 过程中的序列化/反序列化效率。
-*   **合并小文件:** `spark.shuffle.consolidateFiles` (已被 Sort Shuffle 机制取代其主要作用，但曾用于 Hash Shuffle) 尝试合并 Shuffle 输出文件。
-*   **调整 Reduce 端缓冲区:** `spark.reducer.maxSizeInFlight`, `spark.reducer.maxReqsInFlight` 等参数控制 Reduce 端拉取数据的并发度和缓冲区大小。
-*   **避免 Shuffle:** 最根本的优化是尽可能避免不必要的 Shuffle 操作，例如使用 Broadcast Join 代替 Shuffle Join，优化数据处理逻辑等。
-
----
-
-Shuffle 是 Spark 中一个复杂但至关重要的环节。本章我们深入探讨了 Shuffle 的原理和必要性，对比了 Hash Shuffle 和 Sort Shuffle 的实现差异，梳理了 Shuffle Read 的完整流程，并详细介绍了 Bypass Merge Sort、Unsafe Shuffle Writer (Tungsten Sort) 和 External Shuffle Service 等关键优化技术。深刻理解 Shuffle 的内部机制和优化策略，是 Spark 开发者进行性能调优、解决瓶颈问题的必备知识。 
+Shuffle 是 Spark 中一个复杂但至关重要的过程。理解其原理、不同实现（Hash vs Sort）、读写流程以及各种优化策略（BypassMergeSort, Tungsten Sort, External Shuffle Service）对于诊断性能瓶颈、进行有效调优至关重要。在实践中，应尽量避免不必要的 Shuffle，选择合适的算子（如 `reduceByKey` 优于 `groupByKey` + `map`），合理设置分区数，并根据需要启用和配置相关优化参数。 

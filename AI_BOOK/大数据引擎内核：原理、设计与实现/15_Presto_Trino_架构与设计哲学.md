@@ -34,7 +34,7 @@ Presto/Trino采用了无共享（Shared-Nothing）的MPP架构。这意味着每
 
 ```mermaid
 graph TD
-    Client[Client (CLI, JDBC/ODBC)] -- SQL Query --> Coordinator((Coordinator));
+    Client[Client] -- SQL Query --> Coordinator((Coordinator));
 
     subgraph Presto/Trino Cluster
         Coordinator -- "Plan & Schedule Tasks" --> Worker1(Worker 1);
@@ -45,8 +45,8 @@ graph TD
         Worker2 -- "Task Status" --> Coordinator;
         WorkerN -- "Task Status" --> Coordinator;
 
-        Worker1 <-- "Fetch Data" --> DataSource1[Data Source A (e.g., Hive)];
-        Worker2 <-- "Fetch Data" --> DataSource2[Data Source B (e.g., MySQL)];
+        Worker1 <-- "Fetch Data" --> DataSource1[Data Source A];
+        Worker2 <-- "Fetch Data" --> DataSource2[Data Source B];
         WorkerN <-- "Fetch Data" --> DataSource1;
 
         Worker1 -- "Exchange Data (Shuffle)" --> Worker2;
