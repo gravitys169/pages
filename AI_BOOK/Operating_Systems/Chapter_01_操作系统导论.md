@@ -185,7 +185,7 @@ graph TD
 
     ```mermaid
     graph TD
-        subgraph Kernel Space (内核态)
+        subgraph Kernel Space
             direction LR
             SysCall(系统调用接口) --- PM(进程管理)
             SysCall --- MM(内存管理)
