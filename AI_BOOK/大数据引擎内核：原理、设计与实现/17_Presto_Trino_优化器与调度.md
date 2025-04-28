@@ -14,7 +14,7 @@
     *   **目标:** 尽早过滤数据，减少后续操作处理的数据量。
     *   **实现:** 将`WHERE`子句中的过滤条件尽可能地向下推近数据源（`TableScan`）或Join操作。
     *   **示例:** `SELECT a.name FROM A JOIN B ON A.id = B.id WHERE A.city = 'NY'` -> 将`A.city = 'NY'`下推到扫描表`A`时进行过滤。
-    *   **跨Join下推:** 某些条件下，可以将一个表的过滤条件下推到Join的另一侧。
+    *   **动态过滤:** 某些条件下，可以将一个表的过滤条件下推到Join的另一侧。
 
 *   **列裁剪 / 投影下推 (Column Pruning / Projection Pushdown):**
     *   **目标:** 只读取和处理查询最终需要的列。
@@ -141,13 +141,13 @@ Coordinator不仅负责规划查询，还负责将生成的Task调度到Worker�
 
 ```mermaid
 graph TD
-    Query1[Query from User A (Source: BI)] --> Selector{Selector Rules};
-    Query2[Query from User B (Source: ETL)] --> Selector;
-    Query3[Query from User A (Source: AdHoc)] --> Selector;
+    Query1[Query from User A : BI] --> Selector{Selector Rules};
+    Query2[Query from User B : ETL] --> Selector;
+    Query3[Query from User A : AdHoc] --> Selector;
 
     Selector -- Rule: User=A, Source=BI --> RG_BI(Resource Group: BI);
     Selector -- Rule: User=B --> RG_ETL(Resource Group: ETL);
-    Selector -- Rule: User=A --> RG_UserA(Resource Group: User A);
+    Selector -- Rule: User=A --> RG_UserA(Resource Group: AdHoc);
 
     subgraph Resource Groups
         RG_BI -- Limits: High Concurrency, Medium Memory --> Execution1(Execute Query 1);

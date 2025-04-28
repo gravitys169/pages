@@ -17,7 +17,7 @@
             Select --> From[FROM TableA];
             Select --> Where[WHERE Condition];
             SelectList --> Col1[Column: user_id];
-            SelectList --> Col2[Function: COUNT(*)];
+            SelectList --> Col2[Function: COUNT];
             From --> TableRef[Table: clicks];
             Where --> Comparison[Comparison: >];
             Comparison --> Col3[Column: timestamp];
@@ -74,28 +74,28 @@
 
 ```mermaid
 graph TD
-    subgraph Logical Plan (Optimized)
-        LP_Join(Join: A.id = B.id) --> LP_Agg(Aggregate: COUNT(*));
+    subgraph Optimized Logical Plan
+        LP_Join(Join: A.id = B.id) --> LP_Agg(Aggregate: COUNT);
         LP_ScanA(Scan A) --> LP_FilterA(Filter A.city='NY') --> LP_Join;
         LP_ScanB(Scan B) --> LP_FilterB(Filter B.status='active') --> LP_Join;
     end
 
-    subgraph Physical Plan (Stages & Tasks)
+    subgraph Physical Plan :Stages & Tasks
         Stage3((Stage 3: Final Aggregation)) --> Output[Query Output];
         Stage1((Stage 1: Scan & Filter A, Hash A)) -- Exchange --> Stage3;
         Stage2((Stage 2: Scan & Filter B, Build Hash Table B)) -- Exchange --> Stage3;
 
-        subgraph Stage 1 Tasks (Parallel)
+        subgraph Stage 1 Tasks :Parallel
             Task1_1(Task 1.1: Scan Split A1, Filter, Hash) --> Exchange1_1(Exchange Client);
             Task1_2(Task 1.2: Scan Split A2, Filter, Hash) --> Exchange1_2(Exchange Client);
         end
 
-        subgraph Stage 2 Tasks (Parallel)
+        subgraph Stage 2 Tasks :Parallel
             Task2_1(Task 2.1: Scan Split B1, Filter, Build Hash) --> Exchange2_1(Exchange Sink);
             Task2_2(Task 2.2: Scan Split B2, Filter, Build Hash) --> Exchange2_2(Exchange Sink);
         end
 
-         subgraph Stage 3 Tasks (Parallel)
+         subgraph Stage 3 Tasks :Parallel
             Task3_1(Task 3.1: Probe Hash A1, Join, Aggregate) --> Exchange3_1(Output Buffer);
             Task3_2(Task 3.2: Probe Hash A2, Join, Aggregate) --> Exchange3_2(Output Buffer);
         end
@@ -170,7 +170,6 @@ sequenceDiagram
     Worker2-->>Coord: Send Result Page 1
 
     Coord-->>Client: Stream Result Page 1
-    ...
     Worker2->>Coord: Join/Agg Task Finished
     Coord->>Coord: Aggregate Final Results
     Coord-->>Client: Stream Final Result & Close

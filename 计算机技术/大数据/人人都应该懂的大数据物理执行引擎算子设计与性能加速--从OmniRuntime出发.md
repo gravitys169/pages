@@ -308,8 +308,8 @@ HashJoin 算子主要分为两个阶段：build和probe
 2. slot存储的信息如Key、Hash等字段相同，特别的agg存储了State，而Join存储了batchID和rowID
 #### 不同点
 1. 扩容：HashAgg处理一个batch后即丢弃，Hashtable包含了所有输出需要的信息，因而起始Slot 数组较小，随着输入增多需要扩容，一般采用开放地址法。而hashjoin因为会累积所有数据以用于输出，所以是可以直接根据行数与稀疏度，设定slot数组的大小。
-2. 重复key：hashagg中重复key的行，就是需要计算state的行，而join中重复Key的行是需要输出的行
-3. null：hashagg中空值为一个组别，需要计算state，而join中只要key列中有一列为null，那么就不应该join上
+2. 重复key：Hashagg中重复key的行，就是需要计算state的行，而join中重复Key的行是需要输出的行
+3. null：Hashagg中空值为一个组别，需要计算state，而join中只要key列中有一列为null，那么就不应该join上
 
 ## Sort  
 ![[attachments/大数据分析算子算法分析 2025-01-20 09.56.19.excalidraw]]

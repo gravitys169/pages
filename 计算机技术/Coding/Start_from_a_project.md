@@ -6,8 +6,6 @@
 内网网络原则
 - 外网：设置代理
 - 内网：需要排除（export no_proxy=*. huawei. com,*. tools. huawei. com, cmc-cd-mirror. rnd. huawei. com），否则报错 proxy 相关错
-
-），否则
 ## How to set a project
 #### Java
 1. Maven编译指令
