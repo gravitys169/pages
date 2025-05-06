@@ -297,10 +297,10 @@ graph TD
     end
 
     subgraph Streaming Processing 
-        Input[Data Source (e.g., Kafka)] --> Op1[Operator 1 (e.g., Map)]
-        Op1 -- Stream Partition --> Op2[Operator 2 (e.g., KeyBy/Window)]
-        Op2 -- Stream Partition --> Op3[Operator 3 (e.g., Sink)]
-        Op3 --> Output[Data Sink (e.g., DB)]
+        Input[Data Source] --> Op1[Operator 1]
+        Op1 -- Stream Partition --> Op2[Operator 2 e.g., KeyBy/Window]
+        Op2 -- Stream Partition --> Op3[Operator 3 e.g., Sink]
+        Op3 --> Output[Data Sink e.g., DB]
         State[(State Backend)] <--> Op2
     end
 ```
