@@ -31,12 +31,12 @@ Flink采用标准的Master-Slave架构，主要由三个组件构成：**JobMana
 
 ```mermaid
 graph TD
-    Client -- "提交作业 (JobGraph)" --> JM(JobManager);
+    Client -- "提交作业 (JobGraph)" --> JM["JobManager"];
 
     subgraph "Flink Cluster"
-        JM -- "分发任务" --> TM1(TaskManager 1);
-        JM -- "分发任务" --> TM2(TaskManager 2);
-        JM -- "分发任务" --> TMn(TaskManager N);
+        JM -- "分发任务" --> TM1["TaskManager 1"];
+        JM -- "分发任务" --> TM2["TaskManager 2"];
+        JM -- "分发任务" --> TMn["TaskManager N"];
 
         TM1 -- "心跳/状态" --> JM;
         TM2 -- "心跳/状态" --> JM;
@@ -44,8 +44,8 @@ graph TD
 
         subgraph "JobManager (Master)"
             direction LR
-            Dispatcher -- "启动" --> JobMaster1(JobMaster for Job 1);
-            Dispatcher -- "启动" --> JobMaster2(JobMaster for Job 2);
+            Dispatcher -- "启动" --> JobMaster1["JobMaster for Job 1"];
+            Dispatcher -- "启动" --> JobMaster2["JobMaster for Job 2"];
             ResourceManager -- "管理" --> TM1;
             ResourceManager -- "管理" --> TM2;
             ResourceManager -- "管理" --> TMn;
@@ -55,23 +55,23 @@ graph TD
 
         subgraph "TaskManager 1 (Worker)"
             direction TB
-            Slot1_1[Task Slot 1]
-            Slot1_2[Task Slot 2]
-            NetMemMgr1(Network/Memory Manager)
+            Slot1_1["Task Slot 1"]
+            Slot1_2["Task Slot 2"]
+            NetMemMgr1["Network/Memory Manager"]
         end
 
         subgraph "TaskManager 2 (Worker)"
             direction TB
-            Slot2_1[Task Slot 1]
-            Slot2_2[Task Slot 2]
-            NetMemMgr2(Network/Memory Manager)
+            Slot2_1["Task Slot 1"]
+            Slot2_2["Task Slot 2"]
+            NetMemMgr2["Network/Memory Manager"]
         end
 
         subgraph "TaskManager N (Worker)"
             direction TB
-            SlotN_1[Task Slot 1]
-            SlotN_2[Task Slot 2]
-            NetMemMgrN(Network/Memory Manager)
+            SlotN_1["Task Slot 1"]
+            SlotN_2["Task Slot 2"]
+            NetMemMgrN["Network/Memory Manager"]
         end
     end
 
@@ -167,12 +167,12 @@ Flink的DataStream API编程模型围绕着以下三个核心概念构建：
 
 ```mermaid
 graph LR
-    Source[Source: Kafka] --> Map(Map: 解析日志);
-    Map --> Filter(Filter: 筛选错误日志);
-    Filter --> KeyBy(KeyBy: 按错误类型分组);
-    KeyBy --> Window(Window: 5分钟滚动窗口);
-    Window --> Aggregate(Aggregate: 统计错误数量);
-    Aggregate --> Sink[Sink: Elasticsearch];
+    Source["Source: Kafka"] --> Map["Map: 解析日志"];
+    Map --> Filter["Filter: 筛选错误日志"];
+    Filter --> KeyBy["KeyBy: 按错误类型分组"];
+    KeyBy --> Window["Window: 5分钟滚动窗口"];
+    Window --> Aggregate["Aggregate: 统计错误数量"];
+    Aggregate --> Sink["Sink: Elasticsearch"];
 ```
 
 ## 9.4 作业图：StreamGraph -> JobGraph -> ExecutionGraph
@@ -202,20 +202,20 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph Client
-        A[User Code:DataStream API] --> B(StreamGraph);
-        B -- Operator Chaining --> C(JobGraph);
+    subgraph "Client"
+        A["User Code:DataStream API"] --> B["StreamGraph"];
+        B -- "Operator Chaining" --> C["JobGraph"];
     end
 
    
 
-    subgraph JobManager :JobMaster
-        C --> D{ExecutionGraph};
+    subgraph "JobManager :JobMaster"
+        C --> D{"ExecutionGraph"};
         D -- "Deploy Tasks" --> TaskManagers
     end
 
-    subgraph TaskManagers
-        E[Task Execution]
+    subgraph "TaskManagers"
+        E["Task Execution"]
     end
 ```
 

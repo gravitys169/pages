@@ -27,17 +27,17 @@
 ```mermaid
 graph TD
     subgraph "扩展方式对比"
-        A[需求增长: 数据量/计算量增加] --> B{如何扩展?}
-        B -- "垂直扩展 (Scale Up)" --> C[增强单节点: 更强CPU, 更大内存]
-        B -- "水平扩展 (Scale Out)" --> D[增加节点数量: 更多服务器]
+        A["需求增长: 数据量/计算量增加"] --> B{"如何扩展?"}
+        B -- "垂直扩展 (Scale Up)" --> C["增强单节点: 更强CPU, 更大内存"]
+        B -- "水平扩展 (Scale Out)" --> D["增加节点数量: 更多服务器"]
 
         subgraph "垂直扩展"
             direction LR
-            C1[优点: 简单] --> C2[缺点: 成本高, 有上限, 单点风险]
+            C1["优点: 简单"] --> C2["缺点: 成本高, 有上限, 单点风险"]
         end
         subgraph "水平扩展"
             direction LR
-            D1[优点: 性价比高, 扩展性好, 高可用] --> D2[缺点: 系统复杂, 管理开销]
+            D1["优点: 性价比高, 扩展性好, 高可用"] --> D2["缺点: 系统复杂, 管理开销"]
         end
     end
     style D fill:#ccf,stroke:#333,stroke-width:2px
@@ -84,15 +84,15 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Input Data] --> B(Transformation 1)
-    B --> C(Transformation 2)
+    A["Input Data"] --> B["Transformation 1"]
+    B --> C["Transformation 2"]
     subgraph "RDD Lineage"
-        A -- Parent --> B
-        B -- Parent --> C
+        A -- "Parent" --> B
+        B -- "Parent" --> C
     end
-    C -- "Partition Lost (Node Failure)" --> R{Recompute C from B}
+    C -- "Partition Lost (Node Failure)" --> R{"Recompute C from B"}
     R -- "Depends on" --> B
-    B -- "If Lost" --> R_B{Recompute B from A}
+    B -- "If Lost" --> R_B{"Recompute B from A"}
     R_B -- "Depends on" --> A
 
     style R fill:#f9f,stroke:#333,stroke-width:2px
@@ -179,12 +179,12 @@ sequenceDiagram
         *   **缓存管理:** 高效地缓存常用数据或中间结果。
         *   **数据溢写 (Spilling):** 当内存不足时，能够将部分数据临时写入磁盘，防止 `OOM`，保证任务能继续执行（但会牺牲性能）。
 
-| 优化维度    | 关键挑战         | 常见优化策略                                                   |
-| :------ | :----------- | :------------------------------------------------------- |
-| `I/O`     | 磁盘/网络瓶颈      | 内存计算, 列式存储, 谓词下推, 分区裁剪, 高效序列化, 压缩, 异步`I/O`, 并行`I/O`          |
+| 优化维度      | 关键挑战           | 常见优化策略                                                           |
+| :-------- | :------------- | :--------------------------------------------------------------- |
+| `I/O`     | 磁盘/网络瓶颈        | 内存计算, 列式存储, 谓词下推, 分区裁剪, 高效序列化, 压缩, 异步`I/O`, 并行`I/O`              |
 | `Network` | `Shuffle` 开销大  | `Map`端预聚合, `Broadcast Join`, 优化`Shuffle`机制, 高效序列化, 压缩, `Netty`优化 |
-| `CPU`     | 计算密集, `GC` 开销  | 代码生成, 向量化执行, 算子优化, 减少`GC` (堆外内存)                           |
-| `Memory`  | 资源有限, `OOM` 风险 | 统一内存管理, 堆外内存, 紧凑数据结构, 缓存管理, 数据溢写 (`Spilling`)              |
+| `CPU`     | 计算密集, `GC` 开销  | 代码生成, 向量化执行, 算子优化, 减少`GC` (堆外内存)                                 |
+| `Memory`  | 资源有限, `OOM` 风险 | 统一内存管理, 堆外内存, 紧凑数据结构, 缓存管理, 数据溢写 (`Spilling`)                    |
 
 大数据引擎需要在这些方面进行综合优化，并提供参数供用户根据具体场景进行调优。
 

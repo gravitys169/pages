@@ -85,35 +85,35 @@ resultDf.write.parquet("path/to/output") // Action: Triggers a Job
 
 ```mermaid
 graph TD
-    subgraph Job DAG
-        A[lines: textFile] --> B(words: flatMap)
-        B --> C(pairs: map)
-        C -- Wide Dependency (Shuffle) --> D(wordCounts: reduceByKey)
-        D -- Action --> E[saveAsTextFile]
+    subgraph "Job DAG"
+        A["lines: textFile"] --> B["words: flatMap"]
+        B --> C["pairs: map"]
+        C -- "Wide Dependency (Shuffle)" --> D["wordCounts: reduceByKey"]
+        D -- "Action" --> E["saveAsTextFile"]
     end
 
-    subgraph Stage Splitting
+    subgraph "Stage Splitting"
         style Stage0 fill:#ccf,stroke:#333,stroke-width:2px
         style Stage1 fill:#f9f,stroke:#333,stroke-width:2px
 
-        subgraph Stage0 [ShuffleMapStage]
+        subgraph "Stage0 [ShuffleMapStage]"
             direction LR
-            A0[lines Partition 0] --> B0 --> C0
-            A1[lines Partition 1] --> B1 --> C1
-            C0 -- Shuffle Write --> ShuffleData0
-            C1 -- Shuffle Write --> ShuffleData1
+            A0["lines Partition 0"] --> B0 --> C0
+            A1["lines Partition 1"] --> B1 --> C1
+            C0 -- "Shuffle Write" --> ShuffleData0
+            C1 -- "Shuffle Write" --> ShuffleData1
         end
 
-        subgraph Stage1 [ResultStage]
+        subgraph "Stage1 [ResultStage]"
             direction LR
-            ShuffleData0 & ShuffleData1 -- Shuffle Read --> D0[wordCounts Partition 0]
-            ShuffleData0 & ShuffleData1 -- Shuffle Read --> D1[wordCounts Partition 1]
-            D0 --> E0[Save Partition 0]
-            D1 --> E1[Save Partition 1]
+            ShuffleData0 & ShuffleData1 -- "Shuffle Read" --> D0["wordCounts Partition 0"]
+            ShuffleData0 & ShuffleData1 -- "Shuffle Read" --> D1["wordCounts Partition 1"]
+            D0 --> E0["Save Partition 0"]
+            D1 --> E1["Save Partition 1"]
         end
     end
 
-    C -- Wide Dependency Boundary --> Stage1
+    C -- "Wide Dependency Boundary" --> Stage1
 
 ```
 
@@ -167,7 +167,7 @@ Stage 划分完成后，Spark 需要将每个 Stage 转换成具体的、可以�
 ```mermaid
 sequenceDiagram
     participant UserCode
-    participant Driver [Spark Driver]
+    participant Driver as "Spark Driver"
     participant DAGScheduler
     participant TaskScheduler
     participant ClusterManager

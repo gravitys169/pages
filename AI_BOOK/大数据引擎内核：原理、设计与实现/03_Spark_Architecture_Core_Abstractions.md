@@ -62,7 +62,7 @@ graph TD
         end
     end
 
-    UserCode -- Creates --> Driver
+    UserCode -- "Creates" --> Driver
     Driver -- "1. Requests Resources" --> CM
     CM -- "2. Allocates Resources & Starts Executors" --> Exec1
     CM -- "2. Allocates Resources & Starts Executors" --> Exec2
@@ -102,7 +102,7 @@ graph TD
 
 这个架构使得 Spark 能够有效地将计算任务分布到集群中，并管理资源的分配和任务的执行。
 
-∂### 3.2 RDD：弹性分布式数据集的设计与实现
+### 3.2 RDD：弹性分布式数据集的设计与实现
 
 RDD (Resilient Distributed Dataset) 是 Spark 1.x 时代最核心的数据抽象，也是理解 Spark 工作原理的基础。尽管 DataFrame/Dataset API 在 Spark 2.x 后成为主流，但它们底层仍然是基于 RDD 实现的。
 
@@ -131,20 +131,20 @@ RDD (Resilient Distributed Dataset) 是 Spark 1.x 时代最核心的数据抽象
 ```mermaid
 graph TD
     subgraph "RDD Properties"
-        A[RDD] --> B("Partitions")
-        A --> C("Compute Function")
-        A --> D{Dependencies}
-        A -- Optional --> E("Partitioner")
-        A -- Optional --> F("Preferred Locations")
-        A -- Operations --> G["Transformations (Lazy)"]
-        A -- Operations --> H["Actions (Trigger Execution)"]
-        A -- Features --> I[Immutable]
-        A -- Features --> J["Resilient (Lineage)"]
-        A -- Features --> K["Persistent (Optional Cache)"]
+        A["RDD"] --> B["Partitions"]
+        A --> C["Compute Function"]
+        A --> D{"Dependencies"}
+        A -- "Optional" --> E["Partitioner"]
+        A -- "Optional" --> F["Preferred Locations"]
+        A -- "Operations" --> G["Transformations (Lazy)"]
+        A -- "Operations" --> H["Actions (Trigger Execution)"]
+        A -- "Features" --> I["Immutable"]
+        A -- "Features" --> J["Resilient (Lineage)"]
+        A -- "Features" --> K["Persistent (Optional Cache)"]
     end
 
     subgraph "Dependencies"
-        D -- "Narrow (e.g., map, filter)" --> D1[Parent Partition -> 1 Child Partition]
+        D -- "Narrow (e.g., map, filter)" --> D1["Parent Partition -> 1 Child Partition"]
         D -- "Wide (e.g., groupByKey, join)" --> D2["Parent Partition -> N Child Partitions (Shuffle)"]
     end
 
@@ -197,10 +197,10 @@ graph TD
 ```mermaid
 graph TD
     subgraph "Spark Data Abstractions Evolution"
-        RDD["RDD: Low-Level, Flexibility, No Schema Optimization"] -- Spark 1.3 --> DF["DataFrame: Schema, SQL-like DSL, Catalyst/Tungsten Optimization, Untyped (Dataset[Row])"]
-        DF -- Spark 1.6 --> DS["Dataset: Type-Safe (Compile-time check), Functional + Relational API, Encoders, Best of Both Worlds (Scala/Java)"]
-        DS -- Built on --> RDD
-        DF -- Built on --> RDD
+        RDD["RDD: Low-Level, Flexibility, No Schema Optimization"] -- "Spark 1.3" --> DF["DataFrame: Schema, SQL-like DSL, Catalyst/Tungsten Optimization, Untyped (Dataset[Row])"]
+        DF -- "Spark 1.6" --> DS["Dataset: Type-Safe (Compile-time check), Functional + Relational API, Encoders, Best of Both Worlds (Scala/Java)"]
+        DS -- "Built on" --> RDD
+        DF -- "Built on" --> RDD
     end
 
     style DF fill:#ccf,stroke:#333,stroke-width:2px

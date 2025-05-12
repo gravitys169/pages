@@ -25,27 +25,27 @@ Shuffle 的本质是打破原有的数据分区，按照新的规则（通常是
 
 ```mermaid
 graph TD
-    subgraph Before Shuffle (Map Stage Output)
-        N1[Node 1: (K1,V1), (K2,V4)]
-        N2[Node 2: (K1,V2), (K3,V5)]
-        N3[Node 3: (K2,V3), (K3,V6)]
+    subgraph "Before Shuffle (Map Stage Output)"
+        N1["Node 1: (K1,V1), (K2,V4)"]
+        N2["Node 2: (K1,V2), (K3,V5)"]
+        N3["Node 3: (K2,V3), (K3,V6)"]
     end
 
-    subgraph Shuffle Process
+    subgraph "Shuffle Process"
         direction LR
-        N1 -- K1 --> R1
-        N1 -- K2 --> R2
-        N2 -- K1 --> R1
-        N2 -- K3 --> R3
-        N3 -- K2 --> R2
-        N3 -- K3 --> R3
-        Shuffle[Shuffle: Network Transfer & Partitioning by Key]
+        N1 -- "K1" --> R1
+        N1 -- "K2" --> R2
+        N2 -- "K1" --> R1
+        N2 -- "K3" --> R3
+        N3 -- "K2" --> R2
+        N3 -- "K3" --> R3
+        Shuffle["Shuffle: Network Transfer & Partitioning by Key"]
     end
 
-    subgraph After Shuffle (Reduce Stage Input)
-        R1[Reducer 1 (Handles K1): (K1,V1), (K1,V2)]
-        R2[Reducer 2 (Handles K2): (K2,V4), (K2,V3)]
-        R3[Reducer 3 (Handles K3): (K3,V5), (K3,V6)]
+    subgraph "After Shuffle (Reduce Stage Input)"
+        R1["Reducer 1 (Handles K1): (K1,V1), (K1,V2)"]
+        R2["Reducer 2 (Handles K2): (K2,V4), (K2,V3)"]
+        R3["Reducer 3 (Handles K3): (K3,V5), (K3,V6)"]
     end
 
     Before_Shuffle --> Shuffle --> After_Shuffle
@@ -79,13 +79,13 @@ Spark 的 Shuffle 写出（Map 端）机制经历了重要的演进。早期的 
 
 ```mermaid
 graph TD
-    subgraph Hash Shuffle Writer (Map Task i)
-        Input_i[Input Partition i] --> Map_i{Map Function}
-        Map_i -- Output (k,v) --> Hash{Calculate target reducer j = hash(k) % R}
-        Hash -- Target j=0 --> File_i_0[File for Reducer 0]
-        Hash -- Target j=1 --> File_i_1[File for Reducer 1]
-        Hash -- Target j=... --> File_i_dots[...]
-        Hash -- Target j=R-1 --> File_i_R1[File for Reducer R-1]
+    subgraph "Hash Shuffle Writer (Map Task i)"
+        Input_i["Input Partition i"] --> Map_i{"Map Function"}
+        Map_i -- "Output (k,v)" --> Hash{"Calculate target reducer j = hash(k) % R"}
+        Hash -- "Target j=0" --> File_i_0["File for Reducer 0"]
+        Hash -- "Target j=1" --> File_i_1["File for Reducer 1"]
+        Hash -- "Target j=..." --> File_i_dots["..."]
+        Hash -- "Target j=R-1" --> File_i_R1["File for Reducer R-1"]
     end
 ```
 
@@ -111,16 +111,16 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph Sort Shuffle Writer (Map Task i)
-        Input_i[Input Partition i] --> Map_i{Map Function}
-        Map_i -- Output (k,v) --> Buffer[In-Memory Buffer (Partitioned by Target Reducer ID)]
-        Buffer -- Buffer Full or Task End --> Sort{Sort Buffer by Reducer ID}
-        Sort --> Spill1[Spill File 1]
-        Buffer -- Buffer Full or Task End --> Sort2{...}
-        Sort2 --> SpillN[Spill File N]
+    subgraph "Sort Shuffle Writer (Map Task i)"
+        Input_i["Input Partition i"] --> Map_i{"Map Function"}
+        Map_i -- "Output (k,v)" --> Buffer["In-Memory Buffer (Partitioned by Target Reducer ID)"]
+        Buffer -- "Buffer Full or Task End" --> Sort{"Sort Buffer by Reducer ID"}
+        Sort --> Spill1["Spill File 1"]
+        Buffer -- "Buffer Full or Task End" --> Sort2{"..."}
+        Sort2 --> SpillN["Spill File N"]
 
-        Spill1 & SpillN -- Merge --> FinalDataFile[Final Data File (Sorted by Reducer ID)]
-        Spill1 & SpillN -- Generate Index --> IndexFile[Index File (.index)]
+        Spill1 & SpillN -- "Merge" --> FinalDataFile["Final Data File (Sorted by Reducer ID)"]
+        Spill1 & SpillN -- "Generate Index" --> IndexFile["Index File (.index)"]
     end
     style FinalDataFile fill:#ccf,stroke:#333,stroke-width:2px
     style IndexFile fill:#ccf,stroke:#333,stroke-width:2px
@@ -174,12 +174,12 @@ graph TD
 
 ```mermaid
 sequenceDiagram
-    participant ReduceTask_j [Reduce Task j (on Executor A)]
-    participant Driver [Driver (MapOutputTracker)]
-    participant ExecutorB [Executor B (Ran Map Task i)]
-    participant BlockManagerB [BlockManager on Executor B]
-    participant ExecutorC [Executor C (Ran Map Task k)]
-    participant BlockManagerC [BlockManager on Executor C]
+    participant ReduceTask_j as "Reduce Task j (on Executor A)"
+    participant Driver as "Driver (MapOutputTracker)"
+    participant ExecutorB as "Executor B (Ran Map Task i)"
+    participant BlockManagerB as "BlockManager on Executor B"
+    participant ExecutorC as "Executor C (Ran Map Task k)"
+    participant BlockManagerC as "BlockManager on Executor C"
 
     ReduceTask_j ->>+ Driver: Get Map Output Locations for Reducer j
     Driver -->>- ReduceTask_j: Locations (e.g., Block for j from Map i on Exec B, Block for j from Map k on Exec C)

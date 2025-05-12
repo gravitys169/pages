@@ -20,15 +20,15 @@ CAP 理论是分布式系统设计中最基础也最重要的理论之一。它�
 
 ```mermaid
 graph TD
-    A[分布式系统] --> B(一致性 Consistency)
-    A --> C(可用性 Availability)
-    A --> D(分区容错性 Partition Tolerance)
+    A[分布式系统] --> B["一致性 Consistency"]
+    A --> C["可用性 Availability"]
+    A --> D["分区容错性 Partition Tolerance"]
 
-    subgraph CAP权衡
+    subgraph "CAP权衡"
         direction LR
-        CP(优先 C 和 P) -- 牺牲 --> A_Sac[牺牲部分可用性 Availability]
-        AP(优先 A 和 P) -- 牺牲 --> C_Sac[牺牲部分一致性 Consistency]
-        CA(优先 C 和 A) -- 前提 --> No_P[网络分区不存在时才可能]
+        CP["优先 C 和 P"] -- 牺牲 --> A_Sac["牺牲部分可用性 Availability"]
+        AP["优先 A 和 P"] -- 牺牲 --> C_Sac["牺牲部分一致性 Consistency"]
+        CA["优先 C 和 A"] -- 前提 --> No_P["网络分区不存在时才可能"]
     end
 
     style CP fill:#f9f,stroke:#333,stroke-width:2px
@@ -76,16 +76,16 @@ graph TD
 
 ```mermaid
 graph LR
-    subgraph Raft 核心流程
-        A[Candidate] -- RequestVote RPC --> B{Followers}
-        B -- Vote Granted --> A
-        A -- Becomes --> C(Leader)
-        C -- AppendEntries RPC (Heartbeat/Log) --> B
-        B -- Acknowledge --> C
-        D[Client] -- Command --> C
-        C -- Log Replicated --> C
-        C -- Apply to State Machine --> C
-        C -- Response --> D
+    subgraph "Raft 核心流程"
+        A["Candidate"] -- "RequestVote RPC" --> B{"Followers"}
+        B -- "Vote Granted" --> A
+        A -- "Becomes" --> C["Leader"]
+        C -- "AppendEntries RPC (Heartbeat/Log)" --> B
+        B -- "Acknowledge" --> C
+        D["Client"] -- "Command" --> C
+        C -- "Log Replicated" --> C
+        C -- "Apply to State Machine" --> C
+        C -- "Response" --> D
     end
 
     style C fill:#f9f,stroke:#333,stroke-width:2px
@@ -319,16 +319,16 @@ graph TD
 
 ```mermaid
 graph TD
-    subgraph Coupled Architecture (e.g., HDFS + MapReduce)
+    subgraph Coupled Architecture
         N1[Node 1: Compute + Storage] <--> N2[Node 2: Compute + Storage]
         N1 <--> N3[Node 3: Compute + Storage]
         N2 <--> N3
     end
 
-    subgraph Separated Architecture (e.g., S3 + Spark/Presto on EC2/Kubernetes)
-        Compute[Compute Cluster (e.g., Spark, Presto)] -- Network --> Storage[Storage Layer (e.g., S3, HDFS, Data Lake)]
-        Compute -- Scaling --> Compute' [Scaled Compute]
-        Storage -- Scaling --> Storage' [Scaled Storage]
+    subgraph Separated Architecture
+        Compute["Compute Cluster (e.g., Spark, Presto)"] -- Network --> Storage["Storage Layer (e.g., S3, HDFS, Data Lake)"]
+        Compute -- Scaling --> Compute'
+        Storage -- Scaling --> Storage'
     end
 
     style Compute fill:#ccf,stroke:#333,stroke-width:2px

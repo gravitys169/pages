@@ -51,8 +51,8 @@ graph TD
         C -- Based on Shuffle Dependencies --> D[Divide into Stages]
         D --> E{Determine Stage Dependencies}
         E --> F{Wait for Parent Stages Completion}
-        F -- Stage Ready --> G[Generate TaskSet (Tasks per Partition)]
-        G --> H[Determine Preferred Locations (Data Locality)]
+        F -- Stage Ready --> G["Generate TaskSet (Tasks per Partition)"]
+        G --> H["Determine Preferred Locations (Data Locality)"]
         H --> I{Submit TaskSet to TaskScheduler}
         I --> J{Track Stage/Task Completion}
         J -- Task Failed (Max Retries) --> K{Handle Task Failure}
@@ -190,15 +190,15 @@ TaskScheduler 通过 **SchedulerBackend** 接口与具体的 Cluster Manager 进
 
 ```mermaid
 graph TD
-    subgraph Spark Driver (e.g., in YARN AM or Client)
+    subgraph "Spark Driver (e.g., in YARN AM or Client)"
         DAGScheduler --> TaskScheduler
         TaskScheduler <--> SB[SchedulerBackend]
     end
 
     subgraph Cluster Manager Integration
-        SB -- 1. Need Resources --> AM[ApplicationMaster (YARN)]
-        AM -- 2. Request Containers --> RM[YARN ResourceManager]
-        RM -- 3. Allocate Container --> NM[NodeManager]
+        SB -- "1. Need Resources" --> AM["ApplicationMaster (YARN)"]
+        AM -- "2. Request Containers" --> RM[YARN ResourceManager]
+        RM -- "3. Allocate Container" --> NM[NodeManager]
         NM -- 4. Launch Container --> AM
         AM -- 5. Start Executor in Container --> Exec[Executor Process]
         Exec -- 6. Register --> TaskScheduler

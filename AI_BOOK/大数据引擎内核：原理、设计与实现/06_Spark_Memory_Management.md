@@ -42,17 +42,17 @@ Spark 会从 JVM 堆内存中划拨出一块专门用于 Spark 计算和存储�
 *   **执行可以借用存储:** 如果执行内存不足，而存储内存区域有空闲，执行任务可以"借用"存储区域的空闲空间。如果存储区域没有空闲空间，但缓存了一些数据块，执行任务可以**强制驱逐 (Evict)** 存储区域中缓存的数据块（通常按 LRU 策略）来获取空间。
 *   **存储可以借用执行:** 如果存储内存不足以缓存新的数据块，而执行内存区域有空闲，存储可以"借用"执行区域的空闲空间。
 *   **借用限制:** 存储**不能**强制驱逐执行内存中正在使用的数据。一旦执行任务占用了内存（无论是自己的区域还是借来的），这部分内存在任务完成前是不能被存储抢占的。
-*   **优先级:** 这种设计隐含地给予了执行内存更高的优先级，因为它能强制驱逐存储内存，反之则不行。这符合 Spark 的设计哲学：保证计算任务的顺利执行比保证数据一直被缓存更重要。
+*   **优先级:** 这种设计隐含地给予了执行内hu存更高的优先级，因为它能强制驱逐存储内存，反之则不行。这符合 Spark 的设计哲学：保证计算任务的顺利执行比保证数据一直被缓存更重要。
 
 ```mermaid
 graph TD
-    subgraph Executor Memory (spark.executor.memory)
+    subgraph "Executor Memory (spark.executor.memory)"
         direction LR
-        A[JVM Heap (-Xmx)]
-        B[Off-Heap (Optional)]
+        A["JVM Heap (-Xmx)"]
+        B["Off-Heap (Optional)"]
 
         subgraph A [JVM Heap]
-            Reserved[Reserved Memory (e.g., 300MB)]
+            Reserved["Reserved Memory (e.g., 300MB)"]
             Other[User Code & Metadata]
             UnifiedPool[Unified Memory Pool]
         end
@@ -118,15 +118,15 @@ Spark 允许将统一内存池的一部分或全部配置为使用 **堆外内�
 
 **对比总结:**
 
-| 特性         | 堆内内存 (On-Heap)                  | 堆外内存 (Off-Heap)                      |
-| :----------- | :---------------------------------- | :--------------------------------------- |
-| **位置**     | JVM Heap                            | Native Memory (OS)                      |
-| **管理**     | JVM (GC)                            | Spark (via `Unsafe`)                     |
-| **GC 影响**  | 是                                  | 否                                       |
-| **优点**     | 使用简单, 工具支持好                | 避免 GC, 精确控制, 可能更大空间         |
-| **缺点**     | GC 开销, 对象开销, 大小受限         | 管理复杂, 序列化开销, 调试困难          |
-| **配置**     | `spark.executor.memory` (间接影响)  | `spark.memory.offHeap.enabled`, `spark.memory.offHeap.size` |
-| **适用场景** | 默认, GC 不是主要瓶颈时           | GC 频繁且耗时, 需要稳定性能, Tungsten 优化场景, 大内存需求 |
+| 特性        | 堆内内存 (On-Heap)                 | 堆外内存 (Off-Heap)                                             |
+| :-------- | :----------------------------- | :---------------------------------------------------------- |
+| **位置**    | JVM Heap                       | Native Memory (OS)                                          |
+| **管理**    | JVM (GC)                       | Spark (via `Unsafe`)                                        |
+| **GC 影响** | 是                              | 否                                                           |
+| **优点**    | 使用简单, 工具支持好                    | 避免 GC, 精确控制, 可能更大空间                                         |
+| **缺点**    | GC 开销, 对象开销, 大小受限              | 管理复杂, 序列化开销, 调试困难                                           |
+| **配置**    | `spark.executor.memory` (间接影响) | `spark.memory.offHeap.enabled`, `spark.memory.offHeap.size` |
+| **适用场景**  | 默认, GC 不是主要瓶颈时                 | GC 频繁且耗时, 需要稳定性能, Tungsten 优化场景, 大内存需求                      |
 
 **如何选择？**
 
