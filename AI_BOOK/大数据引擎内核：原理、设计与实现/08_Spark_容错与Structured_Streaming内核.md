@@ -228,7 +228,7 @@ graph TD
         G --> H(Restore State @ N-1);
         H --> I(Re-read Offsets N);
         I --> J(Re-process Batch N);
-        J --> K{Re-write Batch N Output (Idempotent/Txnal)};
+        J --> K{"Re-write Batch N Output (Idempotent/Txnal)"};
         K --> L(Commit Offset N);
     end
 

@@ -251,16 +251,16 @@ sequenceDiagram
 graph TD
     subgraph Without External Shuffle Service
         direction LR
-        ExecA[Executor A (Map Task)] -- Shuffle Write --> DiskA[Local Disk on Node A]
-        ExecB[Executor B (Reduce Task)] -- Shuffle Read --> ExecA
+        ExecA["Executor A (Map Task)"] -- Shuffle Write --> DiskA[Local Disk on Node A]
+        ExecB["Executor B (Reduce Task)"] -- Shuffle Read --> ExecA
         ExecA -- Dies --> ShuffleDataLost[Shuffle Data Lost!]
     end
 
     subgraph With External Shuffle Service
         direction LR
-        ExecA2[Executor A (Map Task)] -- Shuffle Write --> ESS_A[External Shuffle Service on Node A]
+        ExecA2["Executor A (Map Task)"] -- Shuffle Write --> ESS_A[External Shuffle Service on Node A]
         ESS_A --> DiskA2[Managed Disk on Node A]
-        ExecB2[Executor B (Reduce Task)] -- Shuffle Read --> ESS_A
+        ExecB2["Executor B (Reduce Task)"] -- Shuffle Read --> ESS_A
         ExecA2 -- Dies --> ESS_A_Stays[Shuffle Data Still Available via ESS_A]
     end
 

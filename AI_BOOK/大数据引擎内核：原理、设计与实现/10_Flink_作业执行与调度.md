@@ -38,8 +38,8 @@ ExecutionGraph是指导Flink作业分布式执行的核心。
 ```mermaid
 graph TD
     subgraph JobGraph :逻辑计划
-        JV1["JobVertex 1 (Source -> map)"\nParallelism=2];
-        JV2["JobVertex 2 (keyBy -> reduce)"\nParallelism=2];
+        JV1["JobVertex 1 (Source -> map)" \n Parallelism=2];
+        JV2["JobVertex 2 (keyBy -> reduce)" \n Parallelism=2];
         JV1 -- Shuffle --> JV2;
     end
 
@@ -102,15 +102,15 @@ JobMaster负责将ExecutionGraph中的Task调度到可用的Task Slot上。Flink
 
 ```mermaid
 graph TD
-    subgraph Job (Max Parallelism = 3)
-        A[Source (P=1)];
-        B[Map (P=3)];
-        C[Reduce (P=3)];
-        D[Sink (P=2)];
+    subgraph Job :Max Parallelism 3
+        A["Source (P=1)"];
+        B["Map (P=3)"];
+        C["Reduce (P=3)"];
+        D["Sink (P=2)"];
         A --> B --> C --> D;
     end
 
-    subgraph TaskManager (3 Slots)
+    subgraph TaskManager:3 Slots
         subgraph Slot 1
             direction TB
             T_A1(Task A Subtask 1);
@@ -131,12 +131,6 @@ graph TD
         end
     end
 
-    note right of TaskManager
-      Assuming default Slot Sharing Group.
-      All subtasks from A, B, C, D can potentially
-      run in any available slot.
-      Only 3 slots are needed despite different parallelisms.
-    end
 ```
 
 ## 10.5 反压机制 (Backpressure) 原理与实现
