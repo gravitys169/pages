@@ -38,7 +38,7 @@ PS：要想sql执行的快，加快算子执行速度是一个重要方向，而
 #### 定长数据类型
 列式定长Vector的主要成员变量为类型数组与bool数组，支持的类型包括：boolean，int，long，double，decimal等
 ![[attachments/大数据分析算子算法分析 2025-01-16 16.52.46.excalidraw]]
-存储空值也可以使用bitmap数组，但解码bitmap数组需要额外的计算，使用bool数组而不是null bitmap相当于使用了经典的空间换时间战术
+存储空值也可以使用bitmap数组，但解码bitmap数组需要额外的计算，使用bool数组而不是null bitmap相当于使用了经典的空间换时间战术![[attachments/人人都应该懂的大数据物理执行引擎算子设计与性能加速--从OmniRuntime出发 2025-05-22 16.08.25.excalidraw]]
 #### 变长数据类型
 ##### 连续存储
 变长数据类型顾名思义，需要额外的offset数组来用于计算变长类型的长度，即values[i]的长度等于offset[i+1]-offset[i]

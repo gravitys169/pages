@@ -49,11 +49,11 @@ env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
 **时间语义对比:**
 
-| 时间语义       | 定义                         | 特点                               | 优点                     | 缺点                             |
-| :------------- | :--------------------------- | :--------------------------------- | :----------------------- | :------------------------------- |
-| **Event Time** | 事件实际发生时间             | 真实反映业务, 可能乱序           | 结果准确, 可重现         | 需要处理乱序 (Watermark)       |
-| **Processing Time** | 算子处理时的本地时间         | 简单, 结果不确定, 不可重现       | 延迟最低                 | 结果不准确, 不可靠             |
-| **Ingestion Time**| 进入Source时的本地时间       | Event/Processing折衷, 相对稳定 | 比Processing Time准确 | 无法处理Source前的乱序     |
+| 时间语义                | 定义             | 特点                       | 优点                 | 缺点                 |
+| :------------------ | :------------- | :----------------------- | :----------------- | :----------------- |
+| **Event Time**      | 事件实际发生时间       | 真实反映业务, 可能乱序             | 结果准确, 可重现          | 需要处理乱序 (Watermark) |
+| **Processing Time** | 算子处理时的本地时间     | 简单, 结果不确定, 不可重现          | 延迟最低               | 结果不准确, 不可靠         |
+| **Ingestion Time**  | 进入Source时的本地时间 | Event/Processing折衷, 相对稳定 | 比Processing Time准确 | 无法处理Source前的乱序     |
 
 ## 12.2 Watermark：原理、生成与传播
 
@@ -116,14 +116,14 @@ graph TD
 
     subgraph "窗口计算 [0, 10), [10, 20)"
         subgraph "Window [0, 10)"
-            WE1[Event(T=8)];
-            WE3[Event(T=9)];
+            WE1["Event(T=8)"];
+            WE3["Event(T=9)"];
         end
         Trigger1(["触发计算 <br/> @ WM(10) 到达"]);
         subgraph "Window [10, 20)"
-            WE2[Event(T=12)];
-            WE5[Event(T=11)];
-            WE4[Event(T=15)];
+            WE2["Event(T=12)"];
+            WE5["Event(T=11)"];
+            WE4["Event(T=15)"];
         end
          Trigger2(["触发计算 <br/> @ WM(13) ? <br/> (取决于后续WM)"]);
     end
@@ -138,7 +138,7 @@ graph TD
 
 ```
 
-*   **延迟数据处理:** 如果一个事件的事件时间小于当前Watermark，它就被认为是**延迟数据 (Late Event)**。默认情况下，窗口关闭后到达的延迟数据会被丢弃。Flink提供了机制（如`allowedLateness()`, `sideOutputLateData()`) 来处理延迟数据。
+*   **延迟数据处理:** 如果一个事件的事件时间小于当前Watermark，它就被认为是**延迟数据 (Late Event)**。默认情况下，窗口关闭后到达的延迟数据会被丢弃(**如上图的T=9即可能被丢弃**)。Flink提供了机制（如`allowedLateness()`, `sideOutputLateData()`) 来处理延迟数据。
 
 ## 12.3 窗口类型：滚动(Tumbling)、滑动(Sliding)、会话(Session)、全局(Global)
 

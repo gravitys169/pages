@@ -84,12 +84,12 @@ graph TD
     TaskManager --> GlobalPool[TaskManager Global Network Buffer Pool];
 
     subgraph Task 1
-        InputGate1(Input Gate) --> LocalPool1_In[Local Buffer Pool (Input)];
-        OutputGate1(Output Gate) --> LocalPool1_Out[Local Buffer Pool (Output)];
+        InputGate1(Input Gate) --> LocalPool1_In["Local Buffer Pool (Input)"];
+        OutputGate1(Output Gate) --> LocalPool1_Out["Local Buffer Pool (Output)"];
     end
     subgraph Task 2
-        InputGate2(Input Gate) --> LocalPool2_In[Local Buffer Pool (Input)];
-        OutputGate2(Output Gate) --> LocalPool2_Out[Local Buffer Pool (Output)];
+        InputGate2(Input Gate) --> LocalPool2_In["Local Buffer Pool (Input)"];
+        OutputGate2(Output Gate) --> LocalPool2_Out["Local Buffer Pool (Output)"];
     end
 
     LocalPool1_In -- Request/Recycle --> GlobalPool;

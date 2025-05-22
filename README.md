@@ -1,7 +1,7 @@
 # 目录
 
 - [Tips](Tips.md)
-- [Untitled_2](Untitled_2.md)
+- [巴菲特投资理念Checklist](巴菲特投资理念Checklist.md)
 - [Why_pages](Why_pages.md)
 - [业界大牛](业界大牛.md)
 - [常用操作](常用操作.md)
